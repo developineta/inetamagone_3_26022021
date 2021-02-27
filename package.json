@@ -1,0 +1,19 @@
+{
+  "name": "inetamagone_3_26022021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developineta/inetamagone_3_26022021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/developineta/inetamagone_3_26022021/issues"
+  },
+  "homepage": "https://github.com/developineta/inetamagone_3_26022021#readme"
+}
