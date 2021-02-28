@@ -24,11 +24,7 @@ h3 {
 	font-size: map-get($font-size-heading, h3);
 	font-weight: $font-weight900;
 }
-h4 {
-	font-family: $font-Shrikhand, $font-Sans-s;
-	font-size: map-get($font-size-heading, h4);
-	letter-spacing: $letter-spacing;
-}
+
 p,
 .fa-map-marker-alt {
 	font-size: 1.1rem;
@@ -59,7 +55,4 @@ button {
 }
 .fa-heart {
 	font-size: 1.4rem;
-}
-.lien-footer i {
-	font-size: 0.9rem;
 }
