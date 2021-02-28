@@ -24,49 +24,15 @@ h1 {
   font-weight: normal;
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: 900;
-  letter-spacing: 0.02rem;
-}
-
 h3 {
   font-size: 1.15rem;
   font-weight: 900;
-}
-
-p,
-.fa-map-marker-alt {
-  font-size: 1.1rem;
 }
 
 .champ_recherche {
   font-family: "Roboto", sans-serif;
   font-size: 1.03rem;
   font-weight: 500;
-}
-
-button {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.fonctionnement__texte,
-.nouveau {
-  font-size: 1.02rem;
-  font-weight: 600;
-}
-
-.fonctionnement__etapes i {
-  height: 1rem;
-  width: 2rem;
-  font-size: 1.2rem;
-  color: #7e7e7e;
-}
-
-.nouveau {
-  color: #008766;
 }
 
 .fa-heart {

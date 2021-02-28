@@ -15,43 +15,14 @@ h1 {
 	font-size: map-get($font-size-heading, h1);
 	font-weight: normal;
 }
-h2 {
-	font-size: map-get($font-size-heading, h2);
-	font-weight: $font-weight900;
-	letter-spacing: $letter-spacing;
-}
 h3 {
 	font-size: map-get($font-size-heading, h3);
 	font-weight: $font-weight900;
-}
-
-p,
-.fa-map-marker-alt {
-	font-size: 1.1rem;
 }
 .champ_recherche {
 	font-family: $font-Roboto, $font-Sans-s;
 	font-size: 1.03rem;
 	font-weight: $font-weight500;
-}
-button {
-	font-family: $font-Roboto, $font-Sans-s;
-	font-weight: $font-weight500;
-	font-size: 1rem;
-}
-.fonctionnement__texte,
-.nouveau {
-	font-size: 1.02rem;
-	font-weight: $font-weight600;
-}
-.fonctionnement__etapes i {
-	height: 1rem;
-	width: 2rem;
-	font-size: 1.2rem;
-	color: #7e7e7e;
-}
-.nouveau {
-	color: #008766;
 }
 .fa-heart {
 	font-size: 1.4rem;
