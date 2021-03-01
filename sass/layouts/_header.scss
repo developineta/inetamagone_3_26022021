@@ -1,1 +1,12 @@
-
+header {
+	#ligne-header i {
+		display: block;
+	}
+	h1,
+	h2 {
+		/* Maps utilisés pour les polices de headings */
+		font-family: $font-Shrikhand, $font-Sans-s;
+		font-size: map-get($font-size-heading, h1);
+		font-weight: normal;
+	}
+}

@@ -15,15 +15,6 @@ h1 {
 	font-size: map-get($font-size-heading, h1);
 	font-weight: normal;
 }
-h3 {
-	font-size: map-get($font-size-heading, h3);
-	font-weight: $font-weight900;
-}
-.champ_recherche {
-	font-family: $font-Roboto, $font-Sans-s;
-	font-size: 1.03rem;
-	font-weight: $font-weight500;
-}
 .fa-heart {
 	font-size: 1.4rem;
 }

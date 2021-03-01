@@ -24,19 +24,19 @@ h1 {
   font-weight: normal;
 }
 
-h3 {
-  font-size: 1.15rem;
-  font-weight: 900;
-}
-
-.champ_recherche {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.03rem;
-  font-weight: 500;
-}
-
 .fa-heart {
   font-size: 1.4rem;
+}
+
+header #ligne-header i {
+  display: block;
+}
+header h1,
+header h2 {
+  /* Maps utilisés pour les polices de headings */
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.9rem;
+  font-weight: normal;
 }
 
 footer {
@@ -78,6 +78,104 @@ footer ul {
 footer ul li {
   margin-bottom: 7px;
   /* Nesting utilisé */
+}
+
+.bouton {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+#ligne-header i {
+  display: none;
+}
+
+h1 {
+  /* Maps utilisés pour les polices de headings */
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.9rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.02rem;
+}
+
+.sous-image__texte h3 {
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+.sous-image__texte p,
+.sous-image__texte .fa-map-marker-alt {
+  font-size: 1.1rem;
+}
+
+.champ_recherche {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.03rem;
+  font-weight: 500;
+}
+
+.fonctionnement__texte,
+.nouveau {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.fonctionnement__etapes i {
+  height: 1rem;
+  width: 2rem;
+  font-size: 1.2rem;
+  color: #7e7e7e;
+}
+
+.nouveau {
+  color: #008766;
+}
+
+.ensamble-menu__titre h2 {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.75rem;
+  font-weight: normal;
+}
+
+.ensamble-menu__article > h3 {
+  /* Combinateur parent > enfant utilisé */
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  position: relative;
+  /* Pour placer la ligne en bas */
+  padding-bottom: 8px;
+}
+
+.ensamble-menu__article > h3::after {
+  /* La ligne sous le <h3> */
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #99e2d0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.carte-choix__texte p {
+  font-size: 0.97rem;
+}
+
+.prix {
+  font-size: 0.97rem;
+  font-weight: 900;
+}
+
+.fa-check-circle {
+  font-size: 1.3rem;
+  color: #ffffff;
+  background-color: #99e2d0;
 }
 
 /*# sourceMappingURL=style.css.map */
