@@ -1,3 +1,6 @@
+.ensamble-articles a {
+	color: $colour-black;
+}
 .ensamble-menu__titre h2 {
 	font-family: $font-Shrikhand, $font-Sans-s;
 	font-size: 1.75rem;
@@ -35,4 +38,10 @@
 	font-size: 1.3rem;
 	color: $colour-white;
 	background-color: $colour-accent;
+}
+#btn-commander {
+	width: 52%; /* Définition de la taille de bouton mixin */
+	span {
+		@include flex-centre;
+	}
 }

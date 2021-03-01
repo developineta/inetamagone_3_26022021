@@ -33,6 +33,13 @@ h2 {
 	font-size: 1.2rem;
 	color: #7e7e7e;
 }
+#bouton_rose a {
+	color: $colour-white;
+	@include flex-centre;
+}
+#restaurants a {
+	color: $colour-black;
+}
 .nouveau {
 	color: #008766;
 }
