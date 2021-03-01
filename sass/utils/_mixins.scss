@@ -1,0 +1,7 @@
+@mixin logo {
+	/* Maps utilisés pour les polices de headings */
+	font-family: $font-Shrikhand, $font-Sans-s;
+	font-size: map-get($font-size-heading, h1);
+	font-weight: normal;
+	margin: 7px 0px 5px 0px;
+}

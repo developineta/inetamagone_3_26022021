@@ -1,12 +1,20 @@
 header {
-	#ligne-header i {
-		display: block;
+	.ligne-header i {
+		padding-left: 4%; /* Espace définie en % pour meilleur raport agrandissant écran */
+		font-size: 1.2rem;
 	}
 	h1,
 	h2 {
-		/* Maps utilisés pour les polices de headings */
-		font-family: $font-Shrikhand, $font-Sans-s;
-		font-size: map-get($font-size-heading, h1);
-		font-weight: normal;
+		@include logo; /* Style de logo définie par mixins */
+	}
+	.ligne-header {
+		display: flex;
+		align-items: center;
+	}
+	.ligne-header h1 {
+		padding-left: 73px;
+	}
+	a:active {
+		color: $colour-secondary;
 	}
 }

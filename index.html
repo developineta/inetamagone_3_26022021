@@ -13,7 +13,7 @@
     <body>
         <div id="bloc_page"> <!-- Definition de la partie intègrale de la page -->
             <header>
-                <h1>ohmyfood</h1> <!-- Le logo de la page -->
+                <h1 class="accueil">ohmyfood</h1> <!-- Le logo de la page -->
             </header>
 
             <section>
@@ -27,8 +27,8 @@
                 </form>
                 <h2>Réservez le menu qui vous convient</h2> 
                 <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p> <!-- La description de la page -->
-                <div class="boutton_submit">
-                    <button type="submit" class="bouton">Explorer nos restaurants</button> <!-- Ancre qui mène directement sur la section 'restaurants' de la page -->
+                <div class="bouton_submit">
+                    <button type="submit" class="bouton"><a href="#restaurants">Explorer nos restaurants</a></button> <!-- Ancre qui mène directement sur la section 'restaurants' de la page -->
                 </div>
             </section>
 
@@ -59,7 +59,7 @@
                 <div id="restaurants">
                     <h2>Restaurants</h2> <!-- Heading de la section -->
                     <div class="cartes-restaurants"> <!-- Contient toutes les cartes de ce block pour pouvoir le cibler en CSS -->
-                        <a href="#" target="_blank"> <!-- Chaque carte est cliquable dans son intégralité -->
+                        <a href="menilmontant.html"> <!-- Lien vers une autre page de ce site -->
                             <div class="cartes-restaurants__seule"> <!-- Sélécteurs BEM utilisés pour blocs parents et ses éléments -->
                                 <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu"> <!-- Modificateurs BEM utilisés -->
                                     <picture> <!-- Les photos sont adaptés à chaque taille de l'écran --> 

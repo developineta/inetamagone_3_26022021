@@ -1,11 +1,6 @@
-#ligne-header i {
-	display: none;
-}
-h1 {
-	/* Maps utilisés pour les polices de headings */
-	font-family: $font-Shrikhand, $font-Sans-s;
-	font-size: map-get($font-size-heading, h1);
-	font-weight: normal;
+.accueil {
+	@include logo; /* Style de logo définie par mixins */
+	text-align: center;
 }
 h2 {
 	font-size: map-get($font-size-heading, h2);

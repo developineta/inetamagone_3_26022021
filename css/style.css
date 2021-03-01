@@ -28,8 +28,10 @@ h1 {
   font-size: 1.4rem;
 }
 
-header #ligne-header i {
-  display: block;
+header .ligne-header i {
+  padding-left: 4%;
+  /* Espace définie en % pour meilleur raport agrandissant écran */
+  font-size: 1.2rem;
 }
 header h1,
 header h2 {
@@ -37,6 +39,18 @@ header h2 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.9rem;
   font-weight: normal;
+  margin: 7px 0px 5px 0px;
+  /* Style de logo définie par mixins */
+}
+header .ligne-header {
+  display: flex;
+  align-items: center;
+}
+header .ligne-header h1 {
+  padding-left: 73px;
+}
+header a:active {
+  color: #ff79da;
 }
 
 footer {
@@ -86,15 +100,14 @@ footer ul li {
   font-size: 1rem;
 }
 
-#ligne-header i {
-  display: none;
-}
-
-h1 {
+.accueil {
   /* Maps utilisés pour les polices de headings */
   font-family: "Shrikhand", sans-serif;
   font-size: 1.9rem;
   font-weight: normal;
+  margin: 7px 0px 5px 0px;
+  /* Style de logo définie par mixins */
+  text-align: center;
 }
 
 h2 {
