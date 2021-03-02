@@ -1,0 +1,21 @@
+{
+  "name": "inetamagone_3_26022021",
+  "version": "1.0.0",
+  "description": "Ohmyfood restaurants en ligne",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developineta/inetamagone_3_26022021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/developineta/inetamagone_3_26022021/issues"
+  },
+  "homepage": "https://github.com/developineta/inetamagone_3_26022021#readme"
+}

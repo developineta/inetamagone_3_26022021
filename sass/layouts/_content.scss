@@ -1,0 +1,43 @@
+.ensamble-articles a {
+	color: $colour-black;
+}
+.ensamble-menu__titre h2 {
+	font-family: $font-Shrikhand, $font-Sans-s;
+	font-size: 1.75rem;
+	font-weight: normal;
+}
+.ensamble-menu__article > h3 {
+	/* Combinateur parent > enfant utilisé */
+	font-size: 1.05rem;
+	text-transform: uppercase;
+	font-weight: normal;
+	position: relative; /* Pour placer la ligne en bas */
+	padding-bottom: 8px;
+}
+.ensamble-menu__article > h3::after {
+	/* La ligne sous le <h3> */
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 3px;
+	background-color: $colour-accent;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.carte-choix {
+	p {
+		font-size: 0.97rem;
+	}
+}
+.prix {
+	font-weight: $font-weight900;
+}
+.fa-check-circle {
+	font-size: 1.3rem;
+	color: $colour-white;
+	background-color: $colour-accent;
+}
+#bouton-commander {
+	width: 185px; /* Définition de la taille de bouton mixin */
+}

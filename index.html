@@ -4,14 +4,18 @@
         <meta charset="utf-8">
         <meta name=viewport content="width=device-width, initial-scale=1"> <!-- Ajout de Viewport pour utilisation de Media quaries -->
 		<title>Ohmyfood</title>
-        <link rel="stylesheet" href="style.css" type = "text/css">
+        <link rel="stylesheet" href="css/style.css" type = "text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet"> <!-- Ajout de police Google Shrikhand -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet"> <!-- Ajout de police Google Roboto -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/d034506d63.js" crossorigin="anonymous"></script> <!-- Ajout de lien vers bibliothèque Font Awesome -->
 	</head>
     <body>
         <div id="bloc_page"> <!-- Definition de la partie intègrale de la page -->
             <header>
-                <h1>ohmyfood</h1> <!-- Le logo de la page -->
+                <h1 class="accueil">ohmyfood</h1> <!-- Le logo de la page -->
             </header>
+
             <section>
                 <form action="action_page.php" id="recherche_form" > <!-- Le forme pour créer le champ de recherche -->
                     <div id="icone_recherche">
@@ -23,144 +27,141 @@
                 </form>
                 <h2>Réservez le menu qui vous convient</h2> 
                 <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p> <!-- La description de la page -->
-                <div id="boutton_submit">
-                    <button type="submit" class="boutton">Explorer nos restaurants</button> <!-- Ancre qui mène directement sur la section 'restaurants' de la page -->
+                <div class="bouton-rose">
+                    <a class="bouton" data-action="button" href="#restaurants" data-title="Explorer nos restaurants">
+                        <div class="btn-texte"><span>Explorer nos restaurants</span></div>
+                        <div class="bouton__survole"></div>
+                    </a>
                 </div>
             </section>
 
-            <nav>
-                <div class="fonctionnement">
-                    <h2 class="fonctionnement__titre">Fonctionnement</h2>
-                    <ul> <!-- Les étapes de fonctionnement sont rangés en liste à puces -->
-                        <li class="fonctionnement__etapes" id="choisissez">
-                            <div class="fonctionnement__numeros">1</div>
-                            <i class="fas fa-mobile-alt" id="icone_mobile"></i> <!-- Les icones à partir de la bibliothèque Font Awesome -->
-                            <span class="fonctionnement__texte">Choissisez un restaurant</span>
-                        </li>
-                        <li class="fonctionnement__etapes" id="composez">
-                            <div class="fonctionnement__numeros">2</div>
-                            <i class="fas fa-list-ul" id="icone_list"></i>
-                            <span class="fonctionnement__texte">Composez votre menu</span>
-                        </li>
-                        <li class="fonctionnement__etapes" id="degustez">
-                            <div class="fonctionnement__numeros">3</div>
-                            <i class="fas fa-store" id="icone_resto"></i>
-                            <span class="fonctionnement__texte fonctionnement__texte--active">Dégustez au restaurant</span>
-                        </li>
-                    </ul>
-                </div>
+            <nav id="fonctionnement">
+                <h2 class="fonctionnement__titre">Fonctionnement</h2>
+                <ul> <!-- Les étapes de fonctionnement sont rangés en liste à puces -->
+                    <li class="fonctionnement__etapes" id="choisissez">
+                        <div class="fonctionnement__numeros">1</div>
+                        <i class="fas fa-mobile-alt" id="icone_mobile"></i> <!-- Les icones à partir de la bibliothèque Font Awesome -->
+                        <span class="fonctionnement__texte">Choissisez un restaurant</span>
+                    </li>
+                    <li class="fonctionnement__etapes" id="composez">
+                        <div class="fonctionnement__numeros">2</div>
+                        <i class="fas fa-list-ul" id="icone_list"></i>
+                        <span class="fonctionnement__texte">Composez votre menu</span>
+                    </li>
+                    <li class="fonctionnement__etapes" id="degustez">
+                        <div class="fonctionnement__numeros">3</div>
+                        <i class="fas fa-store" id="icone_resto"></i>
+                        <span class="fonctionnement__texte fonctionnement__texte--active">Dégustez au restaurant</span>
+                    </li>
+                </ul>
             </nav>
 
-            <section>
-                <div id="restaurants">
-                    <h2>Restaurants</h2> <!-- Heading de la section -->
-                    <div class="cartes-restaurants"> <!-- Contient toutes les cartes de ce block pour pouvoir le cibler en CSS -->
-                        <a href="#" target="_blank"> <!-- Chaque carte est cliquable dans son intégralité -->
-                            <div class="cartes-restaurants__seule"> <!-- Sélécteurs BEM utilisés pour blocs parents et ses éléments -->
-                                <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu"> <!-- Modificateurs BEM utilisés -->
-                                    <picture> <!-- Les photos sont adaptés à chaque taille de l'écran --> 
-                                        <source media="(min-width: 1209px)" srcset="images/restaurants/menilmontant_mob.jpg">
-                                        <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/menilmontant_mob.jpg">
-                                        <source media="(max-width: 636px)" srcset="images/restaurants/menilmontant_mob.jpg">
-                                        <img src="images/restaurants/menilmontant_mob.jpg" class="img_restaurant" alt="Ménilmontant" />
-                                    </picture>
-                                    <div class="nouveau">
-                                        <span>Nouveau</span>
-                                    </div>
-                                    <div class="sous-image"> <!-- L'apparence des textes dans les cartes de même block est pareil -->
-                                        <div class="sous-image__texte">
-                                            <h3>La palette du goût</h3> <!-- <h3> est utilisé pour tous les titres de cartes -->
-                                            <p>Ménilmontant</p> <!-- <p> est utilisé pour tous les textes de cartes -->
-                                        </div>
-                                        <i class="far fa-heart sous-image__icone"></i>
-                                    </div>
-                                </figure>
-                            </div>
-                        </a>
-                        <a href="#" target="_blank"> 
-                            <div class="cartes-restaurants__seule"> 
-                                <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu"> 
-                                    <picture>  
-                                        <source media="(min-width: 1209px)" srcset="images/restaurants/charonne_mob.jpg">
-                                        <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/charonne_mob.jpg">
-                                        <source media="(max-width: 636px)" srcset="images/restaurants/charonne_mob.jpg">
-                                        <img src="images/restaurants/charonne_mob.jpg" class="img_restaurant" alt="Charonne" />
-                                    </picture>
-                                    <div class="nouveau">
-                                        <span>Nouveau</span>
-                                    </div>
-                                    <div class="sous-image"> 
-                                        <div class="sous-image__texte">
-                                            <h3>La note enchantée</h3> 
-                                            <p>Charonne</p> 
-                                        </div>
-                                        <i class="far fa-heart sous-image__icone"></i>
-                                    </div>
-                                </figure>
-                            </div>
-                        </a>
-                        <a href="#" target="_blank"> 
-                            <div class="cartes-restaurants__seule"> 
-                                <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu"> 
-                                    <picture>  
-                                        <source media="(min-width: 1209px)" srcset="images/restaurants/cite-rouge_mob.jpg">
-                                        <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/cite-rouge_mob.jpg">
-                                        <source media="(max-width: 636px)" srcset="images/restaurants/cite-rouge_mob.jpg">
-                                        <img src="images/restaurants/cite-rouge_mob.jpg" class="img_restaurant" alt="Cité Rouge" />
-                                    </picture>
-                                    <div class="sous-image"> 
-                                        <div class="sous-image__texte">
-                                            <h3>À la française</h3> 
-                                            <p>Cité Rouge</p> 
-                                        </div>
-                                        <i class="far fa-heart sous-image__icone"></i>
-                                    </div>
-                                </figure>
-                            </div>
-                        </a>
-                        <a href="#" target="_blank"> 
-                            <div class="cartes-restaurants__seule"> 
-                                <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu"> 
-                                    <picture>  
-                                        <source media="(min-width: 1209px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
-                                        <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
-                                        <source media="(max-width: 636px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
-                                        <img src="images/restaurants/folie-mericourt_mob.jpg" class="img_restaurant" alt="Folie-Méricourt" />
-                                    </picture>
-                                    <div class="sous-image"> 
-                                        <div class="sous-image__texte">
-                                            <h3>Le délice des sens</h3> 
-                                            <p>Folie-Méricourt</p> 
-                                        </div>
-                                        <i class="far fa-heart sous-image__icone"></i>
-                                    </div>
-                                </figure>
-                            </div>
-                        </a>
-            </section>
-
-            <footer>
-                <div id="footer_content">
-                    <h4>ohmyfood</h4>
-                    <ul> <!-- Les éléments de footer rangés en liste à puces -->
-                        <li>
-                            <a href="#" class="lien-proposer">
-                                <i class="fas fa-utensils"></i>
-                                <span>Proposer un restaurant</span>
+            <section id="restaurants">
+                <h2>Restaurants</h2> <!-- Heading de la section -->
+                <div class="cartes-restaurants"> <!-- Contient toutes les cartes de ce block pour pouvoir le cibler en CSS -->
+                    <div class="cartes-restaurants__seule"> <!-- Sélécteurs BEM utilisés pour blocs parents et ses éléments -->
+                        <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu"> <!-- Modificateurs BEM utilisés -->
+                            <a href="menilmontant.html"> <!-- Lien vers une autre page de ce site -->
+                                <picture> <!-- Les photos sont adaptés à chaque taille de l'écran --> 
+                                    <source media="(min-width: 1209px)" srcset="images/restaurants/menilmontant_mob.jpg">
+                                    <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/menilmontant_mob.jpg">
+                                    <source media="(max-width: 636px)" srcset="images/restaurants/menilmontant_mob.jpg">
+                                    <img src="images/restaurants/menilmontant_mob.jpg" class="img_restaurant" alt="Ménilmontant" />
+                                </picture>
                             </a>
-                        </li>
-                        <li>
-                            <a href="#" class="lien-proposer">
-                                <i class="fas fa-hands-helping"></i>
-                                <span>Devenir partenaire</span>
+                            <div class="nouveau">
+                                <span>Nouveau</span>
+                            </div>
+                            <figcaption class="legende-restaurant"> <!-- L'apparence des textes dans les cartes de même block est pareil -->
+                                <div class="legende-restaurant__txt">
+                                    <h3>La palette du goût</h3> <!-- <h3> est utilisé pour tous les titres de cartes -->
+                                    <p>Ménilmontant</p>
+                                </div>
+                                <i class="far fa-heart sous-image__icone"></i>
+                            </figcaption>
+                        </figure>
+                    </div> 
+                    <div class="cartes-restaurants__seule"> 
+                        <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu">
+                            <a href="#" target="_blank">
+                                <picture>  
+                                    <source media="(min-width: 1209px)" srcset="images/restaurants/charonne_mob.jpg">
+                                    <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/charonne_mob.jpg">
+                                    <source media="(max-width: 636px)" srcset="images/restaurants/charonne_mob.jpg">
+                                    <img src="images/restaurants/charonne_mob.jpg" class="img_restaurant" alt="Charonne" />
+                                </picture>
                             </a>
-                        </li>
-                        <li><a href="#">Mentions légales</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                            <div class="nouveau">
+                                <span>Nouveau</span>
+                            </div>
+                            <figcaption class="legende-restaurant"> 
+                                <div class="legende-restaurant__txt">
+                                    <h3>La note enchantée</h3> 
+                                    <p>Charonne</p> 
+                                </div>
+                                <i class="far fa-heart sous-image__icone"></i>
+                            </figcaption>
+                        </figure>
                     </div>
+                    <div class="cartes-restaurants__seule"> 
+                        <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu">
+                            <a href="#" target="_blank">
+                                <picture>  
+                                    <source media="(min-width: 1209px)" srcset="images/restaurants/cite-rouge_mob.jpg">
+                                    <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/cite-rouge_mob.jpg">
+                                    <source media="(max-width: 636px)" srcset="images/restaurants/cite-rouge_mob.jpg">
+                                    <img src="images/restaurants/cite-rouge_mob.jpg" class="img_restaurant" alt="Cité Rouge" />
+                                </picture>
+                            </a>
+                            <figcaption class="legende-restaurant"> 
+                                <div class="legende-restaurant__txt">
+                                    <h3>À la française</h3> 
+                                    <p>Cité Rouge</p> 
+                                </div>
+                                <i class="far fa-heart sous-image__icone"></i>
+                            </figcaption>
+                        </figure>
+                    </div> 
+                    <div class="cartes-restaurants__seule"> 
+                        <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu">
+                            <a href="#" target="_blank">
+                                <picture>  
+                                    <source media="(min-width: 1209px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
+                                    <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
+                                    <source media="(max-width: 636px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
+                                    <img src="images/restaurants/folie-mericourt_mob.jpg" class="img_restaurant" alt="Folie-Méricourt" />
+                                </picture>
+                            </a>
+                            <figcaption class="legende-restaurant"> 
+                                <div class="legende-restaurant__txt">
+                                    <h3>Le délice des sens</h3> 
+                                    <p>Folie-Méricourt</p> 
+                                </div>
+                                <i class="far fa-heart sous-image__icone"></i>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <footer id="footer-content">
+                <h4>ohmyfood</h4>
+                <ul> <!-- Les éléments de footer rangés en liste à puces -->
+                    <li class="lien-footer">
+                        <a href="#">
+                            <i class="fas fa-utensils"></i>
+                            <span>Proposer un restaurant</span>
+                        </a>
+                    </li >
+                    <li class="lien-footer">
+                        <a href="#">
+                            <i class="fas fa-hands-helping"></i>
+                            <span>Devenir partenaire</span>
+                        </a>
+                    </li>
+                    <li class="lien-footer"><a href="#"><span>Mentions légales</span></a></li>
+                    <li class="lien-footer"><a href="mailto:restaurants@ohmyfood.fr"><span>Contact</span></a></li> <!-- Ouvre navigateur par défaut -->
+                </ul>
             </footer>
-
         </div>
     </body>
 </html>

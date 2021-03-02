@@ -1,0 +1,16 @@
+body {
+	font-family: $font-Roboto, $font-Sans-s; /* Les variables de polices utilisés */
+	color: $colour-black; /* Les variables de couleurs principales utilisés */
+	a {
+		text-decoration: none; /* Nesting utilisé */
+	}
+	ul {
+		list-style-type: none;
+	}
+}
+h1 {
+	@include logo;
+}
+.fa-heart {
+	font-size: 1.4rem;
+}
