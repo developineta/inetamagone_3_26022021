@@ -1,37 +1,35 @@
-footer {
+#footer-content {
+	padding: 1px 0px 20px 6%;
 	background-color: #353535;
-	#footer-content {
-		padding: 1px 0px 20px 6%;
+}
+h4 {
+	font-family: $font-Shrikhand, $font-Sans-s;
+	font-size: map-get($font-size-heading, h4);
+	letter-spacing: $letter-spacing;
+	font-weight: normal;
+	color: $colour-white;
+	margin-bottom: 19px;
+}
+.fa-utensils {
+	font-size: 0.9rem;
+	margin-right: 9px;
+}
+.fa-hands-helping {
+	font-size: 0.7rem;
+	margin-right: 7px;
+}
+span {
+	font-size: 1rem;
+}
+.lien-footer a {
+	color: $colour-white; /* Les propiétés d'apparence des liens de footer */
+	&:active {
+		color: $colour-secondary; /* Utilisation d'esperluette Sass*/
 	}
-	h4 {
-		font-family: $font-Shrikhand, $font-Sans-s;
-		font-size: map-get($font-size-heading, h4);
-		letter-spacing: $letter-spacing;
-		font-weight: normal;
-		color: $colour-white;
-		margin-bottom: 19px;
-	}
-	.fa-utensils {
-		font-size: 0.9rem;
-		margin-right: 9px;
-	}
-	.fa-hands-helping {
-		font-size: 0.7rem;
-		margin-right: 7px;
-	}
-	span {
-		font-size: 1rem;
-	}
-	.lien-footer a {
-		color: $colour-white; /* Les propiétés d'apparence des liens de footer */
-		&:active {
-			color: $colour-secondary; /* Utilisation d'esperluette Sass*/
-		}
-	}
-	ul {
-		padding: 0px;
-		li {
-			margin-bottom: 7px; /* Nesting utilisé */
-		}
+}
+ul {
+	padding: 0px;
+	li {
+		margin-bottom: 7px; /* Nesting utilisé */
 	}
 }

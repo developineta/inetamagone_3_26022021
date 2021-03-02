@@ -9,10 +9,7 @@ body {
 	}
 }
 h1 {
-	/* Maps utilisés pour les polices de headings */
-	font-family: $font-Shrikhand, $font-Sans-s;
-	font-size: map-get($font-size-heading, h1);
-	font-weight: normal;
+	@include logo;
 }
 .fa-heart {
 	font-size: 1.4rem;

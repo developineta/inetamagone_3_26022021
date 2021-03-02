@@ -25,13 +25,12 @@
 	left: 0;
 	right: 0;
 }
-.carte-choix__texte {
+.carte-choix {
 	p {
 		font-size: 0.97rem;
 	}
 }
 .prix {
-	font-size: 0.97rem;
 	font-weight: $font-weight900;
 }
 .fa-check-circle {
@@ -39,9 +38,6 @@
 	color: $colour-white;
 	background-color: $colour-accent;
 }
-#btn-commander {
-	width: 52%; /* Définition de la taille de bouton mixin */
-	span {
-		@include flex-centre;
-	}
+#bouton-commander {
+	width: 185px; /* Définition de la taille de bouton mixin */
 }

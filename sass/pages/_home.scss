@@ -1,5 +1,4 @@
 .accueil {
-	@include logo; /* Style de logo définie par mixins */
 	text-align: center;
 }
 h2 {
@@ -7,7 +6,7 @@ h2 {
 	font-weight: $font-weight900;
 	letter-spacing: $letter-spacing;
 }
-.sous-image__texte {
+.legende-restaurant__txt {
 	h3 {
 		font-size: map-get($font-size-heading, h3);
 		font-weight: $font-weight900;
@@ -33,12 +32,9 @@ h2 {
 	font-size: 1.2rem;
 	color: #7e7e7e;
 }
-#bouton_rose a {
+#bouton_explorer span {
 	color: $colour-white;
 	@include flex-centre;
-}
-#restaurants a {
-	color: $colour-black;
 }
 .nouveau {
 	color: #008766;

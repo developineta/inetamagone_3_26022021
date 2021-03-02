@@ -2,10 +2,10 @@ header {
 	.ligne-header i {
 		padding-left: 4%; /* Espace définie en % pour meilleur raport agrandissant écran */
 		font-size: 1.2rem;
+		color: $colour-black;
 	}
-	h1,
 	h2 {
-		@include logo; /* Style de logo définie par mixins */
+		@include logo;
 	}
 	.ligne-header {
 		display: flex;
