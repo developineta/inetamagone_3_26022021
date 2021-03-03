@@ -6,7 +6,7 @@
 		<title>Ohmyfood</title>
         <link rel="stylesheet" href="css/style.css" type = "text/css">
         <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet"> <!-- Ajout de police Google Shrikhand -->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet"> <!-- Ajout de police Google Roboto -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/d034506d63.js" crossorigin="anonymous"></script> <!-- Ajout de lien vers bibliothèque Font Awesome -->
 	</head>
@@ -16,20 +16,18 @@
                 <h1 class="accueil">ohmyfood</h1> <!-- Le logo de la page -->
             </header>
 
-            <section>
-                <form action="action_page.php" id="recherche_form" > <!-- Le forme pour créer le champ de recherche -->
-                    <div id="icone_recherche">
-                        <i class="fas fa-map-marker-alt"></i> <!-- L'icone à partir de la bibliothèque Font Awesome -->
-                    </div>
-                    <div id="texte_recherche">
-                        <input type="text" class="champ_recherche" value="Paris, Belleville" />
-                    </div>
+            <section class="description">
+                <form action="action_page.php" class="recherche-form" > <!-- Le forme pour créer le champ de recherche -->
+                    <i class="fas fa-map-marker-alt"></i> <!-- L'icone à partir de la bibliothèque Font Awesome -->
+                    <input type="text" class="recherche-form__champ" value="Paris, Belleville" />
                 </form>
-                <h2>Réservez le menu qui vous convient</h2> 
-                <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p> <!-- La description de la page -->
+                <div class="description__textes">
+                    <h2>Réservez le menu qui vous convient</h2> 
+                    <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p> <!-- La description de la page -->
+                </div>
                 <div class="bouton-rose">
                     <a class="bouton" data-action="button" href="#restaurants" data-title="Explorer nos restaurants">
-                        <div class="btn-texte"><span>Explorer nos restaurants</span></div>
+                        <div class="bouton__texte"><span>Explorer nos restaurants</span></div>
                         <div class="bouton__survole"></div>
                     </a>
                 </div>

@@ -34,22 +34,22 @@
 				opacity: 1; /* Opaque au survol */
 			}
 		}
-	}
-	.bouton__survole {
-		position: absolute; /* Position des ombres qui changent au survol */
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		@include btn-shadows-hover;
-		opacity: 0; /* Transparence quand pas de survol */
-		z-index: 2;
-		transition: opacity 250ms; /* L'effet plus doux au survol */
-	}
-	.btn-texte {
-		color: $colour-white; /* Les propiétés d'apparence de boutons */
-		font-size: 1rem;
-		margin: auto;
-		z-index: 3; /* Le texte de bouton reste par dessus des effets de bouton */
+		&__survole {
+			position: absolute; /* Position des ombres qui changent au survol */
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			@include btn-shadows-hover;
+			opacity: 0; /* Transparence quand pas de survol */
+			z-index: 2;
+			transition: opacity 250ms; /* L'effet plus doux au survol */
+		}
+		&__texte {
+			color: $colour-white;
+			font-size: 1rem;
+			margin: auto;
+			z-index: 3; /* Le texte de bouton reste par dessus des effets de bouton */
+		}
 	}
 }

@@ -1,25 +1,70 @@
 .accueil {
 	text-align: center;
 }
-h2 {
-	font-size: map-get($font-size-heading, h2);
-	font-weight: $font-weight900;
-	letter-spacing: $letter-spacing;
+.description {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: $colour-background;
+	.recherche-form {
+		display: flex; /* Pour ranger les éléments dans une ligne */
+		justify-content: center;
+		max-width: 680px; /* Définition de taille maximale */
+		width: 100%;
+		max-height: 50px;
+		height: 100%;
+		background-color: darken($colour-background, 4.7%);
+		i {
+			padding: 17px 15px 0px 48px; /* Le positionnement de l'icone dans sa <div> */
+		}
+		&__champ {
+			font-family: $font-Roboto, $font-Sans-s;
+			font-size: 1.03rem;
+			font-weight: $font-weight500;
+			border: none;
+			height: 48px;
+			background-color: darken($colour-background, 4.7%);
+		}
+		&::before {
+			/* La ligne au dessus de champ de recherche */
+			content: "";
+			position: absolute;
+			top: 57px;
+			bottom: 0;
+			left: 8px;
+			right: 0;
+			max-width: 680px;
+			width: 100%;
+			height: 5px;
+			box-shadow: 0px 10px 5px -10px darken($colour-background, 35%) inset;
+		}
+	}
+	&__textes {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		h2 {
+			font-size: map-get($font-size-heading, h2);
+			font-weight: $font-weight900;
+			margin: 36px 0 0 0;
+			width: 80%;
+		}
+		p {
+			margin: 12px 0 28px 0;
+			font-size: $font-size-p;
+		}
+	}
 }
+
 .legende-restaurant__txt {
 	h3 {
 		font-size: map-get($font-size-heading, h3);
 		font-weight: $font-weight900;
 	}
-	p,
-	.fa-map-marker-alt {
-		font-size: 1.1rem;
+	p {
+		font-size: $font-size-p;
 	}
-}
-.champ_recherche {
-	font-family: $font-Roboto, $font-Sans-s;
-	font-size: 1.03rem;
-	font-weight: $font-weight500;
 }
 .fonctionnement__texte,
 .nouveau {
@@ -31,10 +76,6 @@ h2 {
 	width: 2rem;
 	font-size: 1.2rem;
 	color: #7e7e7e;
-}
-#bouton_explorer span {
-	color: $colour-white;
-	@include flex-centre;
 }
 .nouveau {
 	color: #008766;
