@@ -3,242 +3,274 @@
 /* Couleurs principales */
 /* Paramètres de la police */
 body {
-	font-family: "Roboto", sans-serif;
-	/* Les variables de polices utilisés */
-	color: #000000;
-	/* Les variables de couleurs principales utilisés */
+  font-family: "Roboto", sans-serif;
+  /* Les variables de polices utilisés */
+  color: #000000;
+  /* Les variables de couleurs principales utilisés */
 }
 body a {
-	text-decoration: none;
-	/* Nesting utilisé */
+  text-decoration: none;
+  /* Nesting utilisé */
 }
 body ul {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 h1 {
-	/* Maps utilisés pour les polices de headings */
-	font-family: "Shrikhand", sans-serif;
-	font-size: 1.9rem;
-	font-weight: normal;
-	margin: 7px 0px 5px 0px;
-	color: #000000;
+  /* Maps utilisés pour les polices de headings */
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.9rem;
+  font-weight: normal;
+  margin: 7px 0px 5px 0px;
+  color: #000000;
 }
 
 .fa-heart {
-	font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 header .ligne-header i {
-	padding-left: 4%;
-	/* Espace définie en % pour meilleur raport agrandissant écran */
-	font-size: 1.2rem;
-	color: #000000;
+  padding-left: 4%;
+  /* Espace définie en % pour meilleur raport agrandissant écran */
+  font-size: 1.2rem;
+  color: #000000;
 }
 header h2 {
-	/* Maps utilisés pour les polices de headings */
-	font-family: "Shrikhand", sans-serif;
-	font-size: 1.9rem;
-	font-weight: normal;
-	margin: 7px 0px 5px 0px;
-	color: #000000;
+  /* Maps utilisés pour les polices de headings */
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.9rem;
+  font-weight: normal;
+  margin: 7px 0px 5px 0px;
+  color: #000000;
 }
 header .ligne-header {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 header .ligne-header h1 {
-	padding-left: 73px;
+  padding-left: 73px;
 }
 header a:active {
-	color: #ff79da;
+  color: #ff79da;
 }
 
 #footer-content {
-	padding: 1px 0px 20px 6%;
-	background-color: #353535;
+  padding: 1px 0px 20px 6%;
+  background-color: #353535;
 }
 
 h4 {
-	font-family: "Shrikhand", sans-serif;
-	font-size: 1.12rem;
-	letter-spacing: 0.02rem;
-	font-weight: normal;
-	color: #ffffff;
-	margin-bottom: 19px;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.12rem;
+  letter-spacing: 0.02rem;
+  font-weight: normal;
+  color: #ffffff;
+  margin-bottom: 19px;
 }
 
 .fa-utensils {
-	font-size: 0.9rem;
-	margin-right: 9px;
+  font-size: 0.9rem;
+  margin-right: 9px;
 }
 
 .fa-hands-helping {
-	font-size: 0.7rem;
-	margin-right: 7px;
+  font-size: 0.7rem;
+  margin-right: 7px;
 }
 
 span {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 .lien-footer a {
-	color: #ffffff;
-	/* Les propiétés d'apparence des liens de footer */
+  color: #ffffff;
+  /* Les propiétés d'apparence des liens de footer */
 }
 .lien-footer a:active {
-	color: #ff79da;
-	/* Utilisation d'esperluette Sass*/
+  color: #ff79da;
+  /* Utilisation d'esperluette Sass*/
 }
 
 ul {
-	padding: 0px;
+  padding: 0px;
 }
 ul li {
-	margin-bottom: 7px;
-	/* Nesting utilisé */
+  margin-bottom: 7px;
+  /* Nesting utilisé */
 }
 
 .bouton-rose .bouton {
-	background-color: #9356dc;
-	border-radius: 25px 25px 25px 25px;
-	height: 50px;
-	width: 218px;
-	border: none;
-	/* Enlève la bordure de boutton qui est définie par défaut */
-	box-shadow: 4px 4px 10px #c5c5c5, 29px 57px 61px -37px #ff79da inset;
-	/* Appliquation des ombres */
-	display: flex;
-	margin: auto;
-	position: relative;
-	z-index: 1;
+  background-color: #9356dc;
+  border-radius: 25px 25px 25px 25px;
+  height: 50px;
+  width: 218px;
+  border: none;
+  /* Enlève la bordure de boutton qui est définie par défaut */
+  box-shadow: 4px 4px 10px #c5c5c5, 29px 57px 61px -37px #ff79da inset;
+  /* Appliquation des ombres */
+  display: flex;
+  margin: auto;
+  position: relative;
+  z-index: 1;
 }
 .bouton-rose .bouton:active .bouton__survole {
-	opacity: 1;
-	/* Opaque au survol */
+  opacity: 1;
+  /* Opaque au survol */
 }
 .bouton-rose .bouton__survole {
-	position: absolute;
-	/* Position des ombres qui changent au survol */
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	box-shadow: 4px 4px 10px #b8b8b8, 29px 57px 61px -37px #ff93e1 inset;
-	/* Ombres au survol */
-	border-radius: 25px 25px 25px 25px;
-	opacity: 0;
-	/* Transparence quand pas de survol */
-	z-index: 2;
-	transition: opacity 250ms;
-	/* L'effet plus doux au survol */
+  position: absolute;
+  /* Position des ombres qui changent au survol */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 4px 4px 10px #b8b8b8, 29px 57px 61px -37px #ff93e1 inset;
+  /* Ombres au survol */
+  border-radius: 25px 25px 25px 25px;
+  opacity: 0;
+  /* Transparence quand pas de survol */
+  z-index: 2;
+  transition: opacity 250ms;
+  /* L'effet plus doux au survol */
 }
 .bouton-rose .btn-texte {
-	color: #ffffff;
-	/* Les propiétés d'apparence de boutons */
-	font-size: 1rem;
-	margin: auto;
-	z-index: 3;
-	/* Le texte de bouton reste par dessus des effets de bouton */
+  color: #ffffff;
+  /* Les propiétés d'apparence de boutons */
+  font-size: 1rem;
+  margin: auto;
+  z-index: 3;
+  /* Le texte de bouton reste par dessus des effets de bouton */
 }
 
 .accueil {
-	text-align: center;
+  text-align: center;
 }
 
 h2 {
-	font-size: 1.4rem;
-	font-weight: 900;
-	letter-spacing: 0.02rem;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.02rem;
 }
 
 .legende-restaurant__txt h3 {
-	font-size: 1.15rem;
-	font-weight: 900;
+  font-size: 1.15rem;
+  font-weight: 900;
 }
 .legende-restaurant__txt p,
 .legende-restaurant__txt .fa-map-marker-alt {
-	font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .champ_recherche {
-	font-family: "Roboto", sans-serif;
-	font-size: 1.03rem;
-	font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.03rem;
+  font-weight: 500;
 }
 
 .fonctionnement__texte,
 .nouveau {
-	font-size: 1.02rem;
-	font-weight: 600;
+  font-size: 1.02rem;
+  font-weight: 600;
 }
 
 .fonctionnement__etapes i {
-	height: 1rem;
-	width: 2rem;
-	font-size: 1.2rem;
-	color: #7e7e7e;
+  height: 1rem;
+  width: 2rem;
+  font-size: 1.2rem;
+  color: #7e7e7e;
 }
 
 #bouton_explorer span {
-	color: #ffffff;
-	display: flex;
-	margin: auto;
+  color: #ffffff;
+  display: flex;
+  margin: auto;
 }
 
 .nouveau {
-	color: #008766;
+  color: #008766;
+}
+
+#recherche_form {
+  display: flex;
+  /* Pour ranger les éléments dans une ligne */
+  justify-content: center;
+  width: 375px;
+  /* Définition de taille maximale */
+  max-height: 50px;
+  height: 100%;
+  background-color: #eaeaea;
+}
+#recherche_form i {
+  padding: 17px 15px 0px 48px;
+  /* Le positionnement de l'icone dans sa <div> */
+}
+#recherche_form .champ_recherche {
+  border: none;
+  height: 48px;
+  background-color: #eaeaea;
+}
+#recherche_form::before {
+  /* La ligne au dessus de champ de recherche */
+  content: "";
+  position: absolute;
+  top: 57px;
+  bottom: 0;
+  left: 8px;
+  right: 0;
+  width: 375px;
+  height: 5px;
+  box-shadow: 0px 10px 5px -10px #9d9d9d inset;
 }
 
 .ensamble-articles a {
-	color: #000000;
+  color: #000000;
 }
 
 .ensamble-menu__titre h2 {
-	font-family: "Shrikhand", sans-serif;
-	font-size: 1.75rem;
-	font-weight: normal;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.75rem;
+  font-weight: normal;
 }
 
 .ensamble-menu__article > h3 {
-	/* Combinateur parent > enfant utilisé */
-	font-size: 1.05rem;
-	text-transform: uppercase;
-	font-weight: normal;
-	position: relative;
-	/* Pour placer la ligne en bas */
-	padding-bottom: 8px;
+  /* Combinateur parent > enfant utilisé */
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  position: relative;
+  /* Pour placer la ligne en bas */
+  padding-bottom: 8px;
 }
 
 .ensamble-menu__article > h3::after {
-	/* La ligne sous le <h3> */
-	content: "";
-	position: absolute;
-	width: 40px;
-	height: 3px;
-	background-color: #99e2d0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+  /* La ligne sous le <h3> */
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #99e2d0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .carte-choix p {
-	font-size: 0.97rem;
+  font-size: 0.97rem;
 }
 
 .prix {
-	font-weight: 900;
+  font-weight: 900;
 }
 
 .fa-check-circle {
-	font-size: 1.3rem;
-	color: #ffffff;
-	background-color: #99e2d0;
+  font-size: 1.3rem;
+  color: #ffffff;
+  background-color: #99e2d0;
 }
 
 #bouton-commander {
-	width: 185px;
-	/* Définition de la taille de bouton mixin */
+  width: 185px;
+  /* Définition de la taille de bouton mixin */
 }
 
 /*# sourceMappingURL=style.css.map */
