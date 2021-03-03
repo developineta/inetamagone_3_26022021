@@ -58,8 +58,7 @@ header a:active {
   padding: 1px 0px 20px 6%;
   background-color: #353535;
 }
-
-h4 {
+#footer-content h4 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.12rem;
   letter-spacing: 0.02rem;
@@ -67,34 +66,29 @@ h4 {
   color: #ffffff;
   margin-bottom: 19px;
 }
-
-.fa-utensils {
+#footer-content .fa-utensils {
   font-size: 0.9rem;
   margin-right: 9px;
 }
-
-.fa-hands-helping {
+#footer-content .fa-hands-helping {
   font-size: 0.7rem;
   margin-right: 7px;
 }
-
-span {
+#footer-content span {
   font-size: 1rem;
 }
-
-.lien-footer a {
+#footer-content .lien-footer a {
   color: #ffffff;
   /* Les propiétés d'apparence des liens de footer */
 }
-.lien-footer a:active {
+#footer-content .lien-footer a:active {
   color: #ff79da;
   /* Utilisation d'esperluette Sass*/
 }
-
-ul {
+#footer-content ul {
   padding: 0px;
 }
-ul li {
+#footer-content ul li {
   margin-bottom: 7px;
   /* Nesting utilisé */
 }
@@ -109,14 +103,14 @@ ul li {
   width: 218px;
   border: none;
   /* Enlève la bordure de boutton qui est définie par défaut */
-  box-shadow: 4px 4px 10px #c5c5c5, 29px 57px 61px -37px #ff79da inset;
+  box-shadow: 2px 4px 10px #b6b6b6, 29px 57px 61px -37px #ff79da inset;
   /* Appliquation des ombres */
   display: flex;
   margin: auto;
   position: relative;
   z-index: 1;
 }
-.bouton-rose .bouton:active .bouton__survole {
+.bouton-rose .bouton:hover .bouton__survole {
   opacity: 1;
   /* Opaque au survol */
 }
@@ -127,7 +121,7 @@ ul li {
   right: 0;
   bottom: 0;
   left: 0;
-  box-shadow: 4px 4px 10px #b8b8b8, 29px 57px 61px -37px #ff93e1 inset;
+  box-shadow: 4px 4px 10px #aaaaaa, 29px 57px 61px -37px #ff93e1 inset;
   /* Ombres au survol */
   border-radius: 25px 25px 25px 25px;
   opacity: 0;
@@ -207,29 +201,81 @@ ul li {
   font-size: 1.1rem;
 }
 
+.fonctionnement-ensamble {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 19px;
+}
+.fonctionnement-ensamble h2 {
+  margin: 47px 0 10px 0;
+}
+.fonctionnement-ensamble .fonctionnement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 6px;
+}
+.fonctionnement-ensamble .fonctionnement__etapes {
+  display: flex;
+  align-items: center;
+  width: 324px;
+  height: 75px;
+  background-color: #f6f6f6;
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 2px 4px 10px #dddddd;
+  margin: 0 0 20px 0;
+}
+.fonctionnement-ensamble .fonctionnement__etapes--active {
+  background-color: #f5edff;
+}
+.fonctionnement-ensamble .fonctionnement__etapes i {
+  font-size: 1.15rem;
+  color: #7c7c7c;
+  margin: 0 23px 0 22px;
+}
+.fonctionnement-ensamble .fonctionnement__etapes .fa-mobile-alt {
+  font-size: 1.3rem;
+  margin-right: 28px;
+}
+.fonctionnement-ensamble .fonctionnement__etapes .fa-store {
+  color: #9356dc;
+  margin-right: 19px;
+}
+.fonctionnement-ensamble .fonctionnement__numeros {
+  background-color: #9356dc;
+  border-radius: 100%;
+  /* Création de cercle autour de l'icone */
+  width: 23px;
+  height: 23px;
+  margin-left: -11px;
+}
+.fonctionnement-ensamble .fonctionnement__numeros p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 0;
+  padding: 3px 0 0 8px;
+}
+.fonctionnement-ensamble .fonctionnement__texte {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.nouveau {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.nouveau {
+  color: #008766;
+}
+
 .legende-restaurant__txt h3 {
   font-size: 1.15rem;
   font-weight: 900;
 }
 .legende-restaurant__txt p {
   font-size: 1.1rem;
-}
-
-.fonctionnement__texte,
-.nouveau {
-  font-size: 1.02rem;
-  font-weight: 600;
-}
-
-.fonctionnement__etapes i {
-  height: 1rem;
-  width: 2rem;
-  font-size: 1.2rem;
-  color: #7e7e7e;
-}
-
-.nouveau {
-  color: #008766;
 }
 
 .ensamble-articles a {

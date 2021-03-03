@@ -2,8 +2,7 @@
 	text-align: center;
 }
 .description {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	justify-content: space-between;
 	background-color: $colour-background;
 	.recherche-form {
@@ -40,8 +39,7 @@
 		}
 	}
 	&__textes {
-		display: flex;
-		flex-direction: column;
+		@include flex-column;
 		align-items: center;
 		text-align: center;
 		h2 {
@@ -56,7 +54,69 @@
 		}
 	}
 }
-
+.fonctionnement-ensamble {
+	@include flex-column;
+	justify-content: space-between;
+	padding-left: 19px;
+	h2 {
+		margin: 47px 0 10px 0;
+	}
+	.fonctionnement {
+		@include flex-column;
+		align-items: center;
+		padding-left: 6px;
+		&__etapes {
+			display: flex;
+			align-items: center;
+			width: 324px;
+			height: 75px;
+			background-color: $colour-background;
+			border-radius: 25px 25px 25px 25px;
+			@include external-shadow;
+			margin: 0 0 20px 0;
+			&--active {
+				background-color: #f5edff;
+			}
+			i {
+				font-size: 1.15rem;
+				color: darken($colour-background, 48%);
+				margin: 0 23px 0 22px;
+			}
+			.fa-mobile-alt {
+				font-size: 1.3rem;
+				margin-right: 28px;
+			}
+			.fa-store {
+				color: $colour-primary;
+				margin-right: 19px;
+			}
+		}
+		&__numeros {
+			background-color: $colour-primary;
+			border-radius: 100%; /* Création de cercle autour de l'icone */
+			width: 23px;
+			height: 23px;
+			margin-left: -11px;
+			p {
+				font-size: 0.9rem;
+				color: $colour-white;
+				margin: 0;
+				padding: 3px 0 0 8px;
+			}
+		}
+		&__texte {
+			font-size: 1.02rem;
+			font-weight: $font-weight600;
+		}
+	}
+}
+.nouveau {
+	font-size: 1.02rem;
+	font-weight: $font-weight600;
+}
+.nouveau {
+	color: #008766;
+}
 .legende-restaurant__txt {
 	h3 {
 		font-size: map-get($font-size-heading, h3);
@@ -65,18 +125,4 @@
 	p {
 		font-size: $font-size-p;
 	}
-}
-.fonctionnement__texte,
-.nouveau {
-	font-size: 1.02rem;
-	font-weight: $font-weight600;
-}
-.fonctionnement__etapes i {
-	height: 1rem;
-	width: 2rem;
-	font-size: 1.2rem;
-	color: #7e7e7e;
-}
-.nouveau {
-	color: #008766;
 }
