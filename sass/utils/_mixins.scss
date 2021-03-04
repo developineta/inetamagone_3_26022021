@@ -7,6 +7,7 @@
 	color: $colour-black;
 }
 @mixin flex-centre {
+	/*Utilisé souvent dans le code */
 	display: flex;
 	margin: auto;
 }
@@ -14,12 +15,13 @@
 	display: flex;
 	flex-direction: column;
 }
-@mixin external-shadow {
-	box-shadow: 2px 4px 10px darken($colour-background, 10%);
+@mixin external-shadow($colour) {
+	/* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+	box-shadow: 2px 4px 10px ($colour);
 }
 @mixin btn-shadows {
 	box-shadow: 2px 4px 10px darken($colour-background, 25%),
-		29px 57px 61px -37px $colour-secondary inset; /* Appliquation des ombres */
+		29px 57px 61px -37px $colour-secondary inset; /* Appliquation des ombres - externe et interne */
 }
 @mixin btn-shadows-hover {
 	box-shadow: 4px 4px 10px darken($colour-background, 30%),

@@ -3,6 +3,11 @@
 /* Couleurs principales */
 /* Paramètres de la police */
 body {
+  margin: auto;
+  max-width: 1440px;
+}
+
+body {
   font-family: "Roboto", sans-serif;
   /* Les variables de polices utilisés */
   color: #000000;
@@ -104,7 +109,8 @@ header a:active {
   border: none;
   /* Enlève la bordure de boutton qui est définie par défaut */
   box-shadow: 2px 4px 10px #b6b6b6, 29px 57px 61px -37px #ff79da inset;
-  /* Appliquation des ombres */
+  /* Appliquation des ombres - externe et interne */
+  /*Utilisé souvent dans le code */
   display: flex;
   margin: auto;
   position: relative;
@@ -177,7 +183,7 @@ header a:active {
   position: absolute;
   top: 57px;
   bottom: 0;
-  left: 8px;
+  left: 0;
   right: 0;
   max-width: 680px;
   width: 100%;
@@ -208,13 +214,14 @@ header a:active {
   padding-left: 19px;
 }
 .fonctionnement-ensamble h2 {
-  margin: 47px 0 10px 0;
+  margin: 47px 0 10px 2px;
 }
 .fonctionnement-ensamble .fonctionnement {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 6px;
+  padding-left: 0;
+  margin-bottom: 49px;
 }
 .fonctionnement-ensamble .fonctionnement__etapes {
   display: flex;
@@ -223,6 +230,7 @@ header a:active {
   height: 75px;
   background-color: #f6f6f6;
   border-radius: 25px 25px 25px 25px;
+  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #dddddd;
   margin: 0 0 20px 0;
 }
@@ -261,21 +269,82 @@ header a:active {
   font-weight: 600;
 }
 
-.nouveau {
-  font-size: 1.02rem;
-  font-weight: 600;
+.restaurants {
+  background-color: #f6f6f6;
+  height: auto;
+  width: 100%;
+  padding-top: 33px;
 }
-
-.nouveau {
-  color: #008766;
+.restaurants h2 {
+  margin-bottom: 7px;
+  padding-left: 19px;
 }
-
-.legende-restaurant__txt h3 {
+.restaurants .cartes-restaurants {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 49px;
+}
+.restaurants .cartes-restaurants figure {
+  display: flex;
+  flex-direction: column;
+  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  box-shadow: 2px 4px 10px #e4e4e4;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 334px;
+  /* Ne permet pas les cartes de'agrandir plus que taille définie en agrandissant la taille de l'écran */
+  width: 100%;
+  max-height: 250px;
+  height: 100%;
+  min-width: 250px;
+  background-color: #ffffff;
+  border-radius: 22px 22px 22px 22px;
+}
+.restaurants .cartes-restaurants figure .img_restaurant {
+  border-radius: 17px 17px 0px 0px;
+  /* Les bordures arrondies en haut des photos */
+  width: 100%;
+}
+.restaurants .cartes-restaurants figure .nouveau {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #99e2d0;
+  color: #278870;
+  text-align: center;
+  padding: 5px 12px 5px 12px;
+  border-radius: 2px 2px 2px 2px;
+}
+.restaurants .cartes-restaurants figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 22px 0 13px;
+}
+.restaurants .cartes-restaurants figure figcaption h3 {
+  margin: 12px 0 0 0;
+}
+.restaurants .cartes-restaurants figure figcaption p {
+  margin: 3px 0 14px 0;
+}
+.restaurants .cartes-restaurants figure figcaption i {
+  padding-top: 18px;
+  font-size: 1.6rem;
+}
+.restaurants .cartes-restaurants figure figcaption .legende-restaurant__txt h3 {
   font-size: 1.15rem;
   font-weight: 900;
 }
-.legende-restaurant__txt p {
+.restaurants .cartes-restaurants figure figcaption .legende-restaurant__txt p {
   font-size: 1.1rem;
+}
+.restaurants .cartes-restaurants figure:hover {
+  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  box-shadow: 2px 4px 10px #b6b6b6;
 }
 
 .ensamble-articles a {

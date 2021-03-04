@@ -54,91 +54,83 @@
                 </ul>
             </nav>
 
-            <section id="restaurants">
+            <section class="restaurants">
                 <h2>Restaurants</h2> <!-- Heading de la section -->
                 <div class="cartes-restaurants"> <!-- Contient toutes les cartes de ce block pour pouvoir le cibler en CSS -->
-                    <div class="cartes-restaurants__seule"> <!-- Sélécteurs BEM utilisés pour blocs parents et ses éléments -->
-                        <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu"> <!-- Modificateurs BEM utilisés -->
-                            <a href="menilmontant.html"> <!-- Lien vers une autre page de ce site -->
-                                <picture> <!-- Les photos sont adaptés à chaque taille de l'écran --> 
-                                    <source media="(min-width: 1209px)" srcset="images/restaurants/menilmontant_mob.jpg">
-                                    <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/menilmontant_mob.jpg">
-                                    <source media="(max-width: 636px)" srcset="images/restaurants/menilmontant_mob.jpg">
-                                    <img src="images/restaurants/menilmontant_mob.jpg" class="img_restaurant" alt="Ménilmontant" />
-                                </picture>
-                            </a>
-                            <div class="nouveau">
-                                <span>Nouveau</span>
+                    <figure> <!-- Sélécteurs BEM utilisés -->
+                        <a href="menilmontant.html"> <!-- Lien vers une autre page de ce site -->
+                            <picture> <!-- Les photos sont adaptés à chaque taille de l'écran --> 
+                                <source media="(min-width: 1209px)" srcset="images/restaurants/menilmontant_mob.jpg">
+                                <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/menilmontant_mob.jpg">
+                                <source media="(max-width: 636px)" srcset="images/restaurants/menilmontant_mob.jpg">
+                                <img src="images/restaurants/menilmontant_mob.jpg" class="img_restaurant" alt="Ménilmontant" />
+                            </picture>
+                        </a>
+                        <div class="nouveau">
+                            <span>Nouveau</span>
+                        </div>
+                        <figcaption> <!-- L'apparence des textes dans les cartes de même block est pareil -->
+                            <div class="legende-restaurant__txt">
+                                <h3>La palette du goût</h3> <!-- <h3> est utilisé pour tous les titres de cartes -->
+                                <p>Ménilmontant</p>
                             </div>
-                            <figcaption class="legende-restaurant"> <!-- L'apparence des textes dans les cartes de même block est pareil -->
-                                <div class="legende-restaurant__txt">
-                                    <h3>La palette du goût</h3> <!-- <h3> est utilisé pour tous les titres de cartes -->
-                                    <p>Ménilmontant</p>
-                                </div>
-                                <i class="far fa-heart sous-image__icone"></i>
-                            </figcaption>
-                        </figure>
-                    </div> 
-                    <div class="cartes-restaurants__seule"> 
-                        <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu">
-                            <a href="#" target="_blank">
-                                <picture>  
-                                    <source media="(min-width: 1209px)" srcset="images/restaurants/charonne_mob.jpg">
-                                    <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/charonne_mob.jpg">
-                                    <source media="(max-width: 636px)" srcset="images/restaurants/charonne_mob.jpg">
-                                    <img src="images/restaurants/charonne_mob.jpg" class="img_restaurant" alt="Charonne" />
-                                </picture>
-                            </a>
-                            <div class="nouveau">
-                                <span>Nouveau</span>
+                            <i class="far fa-heart sous-image__icone"></i>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <a href="#" target="_blank">
+                            <picture>  
+                                <source media="(min-width: 1209px)" srcset="images/restaurants/charonne_mob.jpg">
+                                <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/charonne_mob.jpg">
+                                <source media="(max-width: 636px)" srcset="images/restaurants/charonne_mob.jpg">
+                                <img src="images/restaurants/charonne_mob.jpg" class="img_restaurant" alt="Charonne" />
+                            </picture>
+                        </a>
+                        <div class="nouveau">
+                            <span>Nouveau</span>
+                        </div>
+                        <figcaption> 
+                            <div class="legende-restaurant__txt">
+                                <h3>La note enchantée</h3> 
+                                <p>Charonne</p> 
                             </div>
-                            <figcaption class="legende-restaurant"> 
-                                <div class="legende-restaurant__txt">
-                                    <h3>La note enchantée</h3> 
-                                    <p>Charonne</p> 
-                                </div>
-                                <i class="far fa-heart sous-image__icone"></i>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="cartes-restaurants__seule"> 
-                        <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu">
-                            <a href="#" target="_blank">
-                                <picture>  
-                                    <source media="(min-width: 1209px)" srcset="images/restaurants/cite-rouge_mob.jpg">
-                                    <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/cite-rouge_mob.jpg">
-                                    <source media="(max-width: 636px)" srcset="images/restaurants/cite-rouge_mob.jpg">
-                                    <img src="images/restaurants/cite-rouge_mob.jpg" class="img_restaurant" alt="Cité Rouge" />
-                                </picture>
-                            </a>
-                            <figcaption class="legende-restaurant"> 
-                                <div class="legende-restaurant__txt">
-                                    <h3>À la française</h3> 
-                                    <p>Cité Rouge</p> 
-                                </div>
-                                <i class="far fa-heart sous-image__icone"></i>
-                            </figcaption>
-                        </figure>
-                    </div> 
-                    <div class="cartes-restaurants__seule"> 
-                        <figure class="cartes-restaurants__seule cartes-restaurants__seule--contenu">
-                            <a href="#" target="_blank">
-                                <picture>  
-                                    <source media="(min-width: 1209px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
-                                    <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
-                                    <source media="(max-width: 636px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
-                                    <img src="images/restaurants/folie-mericourt_mob.jpg" class="img_restaurant" alt="Folie-Méricourt" />
-                                </picture>
-                            </a>
-                            <figcaption class="legende-restaurant"> 
-                                <div class="legende-restaurant__txt">
-                                    <h3>Le délice des sens</h3> 
-                                    <p>Folie-Méricourt</p> 
-                                </div>
-                                <i class="far fa-heart sous-image__icone"></i>
-                            </figcaption>
-                        </figure>
-                    </div>
+                            <i class="far fa-heart sous-image__icone"></i>
+                        </figcaption>
+                    </figure> 
+                    <figure>
+                        <a href="#" target="_blank">
+                            <picture>  
+                                <source media="(min-width: 1209px)" srcset="images/restaurants/cite-rouge_mob.jpg">
+                                <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/cite-rouge_mob.jpg">
+                                <source media="(max-width: 636px)" srcset="images/restaurants/cite-rouge_mob.jpg">
+                                <img src="images/restaurants/cite-rouge_mob.jpg" class="img_restaurant" alt="Cité Rouge" />
+                            </picture>
+                        </a>
+                        <figcaption> 
+                            <div class="legende-restaurant__txt">
+                                <h3>À la française</h3> 
+                                <p>Cité Rouge</p> 
+                            </div>
+                            <i class="far fa-heart sous-image__icone"></i>
+                        </figcaption>
+                    </figure> 
+                    <figure>
+                        <a href="#" target="_blank">
+                            <picture>  
+                                <source media="(min-width: 1209px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
+                                <source media="(min-width: 637px) and (max-width: 1208px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
+                                <source media="(max-width: 636px)" srcset="images/restaurants/folie-mericourt_mob.jpg">
+                                <img src="images/restaurants/folie-mericourt_mob.jpg" class="img_restaurant" alt="Folie-Méricourt" />
+                            </picture>
+                        </a>
+                        <figcaption> 
+                            <div class="legende-restaurant__txt">
+                                <h3>Le délice des sens</h3> 
+                                <p>Folie-Méricourt</p> 
+                            </div>
+                            <i class="far fa-heart sous-image__icone"></i>
+                        </figcaption>
+                    </figure>
                 </div>
             </section>
             <footer id="footer-content">
