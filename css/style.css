@@ -7,6 +7,13 @@ body {
   max-width: 1440px;
 }
 
+@media all and (min-width: 992px) {
+  .fonctionnement-ensamble h2,
+.restaurants h2 {
+    font-size: 1.3rem;
+  }
+}
+
 body {
   font-family: "Roboto", sans-serif;
   /* Les variables de polices utilisés */
@@ -32,6 +39,117 @@ h1 {
 
 .fa-heart {
   font-size: 1.4rem;
+}
+
+.bouton-rose {
+  margin-bottom: 57px;
+}
+.bouton-rose .bouton {
+  background-color: #9356dc;
+  border-radius: 25px 25px 25px 25px;
+  height: 50px;
+  width: 218px;
+  border: none;
+  /* Enlève la bordure de boutton qui est définie par défaut */
+  box-shadow: 2px 4px 10px #b6b6b6, 29px 57px 61px -37px #ff79da inset;
+  /* Appliquation des ombres - externe et interne */
+  /*Utilisé souvent dans le code */
+  display: flex;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.bouton-rose .bouton:hover .bouton__survole {
+  opacity: 1;
+  /* Opaque au survol */
+}
+.bouton-rose .bouton__survole {
+  position: absolute;
+  /* Position des ombres qui changent au survol */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 4px 4px 10px #aaaaaa, 29px 57px 61px -37px #ff93e1 inset;
+  /* Ombres au survol */
+  border-radius: 25px 25px 25px 25px;
+  opacity: 0;
+  /* Transparence quand pas de survol */
+  z-index: 2;
+  transition: opacity 250ms;
+  /* L'effet plus doux au survol */
+}
+.bouton-rose .bouton__texte {
+  color: #ffffff;
+  font-size: 1rem;
+  margin: auto;
+  z-index: 3;
+  /* Le texte de bouton reste par dessus des effets de bouton */
+}
+@media all and (min-width: 681px) {
+  .bouton-rose {
+    position: absolute;
+    top: 138px;
+    left: 54%;
+  }
+}
+@media all and (min-width: 992px) {
+  .bouton-rose {
+    top: 134px;
+    left: unset;
+    right: 10%;
+  }
+}
+
+.ensamble-articles a {
+  color: #000000;
+}
+
+.ensamble-menu__titre h2 {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.75rem;
+  font-weight: normal;
+}
+
+.ensamble-menu__article > h3 {
+  /* Combinateur parent > enfant utilisé */
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  position: relative;
+  /* Pour placer la ligne en bas */
+  padding-bottom: 8px;
+}
+
+.ensamble-menu__article > h3::after {
+  /* La ligne sous le <h3> */
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #99e2d0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.carte-choix p {
+  font-size: 0.97rem;
+}
+
+.prix {
+  font-weight: 900;
+}
+
+.fa-check-circle {
+  font-size: 1.3rem;
+  color: #ffffff;
+  background-color: #99e2d0;
+}
+
+#bouton-commander {
+  width: 185px;
+  /* Définition de la taille de bouton mixin */
 }
 
 header .ligne-header i {
@@ -98,52 +216,6 @@ header a:active {
   /* Nesting utilisé */
 }
 
-.bouton-rose {
-  margin-bottom: 57px;
-}
-.bouton-rose .bouton {
-  background-color: #9356dc;
-  border-radius: 25px 25px 25px 25px;
-  height: 50px;
-  width: 218px;
-  border: none;
-  /* Enlève la bordure de boutton qui est définie par défaut */
-  box-shadow: 2px 4px 10px #b6b6b6, 29px 57px 61px -37px #ff79da inset;
-  /* Appliquation des ombres - externe et interne */
-  /*Utilisé souvent dans le code */
-  display: flex;
-  margin: auto;
-  position: relative;
-  z-index: 1;
-}
-.bouton-rose .bouton:hover .bouton__survole {
-  opacity: 1;
-  /* Opaque au survol */
-}
-.bouton-rose .bouton__survole {
-  position: absolute;
-  /* Position des ombres qui changent au survol */
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  box-shadow: 4px 4px 10px #aaaaaa, 29px 57px 61px -37px #ff93e1 inset;
-  /* Ombres au survol */
-  border-radius: 25px 25px 25px 25px;
-  opacity: 0;
-  /* Transparence quand pas de survol */
-  z-index: 2;
-  transition: opacity 250ms;
-  /* L'effet plus doux au survol */
-}
-.bouton-rose .bouton__texte {
-  color: #ffffff;
-  font-size: 1rem;
-  margin: auto;
-  z-index: 3;
-  /* Le texte de bouton reste par dessus des effets de bouton */
-}
-
 .accueil {
   text-align: center;
 }
@@ -153,6 +225,31 @@ header a:active {
   flex-direction: column;
   justify-content: space-between;
   background-color: #f6f6f6;
+  position: relative;
+}
+@media all and (min-width: 681px) {
+  .description {
+    height: 225px;
+  }
+  .description::before {
+    /* La ligne au dessus de la section */
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 1440px;
+    width: 100%;
+    height: 5px;
+    box-shadow: 0px 10px 5px -10px #9d9d9d inset;
+  }
+}
+@media all and (min-width: 992px) {
+  .description {
+    padding-left: 19px;
+    height: 200px;
+  }
 }
 .description .recherche-form {
   display: flex;
@@ -160,10 +257,33 @@ header a:active {
   justify-content: center;
   max-width: 680px;
   /* Définition de taille maximale */
-  width: 100%;
   max-height: 50px;
   height: 100%;
   background-color: #eaeaea;
+  position: relative;
+  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  box-shadow: 2px 4px 10px #b6b6b6;
+}
+@media all and (max-width: 680px) {
+  .description .recherche-form {
+    width: 100%;
+    box-shadow: none;
+  }
+}
+@media all and (min-width: 681px) {
+  .description .recherche-form {
+    width: 300px;
+    border: 1px solid #9d9d9d;
+    position: absolute;
+    top: 138px;
+    right: 54%;
+  }
+}
+@media all and (min-width: 992px) {
+  .description .recherche-form {
+    top: 57px;
+    right: 10%;
+  }
 }
 .description .recherche-form i {
   padding: 17px 15px 0px 48px;
@@ -174,27 +294,37 @@ header a:active {
   font-size: 1.03rem;
   font-weight: 500;
   border: none;
-  height: 48px;
+  height: 46px;
+  margin-top: 1px;
   background-color: #eaeaea;
 }
-.description .recherche-form::before {
-  /* La ligne au dessus de champ de recherche */
-  content: "";
-  position: absolute;
-  top: 57px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  max-width: 680px;
-  width: 100%;
-  height: 5px;
-  box-shadow: 0px 10px 5px -10px #9d9d9d inset;
+@media all and (max-width: 680px) {
+  .description .recherche-form::before {
+    /* La ligne au dessus de champ de recherche */
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 680px;
+    width: 100%;
+    height: 5px;
+    box-shadow: 0px 10px 5px -10px #9d9d9d inset;
+  }
 }
 .description__textes {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+@media all and (min-width: 992px) {
+  .description__textes {
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 14px;
+  }
 }
 .description__textes h2 {
   font-size: 1.5rem;
@@ -210,45 +340,94 @@ header a:active {
 .fonctionnement-ensamble {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding-left: 19px;
 }
+@media all and (max-width: 680px) {
+  .fonctionnement-ensamble {
+    justify-content: space-between;
+  }
+}
 .fonctionnement-ensamble h2 {
-  margin: 47px 0 10px 2px;
+  margin: 25px 50px 0 0;
+}
+@media all and (max-width: 680px) {
+  .fonctionnement-ensamble h2 {
+    margin: 47px 0 10px 2px;
+  }
 }
 .fonctionnement-ensamble .fonctionnement {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   padding-left: 0;
-  margin-bottom: 49px;
+  margin-right: 20px;
+}
+@media all and (max-width: 680px) {
+  .fonctionnement-ensamble .fonctionnement {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 49px;
+  }
 }
 .fonctionnement-ensamble .fonctionnement__etapes {
   display: flex;
   align-items: center;
-  width: 324px;
-  height: 75px;
+  max-width: 250px;
+  width: 100%;
+  height: 60px;
   background-color: #f6f6f6;
   border-radius: 25px 25px 25px 25px;
+  margin: 0 20px 20px 0;
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #dddddd;
-  margin: 0 0 20px 0;
+}
+@media all and (max-width: 680px) {
+  .fonctionnement-ensamble .fonctionnement__etapes {
+    max-width: 300px;
+    width: 100%;
+    height: 75px;
+    margin: 0 0 20px 0;
+  }
 }
 .fonctionnement-ensamble .fonctionnement__etapes--active {
   background-color: #f5edff;
 }
+@media all and (min-width: 992px) {
+  .fonctionnement-ensamble .fonctionnement__etapes {
+    margin-right: 7%;
+  }
+}
 .fonctionnement-ensamble .fonctionnement__etapes i {
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: #7c7c7c;
-  margin: 0 23px 0 22px;
+  margin: 0 15px 0 14px;
+}
+@media all and (max-width: 680px) {
+  .fonctionnement-ensamble .fonctionnement__etapes i {
+    margin: 0 23px 0 22px;
+    font-size: 1.15rem;
+  }
 }
 .fonctionnement-ensamble .fonctionnement__etapes .fa-mobile-alt {
-  font-size: 1.3rem;
-  margin-right: 28px;
+  font-size: 1.15rem;
+  margin-right: 20px;
+}
+@media all and (max-width: 680px) {
+  .fonctionnement-ensamble .fonctionnement__etapes .fa-mobile-alt {
+    margin-right: 28px;
+    font-size: 1.3rem;
+  }
 }
 .fonctionnement-ensamble .fonctionnement__etapes .fa-store {
   color: #9356dc;
-  margin-right: 19px;
+  margin-right: 11px;
+}
+@media all and (max-width: 680px) {
+  .fonctionnement-ensamble .fonctionnement__etapes .fa-store {
+    margin-right: 19px;
+  }
 }
 .fonctionnement-ensamble .fonctionnement__numeros {
   background-color: #9356dc;
@@ -265,8 +444,13 @@ header a:active {
   padding: 3px 0 0 8px;
 }
 .fonctionnement-ensamble .fonctionnement__texte {
-  font-size: 1.02rem;
+  font-size: 0.9rem;
   font-weight: 600;
+}
+@media all and (max-width: 680px) {
+  .fonctionnement-ensamble .fonctionnement__texte {
+    font-size: 1.02rem;
+  }
 }
 
 .restaurants {
@@ -281,11 +465,19 @@ header a:active {
 }
 .restaurants .cartes-restaurants {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
   width: 100%;
   padding-bottom: 49px;
+}
+@media all and (max-width: 680px) {
+  .restaurants .cartes-restaurants {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
 }
 .restaurants .cartes-restaurants figure {
   display: flex;
@@ -294,14 +486,25 @@ header a:active {
   box-shadow: 2px 4px 10px #e4e4e4;
   justify-content: flex-start;
   position: relative;
-  max-width: 334px;
+  max-width: 434px;
   /* Ne permet pas les cartes de'agrandir plus que taille définie en agrandissant la taille de l'écran */
-  width: 100%;
-  max-height: 250px;
-  height: 100%;
+  width: 47%;
   min-width: 250px;
   background-color: #ffffff;
   border-radius: 22px 22px 22px 22px;
+  margin: 10px;
+}
+@media all and (max-width: 680px) {
+  .restaurants .cartes-restaurants figure {
+    width: 90%;
+    max-height: 350px;
+    height: 90%;
+  }
+}
+@media all and (min-width: 992px) {
+  .restaurants .cartes-restaurants figure {
+    margin: 15px;
+  }
 }
 .restaurants .cartes-restaurants figure .img_restaurant {
   border-radius: 17px 17px 0px 0px;
@@ -345,57 +548,6 @@ header a:active {
 .restaurants .cartes-restaurants figure:hover {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
-}
-
-.ensamble-articles a {
-  color: #000000;
-}
-
-.ensamble-menu__titre h2 {
-  font-family: "Shrikhand", sans-serif;
-  font-size: 1.75rem;
-  font-weight: normal;
-}
-
-.ensamble-menu__article > h3 {
-  /* Combinateur parent > enfant utilisé */
-  font-size: 1.05rem;
-  text-transform: uppercase;
-  font-weight: normal;
-  position: relative;
-  /* Pour placer la ligne en bas */
-  padding-bottom: 8px;
-}
-
-.ensamble-menu__article > h3::after {
-  /* La ligne sous le <h3> */
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 3px;
-  background-color: #99e2d0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.carte-choix p {
-  font-size: 0.97rem;
-}
-
-.prix {
-  font-weight: 900;
-}
-
-.fa-check-circle {
-  font-size: 1.3rem;
-  color: #ffffff;
-  background-color: #99e2d0;
-}
-
-#bouton-commander {
-  width: 185px;
-  /* Définition de la taille de bouton mixin */
 }
 
 /*# sourceMappingURL=style.css.map */
