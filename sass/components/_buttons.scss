@@ -1,14 +1,4 @@
 .bouton-rose {
 	@include btn;
 	margin-bottom: 57px;
-	@include wide-screen {
-		position: absolute;
-		top: 138px;
-		left: 54%;
-	}
-	@include desktop {
-		top: 134px;
-		left: unset;
-		right: 10%;
-	}
 }

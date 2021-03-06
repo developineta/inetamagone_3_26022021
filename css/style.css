@@ -86,42 +86,64 @@ h1 {
   z-index: 3;
   /* Le texte de bouton reste par dessus des effets de bouton */
 }
-@media all and (min-width: 681px) {
-  .bouton-rose {
-    position: absolute;
-    top: 138px;
-    left: 54%;
-  }
-}
-@media all and (min-width: 992px) {
-  .bouton-rose {
-    top: 134px;
-    left: unset;
-    right: 10%;
-  }
-}
 
-.ensamble-articles a {
-  color: #000000;
+.menus__image {
+  width: 100%;
+  margin: auto;
 }
-
-.ensamble-menu__titre h2 {
+.menus .ensamble-menu {
+  position: relative;
+  width: 100%;
+}
+.menus .ensamble-menu__titre {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 35px 35px 0 0;
+  padding-top: 7px;
+  width: 100%;
+  position: absolute;
+  top: -34px;
+}
+.menus .ensamble-menu__titre h2 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.75rem;
   font-weight: normal;
+  margin-left: 19px;
 }
-
-.ensamble-menu__article > h3 {
+.menus .ensamble-menu__titre i {
+  margin-left: 35px;
+}
+.menus .ensamble-articles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f6f6f6;
+  padding-top: 50px;
+}
+.menus .ensamble-articles .article-menu {
+  width: 100%;
+}
+.menus .ensamble-articles .article-menu__cartes {
+  max-width: 434px;
+  margin: 10px;
+}
+@media all and (max-width: 680px) {
+  .menus .ensamble-articles .article-menu__cartes {
+    width: 90%;
+  }
+}
+.menus .ensamble-articles .article-menu > h3 {
   /* Combinateur parent > enfant utilisé */
   font-size: 1.05rem;
   text-transform: uppercase;
   font-weight: normal;
   position: relative;
   /* Pour placer la ligne en bas */
-  padding-bottom: 8px;
+  padding: 0 0 8px 19px;
 }
-
-.ensamble-menu__article > h3::after {
+.menus .ensamble-articles .article-menu > h3::after {
   /* La ligne sous le <h3> */
   content: "";
   position: absolute;
@@ -131,17 +153,52 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
+  margin-left: 19px;
 }
-
-.carte-choix p {
-  font-size: 0.97rem;
+.menus .ensamble-articles .article-menu a {
+  /* Les propriétés de l'apparence des cartes cliquables dans toutes les pages */
+  display: flex;
+  max-width: 434px;
+  width: 47%;
+  min-width: 250px;
+  background-color: #ffffff;
+  border-radius: 22px 22px 22px 22px;
+  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  box-shadow: 2px 4px 10px #e4e4e4;
+  justify-content: space-between;
+  color: #000000;
+  width: 100%;
 }
-
-.prix {
+@media all and (max-width: 680px) {
+  .menus .ensamble-articles .article-menu a {
+    height: 90%;
+  }
+}
+@media all and (min-width: 992px) {
+  .menus .ensamble-articles .article-menu a {
+    margin: 15px;
+  }
+}
+.menus .ensamble-articles .article-menu a .menu-texte {
+  padding-left: 22px;
+}
+.menus .ensamble-articles .article-menu a .menu-texte h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  margin: 14px 0 0 0;
+}
+.menus .ensamble-articles .article-menu a .menu-texte p {
+  font-size: 0.93rem;
+  margin: 5px 0 12px 0;
+}
+.menus .ensamble-articles .article-menu a .prix-check .prix p {
   font-weight: 900;
+  margin: 0;
+  padding: 43px 13px 0 0;
 }
-
-.fa-check-circle {
+.menus .ensamble-articles .article-menu a .prix-check .fa-check-circle {
+  display: none;
   font-size: 1.3rem;
   color: #ffffff;
   background-color: #99e2d0;
@@ -336,6 +393,20 @@ header a:active {
   margin: 12px 0 28px 0;
   font-size: 1.1rem;
 }
+@media all and (min-width: 681px) {
+  .description .bouton-rose {
+    position: absolute;
+    top: 138px;
+    left: 54%;
+  }
+}
+@media all and (min-width: 992px) {
+  .description .bouton-rose {
+    top: 134px;
+    left: unset;
+    right: 10%;
+  }
+}
 
 .fonctionnement-ensamble {
   display: flex;
@@ -480,30 +551,34 @@ header a:active {
   }
 }
 .restaurants .cartes-restaurants figure {
+  /* Les propriétés de l'apparence des cartes cliquables dans toutes les pages */
   display: flex;
-  flex-direction: column;
-  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
-  box-shadow: 2px 4px 10px #e4e4e4;
-  justify-content: flex-start;
-  position: relative;
   max-width: 434px;
-  /* Ne permet pas les cartes de'agrandir plus que taille définie en agrandissant la taille de l'écran */
   width: 47%;
   min-width: 250px;
   background-color: #ffffff;
   border-radius: 22px 22px 22px 22px;
+  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  box-shadow: 2px 4px 10px #e4e4e4;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
   margin: 10px;
 }
 @media all and (max-width: 680px) {
   .restaurants .cartes-restaurants figure {
-    width: 90%;
-    max-height: 350px;
     height: 90%;
   }
 }
 @media all and (min-width: 992px) {
   .restaurants .cartes-restaurants figure {
     margin: 15px;
+  }
+}
+@media all and (max-width: 680px) {
+  .restaurants .cartes-restaurants figure {
+    width: 90%;
+    max-height: 350px;
   }
 }
 .restaurants .cartes-restaurants figure .img_restaurant {
@@ -529,21 +604,17 @@ header a:active {
   padding: 0 22px 0 13px;
 }
 .restaurants .cartes-restaurants figure figcaption h3 {
+  font-size: 1.15rem;
+  font-weight: 900;
   margin: 12px 0 0 0;
 }
 .restaurants .cartes-restaurants figure figcaption p {
+  font-size: 1.1rem;
   margin: 3px 0 14px 0;
 }
 .restaurants .cartes-restaurants figure figcaption i {
   padding-top: 18px;
   font-size: 1.6rem;
-}
-.restaurants .cartes-restaurants figure figcaption .legende-restaurant__txt h3 {
-  font-size: 1.15rem;
-  font-weight: 900;
-}
-.restaurants .cartes-restaurants figure figcaption .legende-restaurant__txt p {
-  font-size: 1.1rem;
 }
 .restaurants .cartes-restaurants figure:hover {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
