@@ -83,6 +83,7 @@
 		}
 	}
 	.bouton-rose {
+		margin-bottom: 57px;
 		@include wide-screen {
 			position: absolute;
 			top: 138px;
@@ -216,9 +217,11 @@
 			flex-direction: column;
 			justify-content: flex-start;
 			position: relative;
+			border-radius: 22px;
+			width: 90%;
+			min-width: 250px;
 			margin: 10px;
 			@include mobile-only {
-				width: 90%;
 				max-height: 350px;
 			}
 			.img_restaurant {

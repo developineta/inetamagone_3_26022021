@@ -55,14 +55,18 @@
 		29px 57px 61px -37px lighten($colour-secondary, 5%) inset; /* Ombres au survol */
 	border-radius: 25px 25px 25px 25px;
 }
+@mixin wrap-dots {
+	/* Si le texte est trop long, il soit coupé et remplacé par trois points */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 @mixin content-cards {
 	/* Les propriétés de l'apparence des cartes cliquables dans toutes les pages */
 	display: flex;
 	max-width: 434px;
 	width: 47%;
-	min-width: 250px;
 	background-color: $colour-white;
-	border-radius: 22px 22px 22px 22px;
 	@include external-shadow(darken($colour-background, 7%));
 	@include mobile-only {
 		height: 90%;

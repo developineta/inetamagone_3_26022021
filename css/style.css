@@ -41,9 +41,6 @@ h1 {
   font-size: 1.4rem;
 }
 
-.bouton-rose {
-  margin-bottom: 57px;
-}
 .bouton-rose .bouton {
   background-color: #9356dc;
   border-radius: 25px 25px 25px 25px;
@@ -87,13 +84,49 @@ h1 {
   /* Le texte de bouton reste par dessus des effets de bouton */
 }
 
-.menus__image {
+.menus {
+  display: flex;
+  flex-direction: column;
+}
+@media all and (min-width: 681px) {
+  .menus__image {
+    display: flex;
+    /* Pour positionner l'image au milieu et mettre la couleur de fond aux espaces vides */
+    justify-content: center;
+    background-color: #e9e9e9;
+    padding: 6px 0 6px 0;
+    position: relative;
+  }
+  .menus__image::before {
+    /* La ligne au dessus de la section */
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 1440px;
+    width: 100%;
+    height: 5px;
+    box-shadow: 0px 10px 5px -10px #9d9d9d inset;
+  }
+}
+.menus__image .menus_img {
+  max-width: 680px;
+  /* L'image ne doit pas grandir à partir de taille indiqué */
   width: 100%;
-  margin: auto;
+}
+@media all and (min-width: 681px) {
+  .menus__image .menus_img {
+    border-radius: 35px;
+    /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+    box-shadow: 2px 4px 10px #b6b6b6;
+  }
 }
 .menus .ensamble-menu {
   position: relative;
   width: 100%;
+  height: auto;
 }
 .menus .ensamble-menu__titre {
   display: flex;
@@ -105,6 +138,12 @@ h1 {
   position: absolute;
   top: -34px;
 }
+@media all and (min-width: 681px) {
+  .menus .ensamble-menu__titre {
+    border-radius: unset;
+    position: unset;
+  }
+}
 .menus .ensamble-menu__titre h2 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.75rem;
@@ -114,7 +153,7 @@ h1 {
 .menus .ensamble-menu__titre i {
   margin-left: 35px;
 }
-.menus .ensamble-articles {
+.menus .ensamble-menu__articles {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -122,19 +161,27 @@ h1 {
   background-color: #f6f6f6;
   padding-top: 50px;
 }
-.menus .ensamble-articles .article-menu {
-  width: 100%;
-}
-.menus .ensamble-articles .article-menu__cartes {
-  max-width: 434px;
-  margin: 10px;
-}
-@media all and (max-width: 680px) {
-  .menus .ensamble-articles .article-menu__cartes {
-    width: 90%;
+@media all and (min-width: 681px) {
+  .menus .ensamble-menu__articles {
+    padding-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
-.menus .ensamble-articles .article-menu > h3 {
+.menus .ensamble-menu__articles .article-menu {
+  width: 100%;
+}
+.menus .ensamble-menu__articles .article-menu__cartes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media all and (min-width: 681px) {
+  .menus .ensamble-menu__articles .article-menu {
+    width: auto;
+  }
+}
+.menus .ensamble-menu__articles .article-menu > h3 {
   /* Combinateur parent > enfant utilisé */
   font-size: 1.05rem;
   text-transform: uppercase;
@@ -142,8 +189,15 @@ h1 {
   position: relative;
   /* Pour placer la ligne en bas */
   padding: 0 0 8px 19px;
+  margin-bottom: 3px;
 }
-.menus .ensamble-articles .article-menu > h3::after {
+@media all and (min-width: 681px) {
+  .menus .ensamble-menu__articles .article-menu > h3 {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+.menus .ensamble-menu__articles .article-menu > h3::after {
   /* La ligne sous le <h3> */
   content: "";
   position: absolute;
@@ -155,67 +209,102 @@ h1 {
   right: 0;
   margin-left: 19px;
 }
-.menus .ensamble-articles .article-menu a {
+@media all and (min-width: 681px) {
+  .menus .ensamble-menu__articles .article-menu > h3::after {
+    left: unset;
+    right: 44%;
+  }
+}
+.menus .ensamble-menu__articles .article-menu a {
   /* Les propriétés de l'apparence des cartes cliquables dans toutes les pages */
   display: flex;
   max-width: 434px;
   width: 47%;
-  min-width: 250px;
   background-color: #ffffff;
-  border-radius: 22px 22px 22px 22px;
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #e4e4e4;
   justify-content: space-between;
+  border-radius: 18px;
   color: #000000;
-  width: 100%;
+  width: 92%;
+  min-width: fit-content;
+  margin: 7px;
 }
 @media all and (max-width: 680px) {
-  .menus .ensamble-articles .article-menu a {
+  .menus .ensamble-menu__articles .article-menu a {
     height: 90%;
   }
 }
 @media all and (min-width: 992px) {
-  .menus .ensamble-articles .article-menu a {
+  .menus .ensamble-menu__articles .article-menu a {
     margin: 15px;
   }
 }
-.menus .ensamble-articles .article-menu a .menu-texte {
-  padding-left: 22px;
+@media all and (min-width: 681px) {
+  .menus .ensamble-menu__articles .article-menu a {
+    width: 97%;
+  }
 }
-.menus .ensamble-articles .article-menu a .menu-texte h3 {
+.menus .ensamble-menu__articles .article-menu a .menu-texte {
+  padding-left: 11px;
+}
+.menus .ensamble-menu__articles .article-menu a .menu-texte h3 {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.02rem;
   margin: 14px 0 0 0;
+  max-width: 270px;
+  /* Si le texte est trop long, il soit coupé et remplacé par trois points */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menus .ensamble-articles .article-menu a .menu-texte p {
+.menus .ensamble-menu__articles .article-menu a .menu-texte p {
   font-size: 0.93rem;
   margin: 5px 0 12px 0;
+  max-width: 265px;
+  /* Si le texte est trop long, il soit coupé et remplacé par trois points */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menus .ensamble-articles .article-menu a .prix-check .prix p {
+.menus .ensamble-menu__articles .article-menu a .prix-check .prix p {
   font-weight: 900;
   margin: 0;
-  padding: 43px 13px 0 0;
+  padding: 39px 19px 0 0;
 }
-.menus .ensamble-articles .article-menu a .prix-check .fa-check-circle {
+.menus .ensamble-menu__articles .article-menu a .prix-check .fa-check-circle {
   display: none;
   font-size: 1.3rem;
   color: #ffffff;
   background-color: #99e2d0;
 }
-
-#bouton-commander {
+.menus .ensamble-menu__articles .article-menu a:hover {
+  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  box-shadow: 2px 4px 10px #b6b6b6;
+}
+.menus .ensamble-menu .bouton-rose {
+  width: 100%;
+  background-color: #f6f6f6;
+  padding: 43px 0 58px 0;
+}
+.menus .ensamble-menu .bouton-rose .bouton {
   width: 185px;
   /* Définition de la taille de bouton mixin */
 }
 
+header .ligne-header {
+  display: flex;
+  align-items: center;
+  height: 63px;
+}
 header .ligne-header i {
   padding-left: 4%;
   /* Espace définie en % pour meilleur raport agrandissant écran */
   font-size: 1.2rem;
   color: #000000;
 }
-header h2 {
+header .ligne-header h2 {
   /* Maps utilisés pour les polices de headings */
   font-family: "Shrikhand", sans-serif;
   font-size: 1.9rem;
@@ -223,14 +312,10 @@ header h2 {
   margin: 7px 0px 5px 0px;
   color: #000000;
 }
-header .ligne-header {
-  display: flex;
-  align-items: center;
-}
 header .ligne-header h1 {
-  padding-left: 73px;
+  margin: auto;
 }
-header a:active {
+header .ligne-header a:active {
   color: #ff79da;
 }
 
@@ -392,6 +477,9 @@ header a:active {
 .description__textes p {
   margin: 12px 0 28px 0;
   font-size: 1.1rem;
+}
+.description .bouton-rose {
+  margin-bottom: 57px;
 }
 @media all and (min-width: 681px) {
   .description .bouton-rose {
@@ -555,14 +643,15 @@ header a:active {
   display: flex;
   max-width: 434px;
   width: 47%;
-  min-width: 250px;
   background-color: #ffffff;
-  border-radius: 22px 22px 22px 22px;
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #e4e4e4;
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
+  border-radius: 22px;
+  width: 90%;
+  min-width: 250px;
   margin: 10px;
 }
 @media all and (max-width: 680px) {
@@ -577,7 +666,6 @@ header a:active {
 }
 @media all and (max-width: 680px) {
   .restaurants .cartes-restaurants figure {
-    width: 90%;
     max-height: 350px;
   }
 }
