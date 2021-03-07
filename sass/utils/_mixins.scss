@@ -1,3 +1,23 @@
+@mixin small-screen {
+	@media all and (max-width: 345px) {
+		@content;
+	}
+}
+@mixin mobile-only {
+	@media all and (max-width: 680px) {
+		@content;
+	}
+}
+@mixin wide-screen {
+	@media all and (min-width: 681px) {
+		@content;
+	}
+}
+@mixin desktop {
+	@media all and (min-width: 992px) {
+		@content;
+	}
+}
 @mixin logo {
 	/* Maps utilisés pour les polices de headings */
 	font-family: $font-Shrikhand, $font-Sans-s;
@@ -6,17 +26,59 @@
 	margin: 7px 0px 5px 0px;
 	color: $colour-black;
 }
+@mixin top-line($max-width) {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	max-width: ($max-width);
+	width: 100%;
+	height: 5px;
+	box-shadow: 0px 10px 5px -10px darken($colour-background, 35%) inset;
+}
 @mixin flex-centre {
+	/*Utilisé souvent dans le code */
 	display: flex;
 	margin: auto;
 }
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+@mixin external-shadow($colour) {
+	/* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+	box-shadow: 2px 4px 10px ($colour);
+}
 @mixin btn-shadows {
-	box-shadow: 4px 4px 10px #c5c5c5, 29px 57px 61px -37px $colour-secondary inset; /* Appliquation des ombres */
+	box-shadow: 2px 4px 10px darken($colour-background, 25%),
+		29px 57px 61px -37px $colour-secondary inset; /* Appliquation des ombres - externe et interne */
 }
 @mixin btn-shadows-hover {
-	box-shadow: 4px 4px 10px darken(#c5c5c5, 5%),
+	box-shadow: 4px 4px 10px darken($colour-background, 30%),
 		29px 57px 61px -37px lighten($colour-secondary, 5%) inset; /* Ombres au survol */
 	border-radius: 25px 25px 25px 25px;
+}
+@mixin wrap-dots {
+	/* Si le texte est trop long, il soit coupé et remplacé par trois points */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+@mixin content-cards {
+	/* Les propriétés de l'apparence des cartes cliquables dans toutes les pages */
+	display: flex;
+	max-width: 434px;
+	width: 47%;
+	background-color: $colour-white;
+	@include external-shadow(darken($colour-background, 7%));
+	@include mobile-only {
+		height: 90%;
+	}
+	@include desktop {
+		margin: 15px;
+	}
 }
 @mixin btn {
 	.bouton {
@@ -34,22 +96,29 @@
 				opacity: 1; /* Opaque au survol */
 			}
 		}
-	}
-	.bouton__survole {
-		position: absolute; /* Position des ombres qui changent au survol */
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		@include btn-shadows-hover;
-		opacity: 0; /* Transparence quand pas de survol */
-		z-index: 2;
-		transition: opacity 250ms; /* L'effet plus doux au survol */
-	}
-	.btn-texte {
-		color: $colour-white; /* Les propiétés d'apparence de boutons */
-		font-size: 1rem;
-		margin: auto;
-		z-index: 3; /* Le texte de bouton reste par dessus des effets de bouton */
+		@include desktop {
+			&:hover {
+				& .bouton__survole {
+					opacity: 1; /* Opaque au survol */
+				}
+			}
+		}
+		&__survole {
+			position: absolute; /* Position des ombres qui changent au survol */
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			@include btn-shadows-hover;
+			opacity: 0; /* Transparence quand pas de survol */
+			z-index: 2;
+			transition: opacity 250ms; /* L'effet plus doux au survol */
+		}
+		&__texte {
+			color: $colour-white;
+			font-size: 1rem;
+			margin: auto;
+			z-index: 3; /* Le texte de bouton reste par dessus des effets de bouton */
+		}
 	}
 }

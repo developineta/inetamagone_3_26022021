@@ -1,43 +1,178 @@
-.ensamble-articles a {
-	color: $colour-black;
-}
-.ensamble-menu__titre h2 {
-	font-family: $font-Shrikhand, $font-Sans-s;
-	font-size: 1.75rem;
-	font-weight: normal;
-}
-.ensamble-menu__article > h3 {
-	/* Combinateur parent > enfant utilisé */
-	font-size: 1.05rem;
-	text-transform: uppercase;
-	font-weight: normal;
-	position: relative; /* Pour placer la ligne en bas */
-	padding-bottom: 8px;
-}
-.ensamble-menu__article > h3::after {
-	/* La ligne sous le <h3> */
-	content: "";
-	position: absolute;
-	width: 40px;
-	height: 3px;
-	background-color: $colour-accent;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-.carte-choix {
-	p {
-		font-size: 0.97rem;
+.menus {
+	@include flex-column;
+	&__image {
+		@include wide-screen {
+			display: flex; /* Pour positionner l'image au milieu et mettre la couleur de fond aux espaces vides */
+			justify-content: center;
+			background-color: darken($colour-background, 5%);
+			padding: 6px 0 6px 0;
+			position: relative;
+			&::before {
+				/* La ligne au dessus de la section */
+				@include top-line($max-width-1440);
+			}
+		}
+		.menus_img {
+			max-width: 680px; /* L'image ne doit pas grandir à partir de taille indiqué */
+			width: 100%;
+			@include wide-screen {
+				border-radius: 35px;
+				@include external-shadow(darken($colour-background, 25%));
+			}
+		}
 	}
-}
-.prix {
-	font-weight: $font-weight900;
-}
-.fa-check-circle {
-	font-size: 1.3rem;
-	color: $colour-white;
-	background-color: $colour-accent;
-}
-#bouton-commander {
-	width: 185px; /* Définition de la taille de bouton mixin */
+	.ensamble-menu {
+		position: relative;
+		width: 100%;
+		height: auto;
+		&__titre {
+			display: flex;
+			flex-wrap: wrap;
+			background-color: $colour-background;
+			border-radius: 35px 35px 0 0;
+			padding: 30px 0 0 0;
+			width: 100%;
+			position: absolute;
+			top: -34px;
+			@include wide-screen {
+				border-radius: unset;
+				position: unset;
+				flex-direction: column;
+				align-items: center;
+			}
+			h2 {
+				font-family: $font-Shrikhand, $font-Sans-s;
+				font-size: 1.75rem;
+				font-weight: normal;
+				margin: 0;
+				padding-left: $space-page-19;
+				@include wide-screen {
+					margin: 0;
+					padding-left: 0;
+				}
+			}
+			i {
+				padding: 10px 0 0 9%;
+				@include wide-screen {
+					margin: 0;
+					padding-left: 0;
+				}
+			}
+		}
+		&__articles {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			background-color: $colour-background;
+			padding-top: 39px;
+			@include wide-screen {
+				padding-top: 0;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			.article-menu {
+				width: 93%;
+				&__cartes {
+					@include flex-column;
+					align-items: center;
+				}
+				@include wide-screen {
+					width: auto;
+				}
+				> h3 {
+					/* Combinateur parent > enfant utilisé */
+					font-size: 1.05rem;
+					text-transform: uppercase;
+					font-weight: normal;
+					position: relative; /* Pour placer la ligne en bas */
+					padding: 0 0 8px $space-page-19;
+					margin: 26px 0 6px 0;
+					@include wide-screen {
+						text-align: center;
+						padding-left: 0;
+					}
+				}
+				> h3::after {
+					/* La ligne sous le <h3> */
+					content: "";
+					position: absolute;
+					width: 40px;
+					height: 3px;
+					background-color: $colour-accent;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin-left: $space-page-19;
+					@include wide-screen {
+						left: unset;
+						right: 44%;
+					}
+				}
+				a {
+					@include content-cards;
+					justify-content: space-between;
+					border-radius: 18px;
+					color: $colour-black;
+					width: 100%;
+					margin: 7px;
+					@include wide-screen {
+						width: 97%;
+					}
+					.menu-texte {
+						padding-left: 11px;
+						h3 {
+							font-size: $font-size-p;
+							font-weight: $font-weight600;
+							letter-spacing: $letter-spacing;
+							margin: 14px 0 0 0;
+							max-width: 270px;
+							@include wrap-dots;
+							@include small-screen {
+								max-width: 230px;
+							}
+						}
+						p {
+							font-size: 0.93rem;
+							margin: 5px 0 12px 0;
+							max-width: 267px;
+							@include wrap-dots;
+							@include small-screen {
+								max-width: 230px;
+							}
+						}
+					}
+					.prix-check {
+						.prix p {
+							font-weight: $font-weight900;
+							margin: 0;
+							padding: 39px 19px 0 0;
+						}
+						.fa-check-circle {
+							display: none;
+							font-size: 1.3rem;
+							color: $colour-white;
+							background-color: $colour-accent;
+						}
+					}
+					&:active {
+						@include external-shadow(darken($colour-background, 25%));
+					}
+					@include desktop {
+						&:hover {
+							@include external-shadow(darken($colour-background, 25%));
+						}
+					}
+				}
+			}
+		}
+		.bouton-rose {
+			width: 100%;
+			background-color: $colour-background;
+			padding: 43px 0 58px 0;
+			.bouton {
+				width: 185px; /* Définition de la taille de bouton mixin */
+			}
+		}
+	}
 }

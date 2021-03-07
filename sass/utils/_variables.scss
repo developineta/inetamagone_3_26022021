@@ -5,6 +5,7 @@ $font-Sans-s: sans-serif;
 $colour-primary: #9356dc; /* Couleurs principales */
 $colour-secondary: #ff79da;
 $colour-accent: #99e2d0;
+$colour-background: #f6f6f6;
 $colour-black: #000000;
 $colour-white: #ffffff;
 
@@ -15,7 +16,15 @@ $font-weight500: 500;
 
 $font-size-heading: (
 	h1: 1.9rem,
-	h2: 1.4rem,
+	h2: 1.5rem,
 	h3: 1.15rem,
 	h4: 1.12rem,
 );
+$font-size-p: 1.1rem;
+
+$space-page-19: 19px;
+$padding-card-txt: 0 22px 0 13px;
+
+$max-width-680: 680px;
+$max-width-991: 991px;
+$max-width-1440: 1440px;

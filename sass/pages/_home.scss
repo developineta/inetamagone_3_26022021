@@ -1,41 +1,275 @@
 .accueil {
 	text-align: center;
 }
-h2 {
-	font-size: map-get($font-size-heading, h2);
-	font-weight: $font-weight900;
-	letter-spacing: $letter-spacing;
-}
-.legende-restaurant__txt {
-	h3 {
-		font-size: map-get($font-size-heading, h3);
-		font-weight: $font-weight900;
+.description {
+	@include flex-column;
+	justify-content: space-between;
+	background-color: $colour-background;
+	position: relative;
+	@include wide-screen {
+		height: 225px;
+		&::before {
+			/* La ligne au dessus de la section */
+			@include top-line($max-width-1440);
+		}
 	}
-	p,
-	.fa-map-marker-alt {
-		font-size: 1.1rem;
+	@include desktop {
+		padding-left: $space-page-19;
+		height: 200px;
+	}
+	.recherche-form {
+		display: flex; /* Pour ranger les éléments dans une ligne */
+		justify-content: center;
+		max-width: 680px; /* Définition de taille maximale */
+		max-height: 50px;
+		height: 100%;
+		background-color: darken($colour-background, 4.7%);
+		position: relative;
+		@include external-shadow(darken($colour-background, 25%));
+		i {
+			padding: 17px 15px 0px 59px; /* Le positionnement de l'icone dans sa <div> */
+		}
+		&__champ {
+			font-family: $font-Roboto, $font-Sans-s;
+			font-size: 1.03rem;
+			font-weight: $font-weight500;
+			border: none;
+			height: 46px;
+			margin-top: 1px;
+			background-color: darken($colour-background, 4.7%);
+		}
+		&:active {
+			@include external-shadow(darken($colour-background, 50%));
+		}
+		@include desktop {
+		}
+		@include mobile-only {
+			width: 100%;
+			box-shadow: none;
+			&::before {
+				/* La ligne au dessus de champ de recherche */
+				@include top-line($max-width-680);
+			}
+		}
+		@include wide-screen {
+			width: 300px;
+			border: 1px solid darken($colour-background, 35%);
+			position: absolute;
+			top: 138px;
+			right: 54%;
+		}
+		@include desktop {
+			top: 57px;
+			right: 10%;
+			&:hover {
+				@include external-shadow(darken($colour-background, 50%));
+			}
+		}
+	}
+	&__textes {
+		@include flex-column;
+		align-items: center;
+		text-align: center;
+		@include desktop {
+			align-items: flex-start;
+			text-align: left;
+			margin-top: 14px;
+		}
+		h2 {
+			font-size: map-get($font-size-heading, h2);
+			font-weight: $font-weight900;
+			margin: 36px 0 0 0;
+			width: 77%;
+		}
+		p {
+			margin: 12px 0 28px 0;
+			font-size: $font-size-p;
+		}
+	}
+	.bouton-rose {
+		margin-bottom: 57px;
+		@include wide-screen {
+			position: absolute;
+			top: 138px;
+			left: 54%;
+		}
+		@include desktop {
+			top: 134px;
+			left: unset;
+			right: 10%;
+		}
 	}
 }
-.champ_recherche {
-	font-family: $font-Roboto, $font-Sans-s;
-	font-size: 1.03rem;
-	font-weight: $font-weight500;
+.fonctionnement-ensamble {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: $space-page-19;
+	@include mobile-only {
+		justify-content: space-between;
+	}
+	h2 {
+		margin: 25px 50px 0 0;
+		@include mobile-only {
+			margin: 47px 0 10px 2px;
+		}
+	}
+	.fonctionnement {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		padding-left: 0;
+		margin-right: 20px;
+		@include mobile-only {
+			@include flex-column;
+			margin-bottom: 49px;
+		}
+		&__etapes {
+			display: flex;
+			align-items: center;
+			max-width: 250px;
+			width: 100%;
+			height: 60px;
+			background-color: $colour-background;
+			border-radius: 25px 25px 25px 25px;
+			margin: 0 20px 20px 0;
+			@include external-shadow(darken($colour-background, 10%));
+			@include mobile-only {
+				max-width: 300px;
+				width: 100%;
+				height: 75px;
+				margin: 0 0 20px 0;
+			}
+			&--active {
+				background-color: #f5edff;
+			}
+			@include desktop {
+				margin-right: 7%;
+			}
+			i {
+				font-size: 1rem;
+				color: darken($colour-background, 48%);
+				margin: 0 15px 0 14px;
+				@include mobile-only {
+					margin: 0 23px 0 22px;
+					font-size: 1.15rem;
+				}
+			}
+			.fa-mobile-alt {
+				font-size: 1.15rem;
+				margin-right: 20px;
+				@include mobile-only {
+					margin-right: 28px;
+					font-size: 1.3rem;
+				}
+			}
+			.fa-store {
+				color: $colour-primary;
+				margin-right: 11px;
+				@include mobile-only {
+					margin-right: 19px;
+				}
+			}
+		}
+		&__numeros {
+			background-color: $colour-primary;
+			border-radius: 100%; /* Création de cercle autour de l'icone */
+			width: 23px;
+			height: 23px;
+			margin-left: -11px;
+			p {
+				font-size: 0.9rem;
+				color: $colour-white;
+				margin: 0;
+				padding: 3px 0 0 8px;
+			}
+		}
+		&__texte {
+			font-size: 0.9rem;
+			font-weight: $font-weight600;
+			@include mobile-only {
+				font-size: 1.02rem;
+			}
+		}
+	}
 }
-.fonctionnement__texte,
-.nouveau {
-	font-size: 1.02rem;
-	font-weight: $font-weight600;
-}
-.fonctionnement__etapes i {
-	height: 1rem;
-	width: 2rem;
-	font-size: 1.2rem;
-	color: #7e7e7e;
-}
-#bouton_explorer span {
-	color: $colour-white;
-	@include flex-centre;
-}
-.nouveau {
-	color: #008766;
+#restaurants {
+	background-color: $colour-background;
+	height: auto;
+	width: 100%;
+	padding-top: 33px;
+	h2 {
+		margin-bottom: 7px;
+		padding-left: $space-page-19;
+	}
+	.cartes-restaurants {
+		display: flex;
+		justify-content: center;
+		align-items: stretch;
+		flex-wrap: wrap;
+		width: 100%;
+		padding-bottom: 49px;
+		@include mobile-only {
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			flex-wrap: nowrap;
+		}
+		figure {
+			@include content-cards;
+			flex-direction: column;
+			justify-content: flex-start;
+			position: relative;
+			border-radius: 22px;
+			width: 90%;
+			min-width: 250px;
+			margin: 10px;
+			@include mobile-only {
+				max-height: 350px;
+			}
+			.img_restaurant {
+				border-radius: 17px 17px 0px 0px; /* Les bordures arrondies en haut des photos */
+				width: 100%;
+			}
+			.nouveau {
+				position: absolute;
+				top: 14px;
+				right: 12px;
+				font-size: 0.9rem;
+				font-weight: $font-weight500;
+				background-color: $colour-accent;
+				color: darken($colour-accent, 40%);
+				text-align: center;
+				padding: 5px 12px 5px 12px;
+				border-radius: 2px 2px 2px 2px;
+			}
+			figcaption {
+				display: flex;
+				justify-content: space-between;
+				padding: $padding-card-txt;
+				h3 {
+					font-size: map-get($font-size-heading, h3);
+					font-weight: $font-weight900;
+					margin: 12px 0 0 0;
+				}
+				p {
+					font-size: $font-size-p;
+					margin: 3px 0 14px 0;
+				}
+				i {
+					padding-top: 18px;
+					font-size: 1.6rem;
+				}
+			}
+			&:active {
+				@include external-shadow(darken($colour-background, 25%));
+			}
+			@include desktop {
+				&:hover {
+					@include external-shadow(darken($colour-background, 25%));
+				}
+			}
+		}
+	}
 }

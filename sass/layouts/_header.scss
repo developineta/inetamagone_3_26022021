@@ -1,20 +1,26 @@
 header {
-	.ligne-header i {
-		padding-left: 4%; /* Espace définie en % pour meilleur raport agrandissant écran */
-		font-size: 1.2rem;
-		color: $colour-black;
-	}
-	h2 {
-		@include logo;
-	}
 	.ligne-header {
 		display: flex;
 		align-items: center;
-	}
-	.ligne-header h1 {
-		padding-left: 73px;
-	}
-	a:active {
-		color: $colour-secondary;
+		height: 63px;
+		i {
+			padding-left: 4%; /* Espace définie en % pour meilleur raport agrandissant écran */
+			font-size: 1.2rem;
+			color: $colour-black;
+		}
+		h2 {
+			@include logo;
+		}
+		h1 {
+			margin: auto;
+		}
+		:active {
+			text-shadow: 2px 4px 10px darken($colour-background, 50%);
+		}
+		@include desktop {
+			:hover {
+				text-shadow: 2px 4px 10px darken($colour-background, 50%);
+			}
+		}
 	}
 }
