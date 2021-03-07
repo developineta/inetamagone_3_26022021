@@ -25,6 +25,11 @@
 		&:active {
 			color: $colour-secondary; /* Utilisation d'esperluette Sass*/
 		}
+		@include desktop {
+			&:hover {
+				color: $colour-secondary;
+			}
+		}
 	}
 	ul {
 		padding: 0px;

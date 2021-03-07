@@ -1,3 +1,8 @@
+@mixin small-screen {
+	@media all and (max-width: 345px) {
+		@content;
+	}
+}
 @mixin mobile-only {
 	@media all and (max-width: 680px) {
 		@content;
@@ -86,9 +91,16 @@
 		@include flex-centre;
 		position: relative;
 		z-index: 1;
-		&:hover {
+		&:active {
 			& .bouton__survole {
 				opacity: 1; /* Opaque au survol */
+			}
+		}
+		@include desktop {
+			&:hover {
+				& .bouton__survole {
+					opacity: 1; /* Opaque au survol */
+				}
 			}
 		}
 		&__survole {

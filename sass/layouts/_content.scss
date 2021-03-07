@@ -27,25 +27,36 @@
 		height: auto;
 		&__titre {
 			display: flex;
-			align-items: center;
+			flex-wrap: wrap;
 			background-color: $colour-background;
 			border-radius: 35px 35px 0 0;
-			padding-top: 7px;
+			padding: 30px 0 0 0;
 			width: 100%;
 			position: absolute;
 			top: -34px;
 			@include wide-screen {
 				border-radius: unset;
 				position: unset;
+				flex-direction: column;
+				align-items: center;
 			}
 			h2 {
 				font-family: $font-Shrikhand, $font-Sans-s;
 				font-size: 1.75rem;
 				font-weight: normal;
-				margin-left: $space-page-19;
+				margin: 0;
+				padding-left: $space-page-19;
+				@include wide-screen {
+					margin: 0;
+					padding-left: 0;
+				}
 			}
 			i {
-				margin-left: 35px;
+				padding: 10px 0 0 9%;
+				@include wide-screen {
+					margin: 0;
+					padding-left: 0;
+				}
 			}
 		}
 		&__articles {
@@ -54,14 +65,14 @@
 			justify-content: space-around;
 			align-items: center;
 			background-color: $colour-background;
-			padding-top: 50px;
+			padding-top: 39px;
 			@include wide-screen {
 				padding-top: 0;
 				flex-direction: row;
 				flex-wrap: wrap;
 			}
 			.article-menu {
-				width: 100%;
+				width: 93%;
 				&__cartes {
 					@include flex-column;
 					align-items: center;
@@ -76,7 +87,7 @@
 					font-weight: normal;
 					position: relative; /* Pour placer la ligne en bas */
 					padding: 0 0 8px $space-page-19;
-					margin-bottom: 3px;
+					margin: 26px 0 6px 0;
 					@include wide-screen {
 						text-align: center;
 						padding-left: 0;
@@ -103,8 +114,7 @@
 					justify-content: space-between;
 					border-radius: 18px;
 					color: $colour-black;
-					width: 92%;
-					min-width: fit-content;
+					width: 100%;
 					margin: 7px;
 					@include wide-screen {
 						width: 97%;
@@ -118,12 +128,18 @@
 							margin: 14px 0 0 0;
 							max-width: 270px;
 							@include wrap-dots;
+							@include small-screen {
+								max-width: 230px;
+							}
 						}
 						p {
 							font-size: 0.93rem;
 							margin: 5px 0 12px 0;
-							max-width: 265px;
+							max-width: 267px;
 							@include wrap-dots;
+							@include small-screen {
+								max-width: 230px;
+							}
 						}
 					}
 					.prix-check {
@@ -139,8 +155,13 @@
 							background-color: $colour-accent;
 						}
 					}
-					&:hover {
+					&:active {
 						@include external-shadow(darken($colour-background, 25%));
+					}
+					@include desktop {
+						&:hover {
+							@include external-shadow(darken($colour-background, 25%));
+						}
 					}
 				}
 			}

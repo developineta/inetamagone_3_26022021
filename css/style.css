@@ -56,9 +56,15 @@ h1 {
   position: relative;
   z-index: 1;
 }
-.bouton-rose .bouton:hover .bouton__survole {
+.bouton-rose .bouton:active .bouton__survole {
   opacity: 1;
   /* Opaque au survol */
+}
+@media all and (min-width: 992px) {
+  .bouton-rose .bouton:hover .bouton__survole {
+    opacity: 1;
+    /* Opaque au survol */
+  }
 }
 .bouton-rose .bouton__survole {
   position: absolute;
@@ -130,10 +136,10 @@ h1 {
 }
 .menus .ensamble-menu__titre {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   background-color: #f6f6f6;
   border-radius: 35px 35px 0 0;
-  padding-top: 7px;
+  padding: 30px 0 0 0;
   width: 100%;
   position: absolute;
   top: -34px;
@@ -142,16 +148,31 @@ h1 {
   .menus .ensamble-menu__titre {
     border-radius: unset;
     position: unset;
+    flex-direction: column;
+    align-items: center;
   }
 }
 .menus .ensamble-menu__titre h2 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.75rem;
   font-weight: normal;
-  margin-left: 19px;
+  margin: 0;
+  padding-left: 19px;
+}
+@media all and (min-width: 681px) {
+  .menus .ensamble-menu__titre h2 {
+    margin: 0;
+    padding-left: 0;
+  }
 }
 .menus .ensamble-menu__titre i {
-  margin-left: 35px;
+  padding: 10px 0 0 9%;
+}
+@media all and (min-width: 681px) {
+  .menus .ensamble-menu__titre i {
+    margin: 0;
+    padding-left: 0;
+  }
 }
 .menus .ensamble-menu__articles {
   display: flex;
@@ -159,7 +180,7 @@ h1 {
   justify-content: space-around;
   align-items: center;
   background-color: #f6f6f6;
-  padding-top: 50px;
+  padding-top: 39px;
 }
 @media all and (min-width: 681px) {
   .menus .ensamble-menu__articles {
@@ -169,7 +190,7 @@ h1 {
   }
 }
 .menus .ensamble-menu__articles .article-menu {
-  width: 100%;
+  width: 93%;
 }
 .menus .ensamble-menu__articles .article-menu__cartes {
   display: flex;
@@ -189,7 +210,7 @@ h1 {
   position: relative;
   /* Pour placer la ligne en bas */
   padding: 0 0 8px 19px;
-  margin-bottom: 3px;
+  margin: 26px 0 6px 0;
 }
 @media all and (min-width: 681px) {
   .menus .ensamble-menu__articles .article-menu > h3 {
@@ -226,8 +247,7 @@ h1 {
   justify-content: space-between;
   border-radius: 18px;
   color: #000000;
-  width: 92%;
-  min-width: fit-content;
+  width: 100%;
   margin: 7px;
 }
 @media all and (max-width: 680px) {
@@ -259,14 +279,24 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+@media all and (max-width: 345px) {
+  .menus .ensamble-menu__articles .article-menu a .menu-texte h3 {
+    max-width: 230px;
+  }
+}
 .menus .ensamble-menu__articles .article-menu a .menu-texte p {
   font-size: 0.93rem;
   margin: 5px 0 12px 0;
-  max-width: 265px;
+  max-width: 267px;
   /* Si le texte est trop long, il soit coupé et remplacé par trois points */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media all and (max-width: 345px) {
+  .menus .ensamble-menu__articles .article-menu a .menu-texte p {
+    max-width: 230px;
+  }
 }
 .menus .ensamble-menu__articles .article-menu a .prix-check .prix p {
   font-weight: 900;
@@ -279,9 +309,15 @@ h1 {
   color: #ffffff;
   background-color: #99e2d0;
 }
-.menus .ensamble-menu__articles .article-menu a:hover {
+.menus .ensamble-menu__articles .article-menu a:active {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
+}
+@media all and (min-width: 992px) {
+  .menus .ensamble-menu__articles .article-menu a:hover {
+    /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+    box-shadow: 2px 4px 10px #b6b6b6;
+  }
 }
 .menus .ensamble-menu .bouton-rose {
   width: 100%;
@@ -315,8 +351,13 @@ header .ligne-header h2 {
 header .ligne-header h1 {
   margin: auto;
 }
-header .ligne-header a:active {
-  color: #ff79da;
+header .ligne-header :active {
+  text-shadow: 2px 4px 10px #777777;
+}
+@media all and (min-width: 992px) {
+  header .ligne-header :hover {
+    text-shadow: 2px 4px 10px #777777;
+  }
 }
 
 #footer-content {
@@ -349,6 +390,11 @@ header .ligne-header a:active {
 #footer-content .lien-footer a:active {
   color: #ff79da;
   /* Utilisation d'esperluette Sass*/
+}
+@media all and (min-width: 992px) {
+  #footer-content .lien-footer a:hover {
+    color: #ff79da;
+  }
 }
 #footer-content ul {
   padding: 0px;
@@ -406,10 +452,40 @@ header .ligne-header a:active {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
 }
+.description .recherche-form i {
+  padding: 17px 15px 0px 59px;
+  /* Le positionnement de l'icone dans sa <div> */
+}
+.description .recherche-form__champ {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.03rem;
+  font-weight: 500;
+  border: none;
+  height: 46px;
+  margin-top: 1px;
+  background-color: #eaeaea;
+}
+.description .recherche-form:active {
+  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  box-shadow: 2px 4px 10px #777777;
+}
 @media all and (max-width: 680px) {
   .description .recherche-form {
     width: 100%;
     box-shadow: none;
+  }
+  .description .recherche-form::before {
+    /* La ligne au dessus de champ de recherche */
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 680px;
+    width: 100%;
+    height: 5px;
+    box-shadow: 0px 10px 5px -10px #9d9d9d inset;
   }
 }
 @media all and (min-width: 681px) {
@@ -426,33 +502,9 @@ header .ligne-header a:active {
     top: 57px;
     right: 10%;
   }
-}
-.description .recherche-form i {
-  padding: 17px 15px 0px 48px;
-  /* Le positionnement de l'icone dans sa <div> */
-}
-.description .recherche-form__champ {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.03rem;
-  font-weight: 500;
-  border: none;
-  height: 46px;
-  margin-top: 1px;
-  background-color: #eaeaea;
-}
-@media all and (max-width: 680px) {
-  .description .recherche-form::before {
-    /* La ligne au dessus de champ de recherche */
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-width: 680px;
-    width: 100%;
-    height: 5px;
-    box-shadow: 0px 10px 5px -10px #9d9d9d inset;
+  .description .recherche-form:hover {
+    /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+    box-shadow: 2px 4px 10px #777777;
   }
 }
 .description__textes {
@@ -472,7 +524,7 @@ header .ligne-header a:active {
   font-size: 1.5rem;
   font-weight: 900;
   margin: 36px 0 0 0;
-  width: 80%;
+  width: 77%;
 }
 .description__textes p {
   margin: 12px 0 28px 0;
@@ -612,17 +664,17 @@ header .ligne-header a:active {
   }
 }
 
-.restaurants {
+#restaurants {
   background-color: #f6f6f6;
   height: auto;
   width: 100%;
   padding-top: 33px;
 }
-.restaurants h2 {
+#restaurants h2 {
   margin-bottom: 7px;
   padding-left: 19px;
 }
-.restaurants .cartes-restaurants {
+#restaurants .cartes-restaurants {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -631,14 +683,14 @@ header .ligne-header a:active {
   padding-bottom: 49px;
 }
 @media all and (max-width: 680px) {
-  .restaurants .cartes-restaurants {
+  #restaurants .cartes-restaurants {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
   }
 }
-.restaurants .cartes-restaurants figure {
+#restaurants .cartes-restaurants figure {
   /* Les propriétés de l'apparence des cartes cliquables dans toutes les pages */
   display: flex;
   max-width: 434px;
@@ -655,26 +707,26 @@ header .ligne-header a:active {
   margin: 10px;
 }
 @media all and (max-width: 680px) {
-  .restaurants .cartes-restaurants figure {
+  #restaurants .cartes-restaurants figure {
     height: 90%;
   }
 }
 @media all and (min-width: 992px) {
-  .restaurants .cartes-restaurants figure {
+  #restaurants .cartes-restaurants figure {
     margin: 15px;
   }
 }
 @media all and (max-width: 680px) {
-  .restaurants .cartes-restaurants figure {
+  #restaurants .cartes-restaurants figure {
     max-height: 350px;
   }
 }
-.restaurants .cartes-restaurants figure .img_restaurant {
+#restaurants .cartes-restaurants figure .img_restaurant {
   border-radius: 17px 17px 0px 0px;
   /* Les bordures arrondies en haut des photos */
   width: 100%;
 }
-.restaurants .cartes-restaurants figure .nouveau {
+#restaurants .cartes-restaurants figure .nouveau {
   position: absolute;
   top: 14px;
   right: 12px;
@@ -686,27 +738,33 @@ header .ligne-header a:active {
   padding: 5px 12px 5px 12px;
   border-radius: 2px 2px 2px 2px;
 }
-.restaurants .cartes-restaurants figure figcaption {
+#restaurants .cartes-restaurants figure figcaption {
   display: flex;
   justify-content: space-between;
   padding: 0 22px 0 13px;
 }
-.restaurants .cartes-restaurants figure figcaption h3 {
+#restaurants .cartes-restaurants figure figcaption h3 {
   font-size: 1.15rem;
   font-weight: 900;
   margin: 12px 0 0 0;
 }
-.restaurants .cartes-restaurants figure figcaption p {
+#restaurants .cartes-restaurants figure figcaption p {
   font-size: 1.1rem;
   margin: 3px 0 14px 0;
 }
-.restaurants .cartes-restaurants figure figcaption i {
+#restaurants .cartes-restaurants figure figcaption i {
   padding-top: 18px;
   font-size: 1.6rem;
 }
-.restaurants .cartes-restaurants figure:hover {
+#restaurants .cartes-restaurants figure:active {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
+}
+@media all and (min-width: 992px) {
+  #restaurants .cartes-restaurants figure:hover {
+    /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+    box-shadow: 2px 4px 10px #b6b6b6;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
