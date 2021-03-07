@@ -2,6 +2,72 @@
 /* Polices utilisés */
 /* Couleurs principales */
 /* Paramètres de la police */
+#entrees {
+  animation: menu-block 700ms ease-out 200ms backwards;
+  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+}
+#entrees .carte-choix--1 {
+  animation: fade-in 250ms ease-out 450ms backwards;
+}
+#entrees .carte-choix--2 {
+  animation: fade-in 250ms ease-out 650ms backwards;
+}
+#entrees .carte-choix--3 {
+  animation: fade-in 200ms ease-out 850ms backwards;
+}
+
+#plats {
+  animation: menu-block 700ms ease-out 1250ms backwards;
+  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+}
+#plats .carte-choix--1 {
+  animation: fade-in 250ms ease-out 1500ms backwards;
+}
+#plats .carte-choix--2 {
+  animation: fade-in 250ms ease-out 1700ms backwards;
+}
+#plats .carte-choix--3 {
+  animation: fade-in 200ms ease-out 1900ms backwards;
+}
+
+#desserts {
+  animation: menu-block 700ms ease-out 2300ms backwards;
+  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+}
+#desserts .carte-choix--1 {
+  animation: fade-in 250ms ease-out 2550ms backwards;
+}
+#desserts .carte-choix--2 {
+  animation: fade-in 250ms ease-out 2750ms backwards;
+}
+#desserts .carte-choix--3 {
+  animation: fade-in 200ms ease-out 2950ms backwards;
+}
+
+@keyframes menu-block {
+  0% {
+    opacity: 0;
+    /* N'est pas visible au début et visible au 100% */
+    transform: translateY(10px);
+    /* Position et axe de début d'animation */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    /* Position et axe de la fin d'animation */
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    box-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 body {
   margin: auto;
   max-width: 1440px;

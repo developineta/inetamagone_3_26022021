@@ -122,3 +122,6 @@
 		}
 	}
 }
+@mixin anime-menu-block($length, $time) {
+	animation: menu-block ($length) ease-out ($time) backwards; /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+}
