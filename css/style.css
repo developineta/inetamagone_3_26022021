@@ -2,48 +2,6 @@
 /* Polices utilisés */
 /* Couleurs principales */
 /* Paramètres de la police */
-#entrees {
-  animation: menu-block 700ms ease-out 200ms backwards;
-  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
-}
-#entrees .carte-choix--1 {
-  animation: fade-in 250ms ease-out 450ms backwards;
-}
-#entrees .carte-choix--2 {
-  animation: fade-in 250ms ease-out 650ms backwards;
-}
-#entrees .carte-choix--3 {
-  animation: fade-in 200ms ease-out 850ms backwards;
-}
-
-#plats {
-  animation: menu-block 700ms ease-out 1250ms backwards;
-  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
-}
-#plats .carte-choix--1 {
-  animation: fade-in 250ms ease-out 1500ms backwards;
-}
-#plats .carte-choix--2 {
-  animation: fade-in 250ms ease-out 1700ms backwards;
-}
-#plats .carte-choix--3 {
-  animation: fade-in 200ms ease-out 1900ms backwards;
-}
-
-#desserts {
-  animation: menu-block 700ms ease-out 2300ms backwards;
-  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
-}
-#desserts .carte-choix--1 {
-  animation: fade-in 250ms ease-out 2550ms backwards;
-}
-#desserts .carte-choix--2 {
-  animation: fade-in 250ms ease-out 2750ms backwards;
-}
-#desserts .carte-choix--3 {
-  animation: fade-in 200ms ease-out 2950ms backwards;
-}
-
 @keyframes menu-block {
   0% {
     opacity: 0;
@@ -66,6 +24,37 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes heart-fill {
+  0% {
+    fill: transparent;
+    stroke: #000000;
+  }
+  12% {
+    fill: #eec5ff;
+  }
+  25% {
+    fill: #ff79da;
+  }
+  37% {
+    fill: #e86edb;
+  }
+  50% {
+    fill: #cf64dc;
+  }
+  63% {
+    fill: #c160dc;
+  }
+  75% {
+    fill: #b35cdc;
+  }
+  87% {
+    fill: #dc68db;
+  }
+  100% {
+    fill: url(#rose-violet);
+    stroke: transparent;
   }
 }
 body {
@@ -101,10 +90,6 @@ h1 {
   font-weight: normal;
   margin: 7px 0px 5px 0px;
   color: #000000;
-}
-
-.fa-heart {
-  font-size: 1.4rem;
 }
 
 .bouton-rose .bouton {
@@ -154,6 +139,33 @@ h1 {
   margin: auto;
   z-index: 3;
   /* Le texte de bouton reste par dessus des effets de bouton */
+}
+
+.heart {
+  margin-left: 36px;
+  display: flex;
+  width: 26px;
+}
+@media all and (min-width: 681px) {
+  .heart {
+    margin: 0;
+  }
+}
+.heart .fa-heart path {
+  /* Définition des parametre de bordure de coeur */
+  fill: transparent;
+  stroke-width: 30px;
+  stroke: #000000;
+}
+.heart .fa-heart path:hover {
+  animation: heart-fill 1000ms ease-out forwards;
+  /* L'Animation se lance au survol ou clique */
+}
+.heart .fa-heart linearGradient .main-stop {
+  stop-color: #9356dc;
+}
+.heart .fa-heart linearGradient .alt-stop {
+  stop-color: #ff79da;
 }
 
 .menus {
@@ -230,9 +242,6 @@ h1 {
     margin: 0;
     padding-left: 0;
   }
-}
-.menus .ensamble-menu__titre i {
-  padding: 10px 0 0 9%;
 }
 @media all and (min-width: 681px) {
   .menus .ensamble-menu__titre i {
@@ -384,6 +393,45 @@ h1 {
     /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
     box-shadow: 2px 4px 10px #b6b6b6;
   }
+}
+.menus .ensamble-menu__articles #entrees {
+  animation: menu-block 700ms ease-out 200ms backwards;
+  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+}
+.menus .ensamble-menu__articles #entrees .carte-choix--1 {
+  animation: fade-in 200ms ease-out 450ms backwards;
+}
+.menus .ensamble-menu__articles #entrees .carte-choix--2 {
+  animation: fade-in 200ms ease-out 650ms backwards;
+}
+.menus .ensamble-menu__articles #entrees .carte-choix--3 {
+  animation: fade-in 200ms ease-out 850ms backwards;
+}
+.menus .ensamble-menu__articles #plats {
+  animation: menu-block 700ms ease-out 1250ms backwards;
+  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+}
+.menus .ensamble-menu__articles #plats .carte-choix--1 {
+  animation: fade-in 200ms ease-out 1500ms backwards;
+}
+.menus .ensamble-menu__articles #plats .carte-choix--2 {
+  animation: fade-in 200ms ease-out 1700ms backwards;
+}
+.menus .ensamble-menu__articles #plats .carte-choix--3 {
+  animation: fade-in 200ms ease-out 1900ms backwards;
+}
+.menus .ensamble-menu__articles #desserts {
+  animation: menu-block 700ms ease-out 2300ms backwards;
+  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+}
+.menus .ensamble-menu__articles #desserts .carte-choix--1 {
+  animation: fade-in 200ms ease-out 2550ms backwards;
+}
+.menus .ensamble-menu__articles #desserts .carte-choix--2 {
+  animation: fade-in 200ms ease-out 2750ms backwards;
+}
+.menus .ensamble-menu__articles #desserts .carte-choix--3 {
+  animation: fade-in 200ms ease-out 2950ms backwards;
 }
 .menus .ensamble-menu .bouton-rose {
   width: 100%;
@@ -809,18 +857,17 @@ header .ligne-header :active {
   justify-content: space-between;
   padding: 0 22px 0 13px;
 }
-#restaurants .cartes-restaurants figure figcaption h3 {
+#restaurants .cartes-restaurants figure figcaption a {
+  color: #000000;
+}
+#restaurants .cartes-restaurants figure figcaption a h3 {
   font-size: 1.15rem;
   font-weight: 900;
   margin: 12px 0 0 0;
 }
-#restaurants .cartes-restaurants figure figcaption p {
+#restaurants .cartes-restaurants figure figcaption a p {
   font-size: 1.1rem;
-  margin: 3px 0 14px 0;
-}
-#restaurants .cartes-restaurants figure figcaption i {
-  padding-top: 18px;
-  font-size: 1.6rem;
+  margin: 3px 0 16px 0;
 }
 #restaurants .cartes-restaurants figure:active {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */

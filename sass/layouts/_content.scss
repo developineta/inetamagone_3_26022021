@@ -52,7 +52,6 @@
 				}
 			}
 			i {
-				padding: 10px 0 0 9%;
 				@include wide-screen {
 					margin: 0;
 					padding-left: 0;
@@ -163,6 +162,42 @@
 							@include external-shadow(darken($colour-background, 25%));
 						}
 					}
+				}
+			}
+			#entrees {
+				@include anime-menu-block($length: 700ms, $time: 200ms);
+				.carte-choix--1 {
+					@include anime-menu-choix($time: 450ms);
+				}
+				.carte-choix--2 {
+					@include anime-menu-choix($time: 650ms);
+				}
+				.carte-choix--3 {
+					@include anime-menu-choix($time: 850ms);
+				}
+			}
+			#plats {
+				@include anime-menu-block($length: 700ms, $time: 1250ms);
+				.carte-choix--1 {
+					@include anime-menu-choix($time: 1500ms);
+				}
+				.carte-choix--2 {
+					@include anime-menu-choix($time: 1700ms);
+				}
+				.carte-choix--3 {
+					@include anime-menu-choix($time: 1900ms);
+				}
+			}
+			#desserts {
+				@include anime-menu-block($length: 700ms, $time: 2300ms);
+				.carte-choix--1 {
+					@include anime-menu-choix($time: 2550ms);
+				}
+				.carte-choix--2 {
+					@include anime-menu-choix($time: 2750ms);
+				}
+				.carte-choix--3 {
+					@include anime-menu-choix($time: 2950ms);
 				}
 			}
 		}
