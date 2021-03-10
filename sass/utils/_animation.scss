@@ -1,0 +1,53 @@
+@keyframes menu-block {
+	0% {
+		opacity: 0; /* N'est pas visible au début et visible au 100% */
+		transform: translateY(10px); /* Position et axe de début d'animation */
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0); /* Position et axe de la fin d'animation */
+	}
+}
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+		box-shadow: none;
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes heart-fill {
+	0% {
+		fill: transparent;
+		stroke: $colour-black;
+	}
+	12% {
+		fill: #eec5ff;
+	}
+	25% {
+		fill: $colour-secondary;
+	}
+	37% {
+		fill: #e86edb;
+	}
+	50% {
+		fill: #cf64dc;
+	}
+	63% {
+		fill: #c160dc;
+	}
+	75% {
+		fill: #b35cdc;
+	}
+	87% {
+		fill: #dc68db;
+	}
+	100% {
+		fill: url(#rose-violet);
+		stroke: transparent;
+	}
+}

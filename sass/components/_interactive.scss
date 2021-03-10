@@ -1,0 +1,30 @@
+.bouton-rose {
+	@include btn;
+}
+.heart {
+	margin-left: 36px;
+	display: flex;
+	width: 26px;
+	@include wide-screen {
+		margin: 0;
+	}
+	.fa-heart {
+		path {
+			/* Définition des parametre de bordure de coeur */
+			fill: transparent;
+			stroke-width: 30px;
+			stroke: $colour-black;
+			&:hover {
+				animation: heart-fill 1000ms ease-out forwards; /* L'Animation se lance au survol ou clique */
+			}
+		}
+		linearGradient {
+			.main-stop {
+				stop-color: $colour-primary;
+			}
+			.alt-stop {
+				stop-color: $colour-secondary;
+			}
+		}
+	}
+}
