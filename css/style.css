@@ -267,11 +267,6 @@ h1 {
 .menus .ensamble-menu__articles .article-menu {
   width: 93%;
 }
-.menus .ensamble-menu__articles .article-menu__cartes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 @media all and (min-width: 681px) {
   .menus .ensamble-menu__articles .article-menu {
     width: auto;
@@ -311,7 +306,12 @@ h1 {
     right: 44%;
   }
 }
-.menus .ensamble-menu__articles .article-menu a {
+.menus .ensamble-menu__articles .article-menu__cartes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menus .ensamble-menu__articles .article-menu__cartes a {
   /* Les propriétés de l'apparence des cartes cliquables dans toutes les pages */
   display: flex;
   max-width: 434px;
@@ -326,72 +326,121 @@ h1 {
   margin: 7px;
 }
 @media all and (max-width: 680px) {
-  .menus .ensamble-menu__articles .article-menu a {
+  .menus .ensamble-menu__articles .article-menu__cartes a {
     height: 90%;
   }
 }
 @media all and (min-width: 992px) {
-  .menus .ensamble-menu__articles .article-menu a {
+  .menus .ensamble-menu__articles .article-menu__cartes a {
     margin: 15px;
   }
 }
 @media all and (min-width: 681px) {
-  .menus .ensamble-menu__articles .article-menu a {
+  .menus .ensamble-menu__articles .article-menu__cartes a {
     width: 97%;
   }
 }
-.menus .ensamble-menu__articles .article-menu a .menu-texte {
+.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte {
+  width: 91%;
+  max-width: 405px;
   padding-left: 11px;
 }
-.menus .ensamble-menu__articles .article-menu a .menu-texte h3 {
+.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte h3 {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.02rem;
   margin: 14px 0 0 0;
-  max-width: 270px;
   /* Si le texte est trop long, il soit coupé et remplacé par trois points */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 @media all and (max-width: 345px) {
-  .menus .ensamble-menu__articles .article-menu a .menu-texte h3 {
+  .menus .ensamble-menu__articles .article-menu__cartes a .menu-texte h3 {
     max-width: 230px;
   }
 }
-.menus .ensamble-menu__articles .article-menu a .menu-texte p {
+.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte .ligne-prix {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte .ligne-prix span {
   font-size: 0.93rem;
   margin: 5px 0 12px 0;
-  max-width: 267px;
   /* Si le texte est trop long, il soit coupé et remplacé par trois points */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 @media all and (max-width: 345px) {
-  .menus .ensamble-menu__articles .article-menu a .menu-texte p {
+  .menus .ensamble-menu__articles .article-menu__cartes a .menu-texte .ligne-prix span {
     max-width: 230px;
   }
 }
-.menus .ensamble-menu__articles .article-menu a .prix-check .prix p {
+.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte .ligne-prix .prix p {
   font-weight: 900;
   margin: 0;
-  padding: 39px 19px 0 0;
+  padding-left: 7px;
 }
-.menus .ensamble-menu__articles .article-menu a .prix-check .fa-check-circle {
-  display: none;
+.menus .ensamble-menu__articles .article-menu__cartes a .check {
+  position: relative;
+  overflow: hidden;
+}
+.menus .ensamble-menu__articles .article-menu__cartes a .check .coche {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -11px;
+  width: 58px;
+  height: 70px;
+  background-color: #99e2d0;
+  border-radius: 0 18px 18px 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 400ms linear;
+}
+.menus .ensamble-menu__articles .article-menu__cartes a .check .fa-check-circle {
+  display: block;
+  position: absolute;
+  top: 27px;
+  right: 0;
+  bottom: 0;
+  left: 7px;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  padding: 0;
   font-size: 1.3rem;
   color: #ffffff;
   background-color: #99e2d0;
+  transition: transform 300ms linear 70ms;
+  transform: translateX(30px) rotate(0turn);
+  opacity: 0;
 }
-.menus .ensamble-menu__articles .article-menu a:active {
+.menus .ensamble-menu__articles .article-menu__cartes a .check:hover .coche {
+  transform: scaleX(1);
+}
+.menus .ensamble-menu__articles .article-menu__cartes a .check:hover .fa-check-circle {
+  opacity: 1;
+  transform: translateX(0) rotate(2turn);
+}
+.menus .ensamble-menu__articles .article-menu__cartes a:hover {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
 }
-@media all and (min-width: 992px) {
-  .menus .ensamble-menu__articles .article-menu a:hover {
-    /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
-    box-shadow: 2px 4px 10px #b6b6b6;
+.menus .ensamble-menu__articles .article-menu__cartes a:hover .menu-texte {
+  max-width: 254px;
+  width: 100%;
+  /* Si le texte est trop long, il soit coupé et remplacé par trois points */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media all and (min-width: 681px) {
+  .menus .ensamble-menu__articles .article-menu__cartes a:hover .menu-texte {
+    width: 74%;
   }
 }
 .menus .ensamble-menu__articles #entrees {

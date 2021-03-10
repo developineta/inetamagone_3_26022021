@@ -72,10 +72,6 @@
 			}
 			.article-menu {
 				width: 93%;
-				&__cartes {
-					@include flex-column;
-					align-items: center;
-				}
 				@include wide-screen {
 					width: auto;
 				}
@@ -108,58 +104,107 @@
 						right: 44%;
 					}
 				}
-				a {
-					@include content-cards;
-					justify-content: space-between;
-					border-radius: 18px;
-					color: $colour-black;
-					width: 100%;
-					margin: 7px;
-					@include wide-screen {
-						width: 97%;
-					}
-					.menu-texte {
-						padding-left: 11px;
-						h3 {
-							font-size: $font-size-p;
-							font-weight: $font-weight600;
-							letter-spacing: $letter-spacing;
-							margin: 14px 0 0 0;
-							max-width: 270px;
-							@include wrap-dots;
-							@include small-screen {
-								max-width: 230px;
+				&__cartes {
+					@include flex-column;
+					align-items: center;
+					a {
+						@include content-cards;
+						justify-content: space-between;
+						border-radius: 18px;
+						color: $colour-black;
+						width: 100%;
+						margin: 7px;
+						@include wide-screen {
+							width: 97%;
+						}
+						.menu-texte {
+							width: 91%;
+							max-width: 405px;
+							padding-left: 11px;
+							h3 {
+								font-size: $font-size-p;
+								font-weight: $font-weight600;
+								letter-spacing: $letter-spacing;
+								margin: 14px 0 0 0;
+								@include wrap-dots;
+								@include small-screen {
+									max-width: 230px;
+								}
+							}
+							.ligne-prix {
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+								span {
+									font-size: 0.93rem;
+									margin: 5px 0 12px 0;
+									@include wrap-dots;
+									@include small-screen {
+										max-width: 230px;
+									}
+								}
+								.prix p {
+									font-weight: $font-weight900;
+									margin: 0;
+									padding-left: 7px;
+								}
 							}
 						}
-						p {
-							font-size: 0.93rem;
-							margin: 5px 0 12px 0;
-							max-width: 267px;
-							@include wrap-dots;
-							@include small-screen {
-								max-width: 230px;
+						.check {
+							position: relative;
+							overflow: hidden;
+							.coche {
+								position: absolute;
+								top: 0;
+								right: 0;
+								bottom: 0;
+								left: -11px;
+								width: 58px;
+								height: 70px;
+								background-color: #99e2d0;
+								border-radius: 0 18px 18px 0;
+								transform: scaleX(0);
+								transform-origin: right;
+								transition: transform 400ms linear;
+							}
+							.fa-check-circle {
+								display: block;
+								position: absolute;
+								top: 27px;
+								right: 0;
+								bottom: 0;
+								left: 7px;
+								height: 20px;
+								width: 20px;
+								margin: 0;
+								padding: 0;
+								font-size: 1.3rem;
+								color: #ffffff;
+								background-color: #99e2d0;
+								transition: transform 300ms linear 70ms;
+								transform: translateX(30px) rotate(0turn);
+								opacity: 0;
+							}
+							&:hover {
+								.coche {
+									transform: scaleX(1);
+								}
+								.fa-check-circle {
+									opacity: 1;
+									transform: translateX(0) rotate(2turn);
+								}
 							}
 						}
-					}
-					.prix-check {
-						.prix p {
-							font-weight: $font-weight900;
-							margin: 0;
-							padding: 39px 19px 0 0;
-						}
-						.fa-check-circle {
-							display: none;
-							font-size: 1.3rem;
-							color: $colour-white;
-							background-color: $colour-accent;
-						}
-					}
-					&:active {
-						@include external-shadow(darken($colour-background, 25%));
-					}
-					@include desktop {
 						&:hover {
 							@include external-shadow(darken($colour-background, 25%));
+							.menu-texte {
+								max-width: 254px;
+								width: 100%;
+								@include wrap-dots;
+								@include wide-screen {
+									width: 74%;
+								}
+							}
 						}
 					}
 				}
