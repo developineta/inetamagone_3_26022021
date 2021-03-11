@@ -57,6 +57,30 @@
     stroke: transparent;
   }
 }
+@keyframes short-text-desktop {
+  from {
+    max-width: 405px;
+  }
+  to {
+    max-width: 238px;
+  }
+}
+@keyframes short-text-wide {
+  from {
+    max-width: 405px;
+  }
+  to {
+    max-width: 230px;
+  }
+}
+@keyframes short-text-mobile {
+  from {
+    max-width: 405px;
+  }
+  to {
+    max-width: 252px;
+  }
+}
 body {
   margin: auto;
   max-width: 1440px;
@@ -107,15 +131,9 @@ h1 {
   position: relative;
   z-index: 1;
 }
-.bouton-rose .bouton:active .bouton__survole {
+.bouton-rose .bouton:hover .bouton__survole {
   opacity: 1;
   /* Opaque au survol */
-}
-@media all and (min-width: 992px) {
-  .bouton-rose .bouton:hover .bouton__survole {
-    opacity: 1;
-    /* Opaque au survol */
-  }
 }
 .bouton-rose .bouton__survole {
   position: absolute;
@@ -158,7 +176,7 @@ h1 {
   stroke: #000000;
 }
 .heart .fa-heart path:hover {
-  animation: heart-fill 1000ms ease-out forwards;
+  animation: heart-fill 500ms ease-out forwards;
   /* L'Animation se lance au survol ou clique */
 }
 .heart .fa-heart linearGradient .main-stop {
@@ -266,9 +284,11 @@ h1 {
 }
 .menus .ensamble-menu__articles .article-menu {
   width: 93%;
+  max-width: 345px;
 }
 @media all and (min-width: 681px) {
   .menus .ensamble-menu__articles .article-menu {
+    min-width: 345px;
     width: auto;
   }
 }
@@ -311,7 +331,7 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
-.menus .ensamble-menu__articles .article-menu__cartes a {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix {
   /* Les propriétés de l'apparence des cartes cliquables dans toutes les pages */
   display: flex;
   max-width: 434px;
@@ -320,32 +340,35 @@ h1 {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #e4e4e4;
   justify-content: space-between;
+  position: relative;
+  /* Pour positionner l'effet de coche au survol */
+  overflow: hidden;
   border-radius: 18px;
   color: #000000;
   width: 100%;
   margin: 7px;
 }
 @media all and (max-width: 680px) {
-  .menus .ensamble-menu__articles .article-menu__cartes a {
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix {
     height: 90%;
   }
 }
 @media all and (min-width: 992px) {
-  .menus .ensamble-menu__articles .article-menu__cartes a {
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix {
     margin: 15px;
   }
 }
 @media all and (min-width: 681px) {
-  .menus .ensamble-menu__articles .article-menu__cartes a {
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix {
     width: 97%;
   }
 }
-.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte {
   width: 91%;
   max-width: 405px;
   padding-left: 11px;
 }
-.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte h3 {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte h3 {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.02rem;
@@ -356,16 +379,22 @@ h1 {
   text-overflow: ellipsis;
 }
 @media all and (max-width: 345px) {
-  .menus .ensamble-menu__articles .article-menu__cartes a .menu-texte h3 {
-    max-width: 230px;
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte h3 {
+    max-width: 225px;
   }
 }
-.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte .ligne-prix {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-prix {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 405px;
 }
-.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte .ligne-prix span {
+@media all and (max-width: 345px) {
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-prix {
+    max-width: 225px;
+  }
+}
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-prix span {
   font-size: 0.93rem;
   margin: 5px 0 12px 0;
   /* Si le texte est trop long, il soit coupé et remplacé par trois points */
@@ -373,41 +402,30 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media all and (max-width: 345px) {
-  .menus .ensamble-menu__articles .article-menu__cartes a .menu-texte .ligne-prix span {
-    max-width: 230px;
-  }
-}
-.menus .ensamble-menu__articles .article-menu__cartes a .menu-texte .ligne-prix .prix p {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-prix .prix p {
   font-weight: 900;
   margin: 0;
-  padding-left: 7px;
+  padding: 0 0 5px 10px;
 }
-.menus .ensamble-menu__articles .article-menu__cartes a .check {
-  position: relative;
-  overflow: hidden;
-}
-.menus .ensamble-menu__articles .article-menu__cartes a .check .coche {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .coche {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  left: -11px;
   width: 58px;
   height: 70px;
   background-color: #99e2d0;
-  border-radius: 0 18px 18px 0;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 400ms linear;
+  /* Le fond vert s'agrandit de coté droite au survol */
+  transition: transform 400ms ease-out;
 }
-.menus .ensamble-menu__articles .article-menu__cartes a .check .fa-check-circle {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .fa-check-circle {
   display: block;
   position: absolute;
   top: 27px;
-  right: 0;
+  right: 21px;
   bottom: 0;
-  left: 7px;
   height: 20px;
   width: 20px;
   margin: 0;
@@ -415,37 +433,45 @@ h1 {
   font-size: 1.3rem;
   color: #ffffff;
   background-color: #99e2d0;
-  transition: transform 300ms linear 70ms;
-  transform: translateX(30px) rotate(0turn);
   opacity: 0;
+  /* Le check n'est pas visible sans survol */
+  transition: transform 300ms linear 70ms;
+  transform: translateX(35px) rotate(0turn);
+  /* Le check a deux transitions - se déplacer et tourner */
 }
-.menus .ensamble-menu__articles .article-menu__cartes a .check:hover .coche {
-  transform: scaleX(1);
-}
-.menus .ensamble-menu__articles .article-menu__cartes a .check:hover .fa-check-circle {
-  opacity: 1;
-  transform: translateX(0) rotate(2turn);
-}
-.menus .ensamble-menu__articles .article-menu__cartes a:hover {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
 }
-.menus .ensamble-menu__articles .article-menu__cartes a:hover .menu-texte {
-  max-width: 254px;
-  width: 100%;
-  /* Si le texte est trop long, il soit coupé et remplacé par trois points */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte {
+  animation: short-text-wide 300ms ease-out forwards;
+  /* Animations de texte au suvol */
+}
+@media all and (max-width: 680px) {
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte {
+    animation: short-text-mobile 300ms ease-out forwards;
+  }
 }
 @media all and (min-width: 681px) {
-  .menus .ensamble-menu__articles .article-menu__cartes a:hover .menu-texte {
-    width: 74%;
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte {
+    animation: short-text-wide 300ms ease-out forwards;
   }
+}
+@media all and (min-width: 992px) {
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte {
+    animation: short-text-desktop 300ms ease-out forwards;
+  }
+}
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .coche {
+  transform: scaleX(1);
+}
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .fa-check-circle {
+  opacity: 1;
+  transform: translateX(0) rotate(2turn);
 }
 .menus .ensamble-menu__articles #entrees {
   animation: menu-block 700ms ease-out 200ms backwards;
-  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+  /* Les animations de reduction de texte menus ayu survol */
 }
 .menus .ensamble-menu__articles #entrees .carte-choix--1 {
   animation: fade-in 200ms ease-out 450ms backwards;
@@ -458,7 +484,7 @@ h1 {
 }
 .menus .ensamble-menu__articles #plats {
   animation: menu-block 700ms ease-out 1250ms backwards;
-  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+  /* Les animations de reduction de texte menus ayu survol */
 }
 .menus .ensamble-menu__articles #plats .carte-choix--1 {
   animation: fade-in 200ms ease-out 1500ms backwards;
@@ -471,7 +497,7 @@ h1 {
 }
 .menus .ensamble-menu__articles #desserts {
   animation: menu-block 700ms ease-out 2300ms backwards;
-  /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+  /* Les animations de reduction de texte menus ayu survol */
 }
 .menus .ensamble-menu__articles #desserts .carte-choix--1 {
   animation: fade-in 200ms ease-out 2550ms backwards;
@@ -514,13 +540,8 @@ header .ligne-header h2 {
 header .ligne-header h1 {
   margin: auto;
 }
-header .ligne-header :active {
+header .ligne-header :hover {
   text-shadow: 2px 4px 10px #777777;
-}
-@media all and (min-width: 992px) {
-  header .ligne-header :hover {
-    text-shadow: 2px 4px 10px #777777;
-  }
 }
 
 #footer-content {
@@ -550,14 +571,9 @@ header .ligne-header :active {
   color: #ffffff;
   /* Les propiétés d'apparence des liens de footer */
 }
-#footer-content .lien-footer a:active {
+#footer-content .lien-footer a :hover {
   color: #ff79da;
   /* Utilisation d'esperluette Sass*/
-}
-@media all and (min-width: 992px) {
-  #footer-content .lien-footer a:hover {
-    color: #ff79da;
-  }
 }
 #footer-content ul {
   padding: 0px;
@@ -628,7 +644,7 @@ header .ligne-header :active {
   margin-top: 1px;
   background-color: #eaeaea;
 }
-.description .recherche-form:active {
+.description .recherche-form:hover {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #777777;
 }
@@ -918,15 +934,9 @@ header .ligne-header :active {
   font-size: 1.1rem;
   margin: 3px 0 16px 0;
 }
-#restaurants .cartes-restaurants figure:active {
+#restaurants .cartes-restaurants figure:hover {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
-}
-@media all and (min-width: 992px) {
-  #restaurants .cartes-restaurants figure:hover {
-    /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
-    box-shadow: 2px 4px 10px #b6b6b6;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

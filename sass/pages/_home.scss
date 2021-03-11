@@ -38,10 +38,8 @@
 			margin-top: 1px;
 			background-color: darken($colour-background, 4.7%);
 		}
-		&:active {
+		&:hover {
 			@include external-shadow(darken($colour-background, 50%));
-		}
-		@include desktop {
 		}
 		@include mobile-only {
 			width: 100%;
@@ -261,13 +259,8 @@
 					}
 				}
 			}
-			&:active {
+			&:hover {
 				@include external-shadow(darken($colour-background, 25%));
-			}
-			@include desktop {
-				&:hover {
-					@include external-shadow(darken($colour-background, 25%));
-				}
 			}
 		}
 	}

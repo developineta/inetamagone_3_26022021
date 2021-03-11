@@ -15,7 +15,7 @@
 			stroke-width: 30px;
 			stroke: $colour-black;
 			&:hover {
-				animation: heart-fill 1000ms ease-out forwards; /* L'Animation se lance au survol ou clique */
+				animation: heart-fill 500ms ease-out forwards; /* L'Animation se lance au survol ou clique */
 			}
 		}
 		linearGradient {

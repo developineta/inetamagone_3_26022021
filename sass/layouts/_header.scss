@@ -14,13 +14,8 @@ header {
 		h1 {
 			margin: auto;
 		}
-		:active {
+		:hover {
 			text-shadow: 2px 4px 10px darken($colour-background, 50%);
-		}
-		@include desktop {
-			:hover {
-				text-shadow: 2px 4px 10px darken($colour-background, 50%);
-			}
 		}
 	}
 }

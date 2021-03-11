@@ -22,13 +22,8 @@
 	}
 	.lien-footer a {
 		color: $colour-white; /* Les propiétés d'apparence des liens de footer */
-		&:active {
+		:hover {
 			color: $colour-secondary; /* Utilisation d'esperluette Sass*/
-		}
-		@include desktop {
-			&:hover {
-				color: $colour-secondary;
-			}
 		}
 	}
 	ul {
