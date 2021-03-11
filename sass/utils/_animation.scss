@@ -51,3 +51,27 @@
 		stroke: transparent;
 	}
 }
+@keyframes short-text-desktop {
+	from {
+		max-width: 405px;
+	}
+	to {
+		max-width: 238px;
+	}
+}
+@keyframes short-text-wide {
+	from {
+		max-width: 405px;
+	}
+	to {
+		max-width: 230px;
+	}
+}
+@keyframes short-text-mobile {
+	from {
+		max-width: 405px;
+	}
+	to {
+		max-width: 252px;
+	}
+}

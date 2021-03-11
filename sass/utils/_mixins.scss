@@ -91,16 +91,9 @@
 		@include flex-centre;
 		position: relative;
 		z-index: 1;
-		&:active {
+		&:hover {
 			& .bouton__survole {
 				opacity: 1; /* Opaque au survol */
-			}
-		}
-		@include desktop {
-			&:hover {
-				& .bouton__survole {
-					opacity: 1; /* Opaque au survol */
-				}
 			}
 		}
 		&__survole {
@@ -123,7 +116,7 @@
 	}
 }
 @mixin anime-menu-block($length, $time) {
-	animation: menu-block ($length) ease-out ($time) backwards; /* Le nom d'animation, temps de progression, type de progression, délai de début et l'état avant animation*/
+	animation: menu-block ($length) ease-out ($time) backwards; /* Les animations de reduction de texte menus ayu survol */
 }
 @mixin anime-menu-choix($time) {
 	animation: fade-in 200ms ease-out ($time) backwards;
