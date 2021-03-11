@@ -62,13 +62,15 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
-			align-items: center;
 			background-color: $colour-background;
 			padding-top: 39px;
 			@include wide-screen {
 				padding-top: 0;
 				flex-direction: row;
 				flex-wrap: wrap;
+			}
+			@include mobile-only {
+				align-items: center;
 			}
 			.article-menu {
 				width: 93%;
@@ -219,6 +221,9 @@
 				}
 				.carte-choix--3 {
 					@include anime-menu-choix($time: 850ms);
+				}
+				.carte-choix--4 {
+					@include anime-menu-choix($time: 1000ms);
 				}
 			}
 			#plats {

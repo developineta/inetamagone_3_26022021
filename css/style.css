@@ -271,7 +271,6 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
   background-color: #f6f6f6;
   padding-top: 39px;
 }
@@ -280,6 +279,11 @@ h1 {
     padding-top: 0;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+@media all and (max-width: 680px) {
+  .menus .ensamble-menu__articles {
+    align-items: center;
   }
 }
 .menus .ensamble-menu__articles .article-menu {
@@ -481,6 +485,9 @@ h1 {
 }
 .menus .ensamble-menu__articles #entrees .carte-choix--3 {
   animation: fade-in 200ms ease-out 850ms backwards;
+}
+.menus .ensamble-menu__articles #entrees .carte-choix--4 {
+  animation: fade-in 200ms ease-out 1000ms backwards;
 }
 .menus .ensamble-menu__articles #plats {
   animation: menu-block 700ms ease-out 1250ms backwards;
