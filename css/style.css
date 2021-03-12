@@ -57,28 +57,14 @@
     stroke: transparent;
   }
 }
-@keyframes short-text-desktop {
+@keyframes txt-wrap {
   from {
-    max-width: 405px;
+    justify-content: space-between;
+    width: 91%;
   }
   to {
-    max-width: 238px;
-  }
-}
-@keyframes short-text-wide {
-  from {
-    max-width: 405px;
-  }
-  to {
-    max-width: 230px;
-  }
-}
-@keyframes short-text-mobile {
-  from {
-    max-width: 405px;
-  }
-  to {
-    max-width: 252px;
+    justify-content: flex-start;
+    width: 74%;
   }
 }
 body {
@@ -349,7 +335,7 @@ h1 {
   overflow: hidden;
   border-radius: 18px;
   color: #000000;
-  width: 100%;
+  width: 101%;
   margin: 7px;
 }
 @media all and (max-width: 680px) {
@@ -368,11 +354,30 @@ h1 {
   }
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
   width: 91%;
   max-width: 405px;
   padding-left: 11px;
 }
-.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte h3 {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 405px;
+  /* Si le texte est trop long, il soit coupé et remplacé par trois points */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media all and (max-width: 345px) {
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-txt {
+    max-width: 225px;
+  }
+}
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-txt h3 {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.02rem;
@@ -383,22 +388,11 @@ h1 {
   text-overflow: ellipsis;
 }
 @media all and (max-width: 345px) {
-  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte h3 {
+  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-txt h3 {
     max-width: 225px;
   }
 }
-.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-prix {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 405px;
-}
-@media all and (max-width: 345px) {
-  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-prix {
-    max-width: 225px;
-  }
-}
-.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-prix span {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-txt span {
   font-size: 0.93rem;
   margin: 5px 0 12px 0;
   /* Si le texte est trop long, il soit coupé et remplacé par trois points */
@@ -406,10 +400,17 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-prix .prix p {
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .prix {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 46px;
+  height: 100%;
+}
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .prix p {
   font-weight: 900;
   margin: 0;
-  padding: 0 0 5px 10px;
+  padding: 0 0 13px 0;
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .coche {
   position: absolute;
@@ -423,6 +424,7 @@ h1 {
   transform-origin: right;
   /* Le fond vert s'agrandit de coté droite au survol */
   transition: transform 400ms ease-out;
+  /* L'effet de coche est réalisé avec les transitions */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .fa-check-circle {
   display: block;
@@ -448,30 +450,21 @@ h1 {
   box-shadow: 2px 4px 10px #b6b6b6;
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte {
-  animation: short-text-wide 300ms ease-out forwards;
-  /* Animations de texte au suvol */
+  animation: txt-wrap 300ms ease-out forwards;
 }
-@media all and (max-width: 680px) {
-  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte {
-    animation: short-text-mobile 300ms ease-out forwards;
-  }
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte .ligne-txt:nth-child(1) {
+  flex: 2.1;
+  /* Utilisé pour definir le rapport de deux blocks au survol */
 }
-@media all and (min-width: 681px) {
-  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte {
-    animation: short-text-wide 300ms ease-out forwards;
-  }
-}
-@media all and (min-width: 992px) {
-  .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte {
-    animation: short-text-desktop 300ms ease-out forwards;
-  }
+.menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte .prix:nth-child(2) {
+  flex: 0.4;
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .coche {
   transform: scaleX(1);
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .fa-check-circle {
-  opacity: 1;
   transform: translateX(0) rotate(2turn);
+  opacity: 1;
 }
 .menus .ensamble-menu__articles #entrees {
   animation: menu-block 700ms ease-out 200ms backwards;
@@ -518,7 +511,7 @@ h1 {
 .menus .ensamble-menu .bouton-rose {
   width: 100%;
   background-color: #f6f6f6;
-  padding: 43px 0 58px 0;
+  padding: 43px 0 84px 0;
 }
 .menus .ensamble-menu .bouton-rose .bouton {
   width: 185px;
