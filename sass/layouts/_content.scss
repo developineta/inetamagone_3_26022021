@@ -62,13 +62,15 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
-			align-items: center;
 			background-color: $colour-background;
 			padding-top: 39px;
 			@include wide-screen {
 				padding-top: 0;
 				flex-direction: row;
 				flex-wrap: wrap;
+			}
+			@include mobile-only {
+				align-items: center;
 			}
 			.article-menu {
 				width: 93%;
@@ -116,42 +118,54 @@
 						overflow: hidden;
 						border-radius: 18px;
 						color: $colour-black;
-						width: 100%;
+						width: 101%;
 						margin: 7px;
 						@include wide-screen {
 							width: 97%;
 						}
 						.menu-texte {
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							align-items: flex-end;
 							width: 91%;
 							max-width: 405px;
 							padding-left: 11px;
-							h3 {
-								font-size: $font-size-p;
-								font-weight: $font-weight600;
-								letter-spacing: $letter-spacing;
-								margin: 14px 0 0 0;
+							.ligne-txt {
+								display: flex;
+								flex-direction: column;
+								justify-content: space-between;
+								max-width: 405px;
 								@include wrap-dots;
 								@include small-screen {
 									max-width: 225px;
 								}
-							}
-							.ligne-prix {
-								display: flex;
-								justify-content: space-between;
-								align-items: center;
-								max-width: 405px;
-								@include small-screen {
-									max-width: 225px;
+								h3 {
+									font-size: $font-size-p;
+									font-weight: $font-weight600;
+									letter-spacing: $letter-spacing;
+									margin: 14px 0 0 0;
+									@include wrap-dots;
+									@include small-screen {
+										max-width: 225px;
+									}
 								}
 								span {
 									font-size: 0.93rem;
 									margin: 5px 0 12px 0;
 									@include wrap-dots;
 								}
-								.prix p {
+							}
+							.prix {
+								display: flex;
+								justify-content: flex-end;
+								align-items: flex-end;
+								width: 46px;
+								height: 100%;
+								p {
 									font-weight: $font-weight900;
 									margin: 0;
-									padding: 0 0 5px 10px;
+									padding: 0 0 13px 0;
 								}
 							}
 						}
@@ -165,7 +179,7 @@
 							background-color: #99e2d0;
 							transform: scaleX(0);
 							transform-origin: right; /* Le fond vert s'agrandit de coté droite au survol */
-							transition: transform 400ms ease-out;
+							transition: transform 400ms ease-out; /* L'effet de coche est réalisé avec les transitions */
 						}
 						.fa-check-circle {
 							display: block;
@@ -187,23 +201,20 @@
 						&:hover {
 							@include external-shadow(darken($colour-background, 25%));
 							.menu-texte {
-								animation: short-text-wide 300ms ease-out forwards; /* Animations de texte au suvol */
-								@include mobile-only {
-									animation: short-text-mobile 300ms ease-out forwards;
+								animation: txt-wrap 300ms ease-out forwards;
+								.ligne-txt:nth-child(1) {
+									flex: 2.1; /* Utilisé pour definir le rapport de deux blocks au survol */
 								}
-								@include wide-screen {
-									animation: short-text-wide 300ms ease-out forwards;
-								}
-								@include desktop {
-									animation: short-text-desktop 300ms ease-out forwards;
+								.prix:nth-child(2) {
+									flex: 0.4;
 								}
 							}
 							.coche {
 								transform: scaleX(1);
 							}
 							.fa-check-circle {
-								opacity: 1;
 								transform: translateX(0) rotate(2turn);
+								opacity: 1;
 							}
 						}
 					}
@@ -219,6 +230,9 @@
 				}
 				.carte-choix--3 {
 					@include anime-menu-choix($time: 850ms);
+				}
+				.carte-choix--4 {
+					@include anime-menu-choix($time: 1000ms);
 				}
 			}
 			#plats {
@@ -249,7 +263,7 @@
 		.bouton-rose {
 			width: 100%;
 			background-color: $colour-background;
-			padding: 43px 0 58px 0;
+			padding: 43px 0 84px 0;
 			.bouton {
 				width: 185px; /* Définition de la taille de bouton mixin */
 			}
