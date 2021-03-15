@@ -1,7 +1,10 @@
 body {
 	margin: auto;
 	max-width: $max-width-1440;
+	width: auto;
+	position: relative; /* Pour positionner le loader spinner */
 }
+
 .fonctionnement-ensamble h2,
 .restaurants h2 {
 	@include desktop {

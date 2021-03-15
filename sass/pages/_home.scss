@@ -5,8 +5,8 @@
 	@include flex-column;
 	justify-content: space-between;
 	background-color: $colour-background;
-	position: relative;
 	@include wide-screen {
+		position: relative;
 		height: 225px;
 		&::before {
 			/* La ligne au dessus de la section */

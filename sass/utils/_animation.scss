@@ -61,3 +61,63 @@
 		width: 74%;
 	}
 }
+@keyframes play-loader {
+	90% {
+		opacity: 1; /* Visibilité de loader */
+		z-index: 4; /* Sa position par dessus des autres éléments */
+		width: 100%;
+		height: auto;
+		max-width: $max-width-1440;
+		max-height: 2600px;
+		min-height: 1400px;
+	}
+	100% {
+		opacity: 0; /* À la fin de l'animation le loader devient invisible et prend la place derrière les autres éléments */
+		height: 0;
+		z-index: 0;
+	}
+}
+@keyframes circle-turn {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes fork-shake {
+	25% {
+		transform: translateX(10%);
+	}
+	75% {
+		transform: translateX(-10%);
+	}
+}
+@keyframes spinner-shine-before {
+	0% {
+		top: 109%;
+		right: 20%;
+	}
+	50% {
+		top: -33%;
+		right: -140%;
+	}
+	100% {
+		top: 109%;
+		right: 20%;
+	}
+}
+@keyframes spinner-shine-after {
+	0% {
+		top: 121%;
+		right: 38%;
+	}
+	50% {
+		top: -22%;
+		right: -120%;
+	}
+	100% {
+		top: 121%;
+		right: 38%;
+	}
+}
