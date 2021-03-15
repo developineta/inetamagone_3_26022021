@@ -28,3 +28,105 @@
 		}
 	}
 }
+/* Réalisation de loader spinner */
+#spinner-overlay {
+	display: hidden;
+	/* Caché sur la page */
+	width: 100%; /* Couvre toute la page */
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(246, 246, 246, 0.9);
+	/* Couleur rgba utilisé pour définir opacité, pour ne pas définir opacité apart qui affecte l'opacité de l'image de spinner */
+	z-index: 2;
+	animation: play-loader 2000ms forwards;
+	.spinner-block {
+		display: flex;
+		justify-content: center;
+		margin-top: 20%;
+		.anim-container {
+			position: relative;
+			top: 0px;
+			left: 0px;
+			width: 265px;
+			height: 265px;
+			border-radius: 100%;
+			overflow: hidden;
+			.cercle--contour {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 265px;
+				height: 265px;
+				border-radius: 100%;
+				animation: circle-turn 1500ms infinite linear;
+				@include gradient-gris;
+				overflow: hidden;
+			}
+			.cercle--grand {
+				position: absolute;
+				top: 12px;
+				left: 12px;
+				width: 240px;
+				height: 240px;
+				border-radius: 100%;
+				@include gradient-primary($direction: to right top);
+			}
+			.cercle--fin {
+				position: absolute;
+				top: 48px;
+				left: 48px;
+				width: 165px;
+				height: 165px;
+				border-radius: 100%;
+				animation: circle-turn 1500ms infinite linear;
+				@include gradient-gris;
+			}
+			.cercle--petit {
+				position: relative;
+				top: 53px;
+				left: 53px;
+				width: 155px;
+				height: 155px;
+				border-radius: 100%;
+				@include gradient-primary($direction: to left bottom);
+				&::before {
+					content: "";
+					position: absolute;
+					top: 109%;
+					right: 20%;
+					width: 300px;
+					height: 15px;
+					background-color: $colour-white;
+					opacity: 0.2;
+					transform: rotate(45deg);
+					animation: spinner-shine-before 4000ms ease-in-out 700ms infinite;
+					z-index: 1;
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					top: 121%;
+					right: 38%;
+					width: 300px;
+					height: 30px;
+					background-color: $colour-white;
+					opacity: 0.2;
+					transform: rotate(45deg);
+					animation: spinner-shine-after 4000ms ease-in-out 700ms infinite;
+					z-index: 1;
+				}
+			}
+			.fa-utensils {
+				font-size: 4rem;
+				position: absolute;
+				top: 98px;
+				left: 104px;
+				color: darken($colour-background, 60%);
+				animation: fork-shake 200ms ease-in-out 750ms 3;
+			}
+		}
+	}
+}

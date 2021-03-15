@@ -60,6 +60,27 @@
 		29px 57px 61px -37px lighten($colour-secondary, 5%) inset; /* Ombres au survol */
 	border-radius: 25px 25px 25px 25px;
 }
+@mixin gradient-primary($direction) {
+	/* Utilisé pour spinner */
+	background-image: linear-gradient(
+		($direction),
+		#ff79da,
+		#e86edb,
+		#cf64dc,
+		#b35cdc,
+		#9356dc
+	);
+}
+@mixin gradient-gris {
+	background-image: linear-gradient(
+		to right top,
+		#f6f6f6,
+		#dbdbdb,
+		#c1c1c1,
+		#a8a8a8,
+		#8f8f8f
+	);
+}
 @mixin wrap-dots {
 	/* Si le texte est trop long, il soit coupé et remplacé par trois points */
 	white-space: nowrap;
