@@ -67,6 +67,25 @@
     width: 74%;
   }
 }
+@keyframes play-loader {
+  90% {
+    opacity: 1;
+    /* Visibilité de loader */
+    z-index: 4;
+    /* Sa position par dessus des autres éléments */
+    width: 100%;
+    height: auto;
+    max-width: 1440px;
+    max-height: 2600px;
+    min-height: 1400px;
+  }
+  100% {
+    opacity: 0;
+    /* À la fin de l'animation le loader devient invisible et prend la place derrière les autres éléments */
+    height: 0;
+    z-index: 0;
+  }
+}
 @keyframes circle-turn {
   from {
     transform: rotate(0deg);
@@ -88,21 +107,13 @@
     top: 109%;
     right: 20%;
   }
-  25% {
-    top: -33%;
-    right: -140%;
-  }
   50% {
-    top: 409%;
-    right: 320%;
-  }
-  75% {
     top: -33%;
     right: -140%;
   }
   100% {
-    top: 409%;
-    right: 320%;
+    top: 109%;
+    right: 20%;
   }
 }
 @keyframes spinner-shine-after {
@@ -110,37 +121,21 @@
     top: 121%;
     right: 38%;
   }
-  25% {
-    top: -22%;
-    right: -120%;
-  }
   50% {
-    top: 421%;
-    right: 338%;
-  }
-  75% {
     top: -22%;
     right: -120%;
   }
   100% {
-    top: 421%;
-    right: 338%;
-  }
-}
-@keyframes play-loader {
-  0% {
-    display: block;
-  }
-  50% {
-    display: block;
-  }
-  100% {
-    display: hidden;
+    top: 121%;
+    right: 38%;
   }
 }
 body {
   margin: auto;
   max-width: 1440px;
+  width: auto;
+  position: relative;
+  /* Pour positionner le loader spinner */
 }
 
 @media all and (min-width: 992px) {
@@ -216,6 +211,7 @@ h1 {
   /* Le texte de bouton reste par dessus des effets de bouton */
 }
 
+/* Réalisation de coeur qui change l'apparence au survol */
 .heart {
   margin-left: 36px;
   display: flex;
@@ -227,7 +223,7 @@ h1 {
   }
 }
 .heart .fa-heart path {
-  /* Définition des parametre de bordure de coeur */
+  /* Définition des parametres de bordure de coeur */
   fill: transparent;
   stroke-width: 30px;
   stroke: #000000;
@@ -238,6 +234,7 @@ h1 {
 }
 .heart .fa-heart linearGradient .main-stop {
   stop-color: #9356dc;
+  /* Définition des couleurs de gradient */
 }
 .heart .fa-heart linearGradient .alt-stop {
   stop-color: #ff79da;
@@ -245,24 +242,30 @@ h1 {
 
 /* Réalisation de loader spinner */
 #spinner-overlay {
-  display: hidden;
-  /* Caché sur la page */
+  position: absolute;
+  /* Positionné par rapport de body */
   width: 100%;
   /* Couvre toute la page */
-  height: 100%;
+  height: auto;
+  margin: 0;
+  max-width: 1440px;
+  max-height: 2600px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(246, 246, 246, 0.9);
-  /* Couleur rgba utilisé pour définir opacité, pour ne pas définir opacité apart qui affecte l'opacité de l'image de spinner */
-  z-index: 2;
-  animation: play-loader 2000ms forwards;
+  /* Couleur rgba utilisé pour définir opacité, pour ne pas définir opacité apart qui affecte l'opacité de l'image de loader */
+  z-index: 4;
+  /* Place le loader par dessus de l'autre contenu */
+  animation: play-loader 2500ms forwards;
+  /* L'apparition et disparition de loader entier */
 }
 #spinner-overlay .spinner-block {
   display: flex;
+  /* La position des images de loader sur la page */
   justify-content: center;
-  margin-top: 20%;
+  padding-top: 20%;
 }
 #spinner-overlay .spinner-block .anim-container {
   position: relative;
@@ -272,6 +275,7 @@ h1 {
   height: 265px;
   border-radius: 100%;
   overflow: hidden;
+  /* Les éléments de l'animation qui dépassent les bordures de ce block pendant l'animation, ne sont pas visibles */
 }
 #spinner-overlay .spinner-block .anim-container .cercle--contour {
   position: absolute;
@@ -280,9 +284,10 @@ h1 {
   width: 265px;
   height: 265px;
   border-radius: 100%;
-  animation: circle-turn 1500ms infinite linear;
+  animation: circle-turn 1500ms linear 2;
+  /* Les animations de chaque élément se passent "au milieu" de temps de l'animation de loader intégral */
+  /* Utilisé pour loader */
   background-image: linear-gradient(to right top, #f6f6f6, #dbdbdb, #c1c1c1, #a8a8a8, #8f8f8f);
-  overflow: hidden;
 }
 #spinner-overlay .spinner-block .anim-container .cercle--grand {
   position: absolute;
@@ -291,7 +296,7 @@ h1 {
   width: 240px;
   height: 240px;
   border-radius: 100%;
-  /* Utilisé pour spinner */
+  /* Utilisé pour loader */
   background-image: linear-gradient(to right top, #ff79da, #e86edb, #cf64dc, #b35cdc, #9356dc);
 }
 #spinner-overlay .spinner-block .anim-container .cercle--fin {
@@ -301,7 +306,8 @@ h1 {
   width: 165px;
   height: 165px;
   border-radius: 100%;
-  animation: circle-turn 1500ms infinite linear;
+  animation: circle-turn 1500ms linear 2;
+  /* Utilisé pour loader */
   background-image: linear-gradient(to right top, #f6f6f6, #dbdbdb, #c1c1c1, #a8a8a8, #8f8f8f);
 }
 #spinner-overlay .spinner-block .anim-container .cercle--petit {
@@ -311,7 +317,7 @@ h1 {
   width: 155px;
   height: 155px;
   border-radius: 100%;
-  /* Utilisé pour spinner */
+  /* Utilisé pour loader */
   background-image: linear-gradient(to left bottom, #ff79da, #e86edb, #cf64dc, #b35cdc, #9356dc);
 }
 #spinner-overlay .spinner-block .anim-container .cercle--petit::before {
@@ -324,8 +330,9 @@ h1 {
   background-color: #ffffff;
   opacity: 0.2;
   transform: rotate(45deg);
-  animation: spinner-shine-before 4000ms ease-in-out 700ms infinite;
+  animation: spinner-shine-before 1500ms ease-in-out 500ms 1;
   z-index: 1;
+  /* Les éléments sont placés par dessus de l'cone des ustensiles */
 }
 #spinner-overlay .spinner-block .anim-container .cercle--petit::after {
   content: "";
@@ -337,7 +344,7 @@ h1 {
   background-color: #ffffff;
   opacity: 0.2;
   transform: rotate(45deg);
-  animation: spinner-shine-after 4000ms ease-in-out 700ms infinite;
+  animation: spinner-shine-after 1500ms ease-in-out 500ms 1;
   z-index: 1;
 }
 #spinner-overlay .spinner-block .anim-container .fa-utensils {
@@ -346,7 +353,8 @@ h1 {
   top: 98px;
   left: 104px;
   color: #5d5d5d;
-  animation: fork-shake 200ms ease-in-out 750ms 3;
+  animation: fork-shake 200ms ease-in-out 1150ms 3;
+  /* Les durées de toutes les animations n'excède pas la durée totale de loader spinner */
 }
 
 .menus {
@@ -688,7 +696,7 @@ h1 {
 .menus .ensamble-menu .bouton-rose {
   width: 100%;
   background-color: #f6f6f6;
-  padding: 43px 0 84px 0;
+  padding: 40px 0 56px 0;
 }
 .menus .ensamble-menu .bouton-rose .bouton {
   width: 185px;
@@ -758,6 +766,7 @@ header .ligne-header :hover {
 #footer-content ul li {
   margin-bottom: 7px;
   /* Nesting utilisé */
+  width: auto;
 }
 
 .accueil {
@@ -769,10 +778,10 @@ header .ligne-header :hover {
   flex-direction: column;
   justify-content: space-between;
   background-color: #f6f6f6;
-  position: relative;
 }
 @media all and (min-width: 681px) {
   .description {
+    position: relative;
     height: 225px;
   }
   .description::before {

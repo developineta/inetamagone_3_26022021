@@ -1,6 +1,7 @@
 .bouton-rose {
 	@include btn;
 }
+/* Réalisation de coeur qui change l'apparence au survol */
 .heart {
 	margin-left: 36px;
 	display: flex;
@@ -10,7 +11,7 @@
 	}
 	.fa-heart {
 		path {
-			/* Définition des parametre de bordure de coeur */
+			/* Définition des parametres de bordure de coeur */
 			fill: transparent;
 			stroke-width: 30px;
 			stroke: $colour-black;
@@ -20,7 +21,7 @@
 		}
 		linearGradient {
 			.main-stop {
-				stop-color: $colour-primary;
+				stop-color: $colour-primary; /* Définition des couleurs de gradient */
 			}
 			.alt-stop {
 				stop-color: $colour-secondary;
@@ -30,22 +31,25 @@
 }
 /* Réalisation de loader spinner */
 #spinner-overlay {
-	display: hidden;
-	/* Caché sur la page */
+	position: absolute; /* Positionné par rapport de body */
 	width: 100%; /* Couvre toute la page */
-	height: 100%;
+	height: auto;
+	margin: 0;
+	max-width: $max-width-1440;
+	max-height: 2600px;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	background-color: rgba(246, 246, 246, 0.9);
-	/* Couleur rgba utilisé pour définir opacité, pour ne pas définir opacité apart qui affecte l'opacité de l'image de spinner */
-	z-index: 2;
-	animation: play-loader 2000ms forwards;
+	/* Couleur rgba utilisé pour définir opacité, pour ne pas définir opacité apart qui affecte l'opacité de l'image de loader */
+	z-index: 4; /* Place le loader par dessus de l'autre contenu */
+	animation: play-loader 2500ms forwards;
+	/* L'apparition et disparition de loader entier */
 	.spinner-block {
-		display: flex;
+		display: flex; /* La position des images de loader sur la page */
 		justify-content: center;
-		margin-top: 20%;
+		padding-top: 20%;
 		.anim-container {
 			position: relative;
 			top: 0px;
@@ -53,7 +57,7 @@
 			width: 265px;
 			height: 265px;
 			border-radius: 100%;
-			overflow: hidden;
+			overflow: hidden; /* Les éléments de l'animation qui dépassent les bordures de ce block pendant l'animation, ne sont pas visibles */
 			.cercle--contour {
 				position: absolute;
 				top: 0px;
@@ -61,9 +65,8 @@
 				width: 265px;
 				height: 265px;
 				border-radius: 100%;
-				animation: circle-turn 1500ms infinite linear;
+				animation: circle-turn 1500ms linear 2; /* Les animations de chaque élément se passent "au milieu" de temps de l'animation de loader intégral */
 				@include gradient-gris;
-				overflow: hidden;
 			}
 			.cercle--grand {
 				position: absolute;
@@ -81,7 +84,7 @@
 				width: 165px;
 				height: 165px;
 				border-radius: 100%;
-				animation: circle-turn 1500ms infinite linear;
+				animation: circle-turn 1500ms linear 2;
 				@include gradient-gris;
 			}
 			.cercle--petit {
@@ -102,8 +105,8 @@
 					background-color: $colour-white;
 					opacity: 0.2;
 					transform: rotate(45deg);
-					animation: spinner-shine-before 4000ms ease-in-out 700ms infinite;
-					z-index: 1;
+					animation: spinner-shine-before 1500ms ease-in-out 500ms 1;
+					z-index: 1; /* Les éléments sont placés par dessus de l'cone des ustensiles */
 				}
 				&::after {
 					content: "";
@@ -115,7 +118,7 @@
 					background-color: $colour-white;
 					opacity: 0.2;
 					transform: rotate(45deg);
-					animation: spinner-shine-after 4000ms ease-in-out 700ms infinite;
+					animation: spinner-shine-after 1500ms ease-in-out 500ms 1;
 					z-index: 1;
 				}
 			}
@@ -125,7 +128,7 @@
 				top: 98px;
 				left: 104px;
 				color: darken($colour-background, 60%);
-				animation: fork-shake 200ms ease-in-out 750ms 3;
+				animation: fork-shake 200ms ease-in-out 1150ms 3; /* Les durées de toutes les animations n'excède pas la durée totale de loader spinner */
 			}
 		}
 	}
