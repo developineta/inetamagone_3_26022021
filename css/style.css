@@ -69,6 +69,7 @@
 }
 @keyframes play-loader {
   90% {
+    /* À 90% le loader commence a disparaître */
     opacity: 1;
     /* Visibilité de loader */
     z-index: 4;
@@ -80,8 +81,8 @@
     min-height: 1400px;
   }
   100% {
-    opacity: 0;
     /* À la fin de l'animation le loader devient invisible et prend la place derrière les autres éléments */
+    opacity: 0;
     height: 0;
     z-index: 0;
   }
