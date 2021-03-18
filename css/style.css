@@ -201,7 +201,7 @@ h1 {
   opacity: 0;
   /* Transparence quand pas de survol */
   z-index: 2;
-  transition: opacity 250ms;
+  transition: opacity 350ms;
   /* L'effet plus doux au survol */
 }
 .bouton-rose .bouton__texte {
@@ -608,9 +608,7 @@ h1 {
   background-color: #99e2d0;
   transform: scaleX(0);
   transform-origin: right;
-  /* Le fond vert s'agrandit de coté droite au survol */
   transition: transform 400ms ease-out;
-  /* L'effet de coche est réalisé avec les transitions */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .fa-check-circle {
   display: block;
@@ -626,10 +624,8 @@ h1 {
   color: #ffffff;
   background-color: #99e2d0;
   opacity: 0;
-  /* Le check n'est pas visible sans survol */
   transition: transform 300ms linear 70ms;
   transform: translateX(35px) rotate(0turn);
-  /* Le check a deux transitions - se déplacer et tourner */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover {
   /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
@@ -640,7 +636,7 @@ h1 {
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte .ligne-txt:nth-child(1) {
   flex: 2.1;
-  /* Utilisé pour definir le rapport de deux blocks au survol */
+  /* Utilisé pour définir le rapport de deux blocks au survol */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte .prix:nth-child(2) {
   flex: 0.4;

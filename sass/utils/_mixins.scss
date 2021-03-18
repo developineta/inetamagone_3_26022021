@@ -127,7 +127,7 @@
 			@include btn-shadows-hover;
 			opacity: 0; /* Transparence quand pas de survol */
 			z-index: 2;
-			transition: opacity 250ms; /* L'effet plus doux au survol */
+			transition: opacity 350ms; /* L'effet plus doux au survol */
 		}
 		&__texte {
 			color: $colour-white;

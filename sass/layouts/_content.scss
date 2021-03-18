@@ -178,8 +178,8 @@
 							height: 70px;
 							background-color: #99e2d0;
 							transform: scaleX(0);
-							transform-origin: right; /* Le fond vert s'agrandit de coté droite au survol */
-							transition: transform 400ms ease-out; /* L'effet de coche est réalisé avec les transitions */
+							transform-origin: right;
+							transition: transform 400ms ease-out;
 						}
 						.fa-check-circle {
 							display: block;
@@ -194,16 +194,16 @@
 							font-size: 1.3rem;
 							color: #ffffff;
 							background-color: #99e2d0;
-							opacity: 0; /* Le check n'est pas visible sans survol */
+							opacity: 0;
 							transition: transform 300ms linear 70ms;
-							transform: translateX(35px) rotate(0turn); /* Le check a deux transitions - se déplacer et tourner */
+							transform: translateX(35px) rotate(0turn);
 						}
 						&:hover {
 							@include external-shadow(darken($colour-background, 25%));
 							.menu-texte {
 								animation: txt-wrap 300ms ease-out forwards;
 								.ligne-txt:nth-child(1) {
-									flex: 2.1; /* Utilisé pour definir le rapport de deux blocks au survol */
+									flex: 2.1; /* Utilisé pour définir le rapport de deux blocks au survol */
 								}
 								.prix:nth-child(2) {
 									flex: 0.4;
