@@ -4,8 +4,9 @@
 .description {
 	@include flex-column;
 	justify-content: space-between;
-	background-color: $colour-background;
+	background-color: $colour-background; /* Utilisation de variable */
 	@include wide-screen {
+		/* Media queries sont placés directement dans les sélécteurs */
 		position: relative;
 		height: 225px;
 		&::before {
@@ -25,7 +26,9 @@
 		height: 100%;
 		background-color: darken($colour-background, 4.7%);
 		position: relative;
-		@include external-shadow(darken($colour-background, 25%));
+		@include external-shadow(
+			darken($colour-background, 25%)
+		); /* Utilisation de fonctions de couleurs */
 		i {
 			padding: 17px 15px 0px 59px; /* Le positionnement de l'icone dans sa <div> */
 		}
@@ -74,7 +77,10 @@
 			margin-top: 14px;
 		}
 		h2 {
-			font-size: map-get($font-size-heading, h2);
+			font-size: map-get(
+				$font-size-heading,
+				h2
+			); /* Utilisation de map définie dans les variables */
 			font-weight: $font-weight900;
 			margin: 36px 0 0 0;
 			width: 77%;
@@ -85,7 +91,7 @@
 		}
 	}
 	.bouton-rose {
-		margin-bottom: 57px;
+		margin-bottom: 57px; /* Les propriétés principales de bouton sont définies dans les mixins */
 		@include wide-screen {
 			position: absolute;
 			top: 138px;
@@ -140,6 +146,7 @@
 				margin: 0 0 20px 0;
 			}
 			&--active {
+				/* Sélécteur BEM utilisé */
 				background-color: #f5edff;
 			}
 			@include desktop {

@@ -1,6 +1,6 @@
 @mixin small-screen {
 	@media all and (max-width: 345px) {
-		@content;
+		@content; /* Permet au Sass de remplacer mot 'content' par les propriétés qui vont être définies dans le code */
 	}
 }
 @mixin mobile-only {
@@ -19,8 +19,8 @@
 	}
 }
 @mixin logo {
-	/* Maps utilisés pour les polices de headings */
 	font-family: $font-Shrikhand, $font-Sans-s;
+	/* Maps utilisés pour les polices de headings */
 	font-size: map-get($font-size-heading, h1);
 	font-weight: normal;
 	margin: 7px 0px 5px 0px;
@@ -48,7 +48,7 @@
 	flex-direction: column;
 }
 @mixin external-shadow($colour) {
-	/* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+	/* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
 	box-shadow: 2px 4px 10px ($colour);
 }
 @mixin btn-shadows {
@@ -64,18 +64,18 @@
 	/* Utilisé pour loader */
 	background-image: linear-gradient(
 		($direction),
-		#ff79da,
+		$colour-secondary,
 		#e86edb,
 		#cf64dc,
 		#b35cdc,
-		#9356dc
+		$colour-primary
 	);
 }
 @mixin gradient-gris {
 	/* Utilisé pour loader */
 	background-image: linear-gradient(
 		to right top,
-		#f6f6f6,
+		$colour-background,
 		#dbdbdb,
 		#c1c1c1,
 		#a8a8a8,
@@ -83,10 +83,10 @@
 	);
 }
 @mixin wrap-dots {
-	/* Si le texte est trop long, il soit coupé et remplacé par trois points */
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	/* Si le texte est trop long, il soit coupé et remplacé par les points de suspension */
+	white-space: nowrap; /* Le texte reste dans la même ligne */
+	overflow: hidden; /* N'a pas de débordement */
+	text-overflow: ellipsis; /* Les points de suspension */
 }
 @mixin content-cards {
 	/* Les propriétés de l'apparence des cartes cliquables dans toutes les pages */
@@ -108,7 +108,7 @@
 		border-radius: 25px 25px 25px 25px;
 		height: 50px;
 		width: 218px;
-		border: none; /* Enlève la bordure de boutton qui est définie par défaut */
+		border: none; /* Enlève la bordure de bouton qui est définie par défaut */
 		@include btn-shadows;
 		@include flex-centre;
 		position: relative;
@@ -126,20 +126,20 @@
 			left: 0;
 			@include btn-shadows-hover;
 			opacity: 0; /* Transparence quand pas de survol */
-			z-index: 2;
-			transition: opacity 250ms; /* L'effet plus doux au survol */
+			z-index: 2; /* Par dessus d'élément parent */
+			transition: opacity 350ms; /* L'effet plus doux au survol */
 		}
 		&__texte {
 			color: $colour-white;
 			font-size: 1rem;
 			margin: auto;
-			z-index: 3; /* Le texte de bouton reste par dessus des effets de bouton */
+			z-index: 3; /* Le texte de bouton reste par dessus de tous les autres effets de bouton */
 		}
 	}
 }
-@mixin anime-menu-block($length, $time) {
-	animation: menu-block ($length) ease-out ($time) backwards; /* Les animations de reduction de texte menus ayu survol */
+@mixin anime-menu-block($duration, $delay) {
+	animation: menu-block ($duration) ease-out ($delay) backwards; /* Les animations de reduction de texte menus au survol */
 }
-@mixin anime-menu-choix($time) {
-	animation: fade-in 200ms ease-out ($time) backwards;
+@mixin anime-menu-choix($delay) {
+	animation: fade-in 200ms ease-out ($delay) backwards;
 }

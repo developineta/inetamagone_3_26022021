@@ -2,13 +2,13 @@
 <html lang="fr">
 	<head>
         <meta charset="utf-8">
-        <meta name=viewport content="width=device-width, initial-scale=1"> <!-- Ajout de Viewport pour utilisation de Media quaries -->
+        <meta name=viewport content="width=device-width, initial-scale=1"> <!-- Ajout de Viewport pour adapter la taille du site à la taille d'écran -->
 		<title>Ohmyfood</title>
         <link rel="stylesheet" href="css/style.css" type = "text/css">
-        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet"> <!-- Ajout de police Google Shrikhand -->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet"> <!-- Ajout de police Google Roboto -->
+        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet"> <!-- Ajout de la police Google Shrikhand -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet"> <!-- Ajout de la police Google Roboto -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/d034506d63.js" crossorigin="anonymous"></script> <!-- Ajout de lien vers bibliothèque Font Awesome -->
+        <script src="https://kit.fontawesome.com/d034506d63.js" crossorigin="anonymous"></script> <!-- Ajout de lien vers la bibliothèque Font Awesome -->
 	</head>
     <body>
         <div id="spinner-overlay"> <!-- Le block de loader spinner -->
@@ -22,13 +22,13 @@
                 </div>
             </div>
         </div>
-        <div id="bloc_page"> <!-- Definition de la partie intègrale de la page -->
+        <div id="bloc_page"> <!-- Définition de la partie intègrale de la page -->
             <header>
                 <h1 class="accueil">ohmyfood</h1> <!-- Le logo de la page -->
             </header>
 
             <section class="description">
-                <form action="action_page.php" class="recherche-form" > <!-- Le forme pour créer le champ de recherche -->
+                <form action="action_page.php" class="recherche-form" > <!-- La création de champ de recherche -->
                     <i class="fas fa-map-marker-alt"></i> <!-- L'icone à partir de la bibliothèque Font Awesome -->
                     <input type="text" class="recherche-form__champ" value="Paris, Belleville" />
                 </form>
@@ -38,7 +38,9 @@
                 </div>
                 <div class="bouton-rose">
                     <a class="bouton" data-action="button" href="#restaurants" data-title="Explorer nos restaurants">
-                        <div class="bouton__texte"><span>Explorer nos restaurants</span></div>
+                        <div class="bouton__texte">
+                            <span>Explorer nos restaurants</span>
+                        </div>
                         <div class="bouton__survole"></div>
                     </a>
                 </div>
@@ -48,17 +50,23 @@
                 <h2>Fonctionnement</h2>
                 <ul class="fonctionnement"> <!-- Les étapes de fonctionnement sont rangés en liste à puces -->
                     <li class="fonctionnement__etapes">
-                        <div class="fonctionnement__numeros"><p>1</p></div>
+                        <div class="fonctionnement__numeros">
+                            <p>1</p>
+                        </div>
                         <i class="fas fa-mobile-alt"></i> <!-- Les icones à partir de la bibliothèque Font Awesome -->
                         <span class="fonctionnement__texte">Choissisez un restaurant</span>
                     </li>
                     <li class="fonctionnement__etapes">
-                        <div class="fonctionnement__numeros"><p>2</p></div>
+                        <div class="fonctionnement__numeros">
+                            <p>2</p>
+                        </div>
                         <i class="fas fa-list-ul"></i>
                         <span class="fonctionnement__texte">Composez votre menu</span>
                     </li>
                     <li class="fonctionnement__etapes fonctionnement__etapes--active">
-                        <div class="fonctionnement__numeros"><p>3</p></div>
+                        <div class="fonctionnement__numeros">
+                            <p>3</p>
+                        </div>
                         <i class="fas fa-store"></i>
                         <span class="fonctionnement__texte">Dégustez au restaurant</span>
                     </li>
@@ -67,17 +75,17 @@
 
             <section id="restaurants">
                 <h2>Restaurants</h2> <!-- Heading de la section -->
-                <div class="cartes-restaurants"> <!-- Contient toutes les cartes de ce block pour pouvoir le cibler en CSS -->
+                <div class="cartes-restaurants"> <!-- Contient toutes les cartes de ce block -->
                     <figure> 
                         <a href="menilmontant.html"> <!-- Lien vers une autre page de ce site -->
-                            <picture> <!-- Les photos sont adaptés à chaque taille de l'écran --> 
+                            <picture> <!-- Une seule taille d'image utilisé -->
                                 <img src="images/restaurants/menilmontant_mob.jpg" class="img_restaurant" alt="Ménilmontant" />
                             </picture>
                             <div class="nouveau">
                                 <span>Nouveau</span>
                             </div>
                         </a>
-                        <figcaption> <!-- L'apparence des textes dans les cartes de même block est pareil -->
+                        <figcaption> <!-- L'apparence de textes dans les cartes de même block est pareille -->
                             <a href="menilmontant.html" class="legende-restaurant__txt">
                                 <h3>La palette du goût</h3> <!-- <h3> est utilisé pour tous les titres de cartes -->
                                 <p>Ménilmontant</p>
@@ -85,7 +93,7 @@
                             <div class="heart"> <!-- La réalisation de coeur utilisant image SVG --> 
                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="-19 0 600 600"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
                                     <linearGradient id="rose-violet" x2="0" y2="1.3"> <!-- La position des couleurs sur les axes -->
-                                        <stop class="main-stop" offset="0%" /> <!-- Les proportions de gradient -->
+                                        <stop class="main-stop" offset="0%" /> <!-- Les proportions de gradient et classes pour définir les couleurs en CSS -->
                                         <stop class="alt-stop" offset="65%" />
                                     </linearGradient>
                                 </svg>
@@ -95,7 +103,7 @@
                     <figure>
                         <a href="charonne.html">
                             <picture>  
-                                <img src="images/restaurants/charonne_mob.jpg" class="img_restaurant" alt="Charonne" /> <!-- Une seule taille d'image utilisé -->
+                                <img src="images/restaurants/charonne_mob.jpg" class="img_restaurant" alt="Charonne" />
                             </picture>
                         </a>
                         <div class="nouveau">
@@ -147,7 +155,7 @@
             </section>
             <footer id="footer-content">
                 <h4>ohmyfood</h4>
-                <ul> <!-- Les éléments de footer rangés en liste à puces -->
+                <ul> <!-- Les éléments de footer sont rangés en liste à puces -->
                     <li class="lien-footer">
                         <a href="#">
                             <i class="fas fa-utensils"></i>

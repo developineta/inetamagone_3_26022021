@@ -2,17 +2,18 @@
 /* Polices utilisés */
 /* Couleurs principales */
 /* Paramètres de la police */
+/* Utilisés souvent pour media queries */
 @keyframes menu-block {
   0% {
     opacity: 0;
     /* N'est pas visible au début et visible au 100% */
     transform: translateY(10px);
-    /* Position et axe de début d'animation */
+    /* Déplacé de 10px de sa position normale sur axe Y */
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    /* Position et axe de la fin d'animation */
+    /* Position sur axe Y à la fin de l'animation */
   }
 }
 @keyframes fade-in {
@@ -29,7 +30,9 @@
 @keyframes heart-fill {
   0% {
     fill: transparent;
+    /* Couleur intérieur de coeur */
     stroke: #000000;
+    /* La bordure de coeur */
   }
   12% {
     fill: #eec5ff;
@@ -54,6 +57,7 @@
   }
   100% {
     fill: url(#rose-violet);
+    /* linearGradient */
     stroke: transparent;
   }
 }
@@ -69,6 +73,7 @@
 }
 @keyframes play-loader {
   90% {
+    /* À 90% le loader commence a disparaître */
     opacity: 1;
     /* Visibilité de loader */
     z-index: 4;
@@ -80,8 +85,8 @@
     min-height: 1400px;
   }
   100% {
+    /* À la fin de l'animation le loader devient invisible et prend la place derrière des autres éléments */
     opacity: 0;
-    /* À la fin de l'animation le loader devient invisible et prend la place derrière les autres éléments */
     height: 0;
     z-index: 0;
   }
@@ -105,6 +110,7 @@
 @keyframes spinner-shine-before {
   0% {
     top: 109%;
+    /* Le déplacement de l'élément pendant l'animation */
     right: 20%;
   }
   50% {
@@ -147,7 +153,7 @@ body {
 
 body {
   font-family: "Roboto", sans-serif;
-  /* Les variables de polices utilisés */
+  /* Les variables de police utilisés */
   color: #000000;
   /* Les variables de couleurs principales utilisés */
 }
@@ -160,8 +166,8 @@ body ul {
 }
 
 h1 {
-  /* Maps utilisés pour les polices de headings */
   font-family: "Shrikhand", sans-serif;
+  /* Maps utilisés pour les polices de headings */
   font-size: 1.9rem;
   font-weight: normal;
   margin: 7px 0px 5px 0px;
@@ -174,7 +180,7 @@ h1 {
   height: 50px;
   width: 218px;
   border: none;
-  /* Enlève la bordure de boutton qui est définie par défaut */
+  /* Enlève la bordure de bouton qui est définie par défaut */
   box-shadow: 2px 4px 10px #b6b6b6, 29px 57px 61px -37px #ff79da inset;
   /* Appliquation des ombres - externe et interne */
   /*Utilisé souvent dans le code */
@@ -200,7 +206,8 @@ h1 {
   opacity: 0;
   /* Transparence quand pas de survol */
   z-index: 2;
-  transition: opacity 250ms;
+  /* Par dessus d'élément parent */
+  transition: opacity 350ms;
   /* L'effet plus doux au survol */
 }
 .bouton-rose .bouton__texte {
@@ -208,7 +215,7 @@ h1 {
   font-size: 1rem;
   margin: auto;
   z-index: 3;
-  /* Le texte de bouton reste par dessus des effets de bouton */
+  /* Le texte de bouton reste par dessus de tous les autres effets de bouton */
 }
 
 /* Réalisation de coeur qui change l'apparence au survol */
@@ -223,7 +230,7 @@ h1 {
   }
 }
 .heart .fa-heart path {
-  /* Définition des parametres de bordure de coeur */
+  /* Définition des paramètres de la bordure de coeur */
   fill: transparent;
   stroke-width: 30px;
   stroke: #000000;
@@ -255,11 +262,11 @@ h1 {
   right: 0;
   bottom: 0;
   background-color: rgba(246, 246, 246, 0.9);
-  /* Couleur rgba utilisé pour définir opacité, pour ne pas définir opacité apart qui affecte l'opacité de l'image de loader */
+  /* Couleur rgba utilisé pour définir opacité, pour ne pas définir opacité apart qui affecte l'opacité des éléments de loader */
   z-index: 4;
   /* Place le loader par dessus de l'autre contenu */
   animation: play-loader 2500ms forwards;
-  /* L'apparition et disparition de loader entier */
+  /* L'apparition et disparition de loader entier avec 'animation-duration' de 2.5 secondes */
 }
 #spinner-overlay .spinner-block {
   display: flex;
@@ -275,7 +282,7 @@ h1 {
   height: 265px;
   border-radius: 100%;
   overflow: hidden;
-  /* Les éléments de l'animation qui dépassent les bordures de ce block pendant l'animation, ne sont pas visibles */
+  /* Les éléments de l'animation qui dépassent les bordures de ce block pendant l'animation ne sont pas visibles */
 }
 #spinner-overlay .spinner-block .anim-container .cercle--contour {
   position: absolute;
@@ -285,7 +292,7 @@ h1 {
   height: 265px;
   border-radius: 100%;
   animation: circle-turn 1500ms linear 2;
-  /* Les animations de chaque élément se passent "au milieu" de temps de l'animation de loader intégral */
+  /* Les animations de chaque élément se passent que pendant le temps de l'animation de loader entier */
   /* Utilisé pour loader */
   background-image: linear-gradient(to right top, #f6f6f6, #dbdbdb, #c1c1c1, #a8a8a8, #8f8f8f);
 }
@@ -307,6 +314,7 @@ h1 {
   height: 165px;
   border-radius: 100%;
   animation: circle-turn 1500ms linear 2;
+  /* 'animation-iteration-count' - le nombre de répétitions est 2 */
   /* Utilisé pour loader */
   background-image: linear-gradient(to right top, #f6f6f6, #dbdbdb, #c1c1c1, #a8a8a8, #8f8f8f);
 }
@@ -332,7 +340,7 @@ h1 {
   transform: rotate(45deg);
   animation: spinner-shine-before 1500ms ease-in-out 500ms 1;
   z-index: 1;
-  /* Les éléments sont placés par dessus de l'cone des ustensiles */
+  /* Les éléments sont placés par dessus de l'icone des ustensiles */
 }
 #spinner-overlay .spinner-block .anim-container .cercle--petit::after {
   content: "";
@@ -392,7 +400,7 @@ h1 {
 @media all and (min-width: 681px) {
   .menus__image .menus_img {
     border-radius: 35px;
-    /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+    /* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
     box-shadow: 2px 4px 10px #b6b6b6;
   }
 }
@@ -512,12 +520,13 @@ h1 {
   max-width: 434px;
   width: 47%;
   background-color: #ffffff;
-  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  /* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
   box-shadow: 2px 4px 10px #e4e4e4;
   justify-content: space-between;
   position: relative;
   /* Pour positionner l'effet de coche au survol */
   overflow: hidden;
+  /* Cache l'icone de coche pendant son effet de transition au survol, pendant qu'elle n'est pas entrée dans son bloc */
   border-radius: 18px;
   color: #000000;
   width: 101%;
@@ -552,14 +561,12 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   max-width: 405px;
-  /* Si le texte est trop long, il soit coupé et remplacé par trois points */
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 @media all and (max-width: 345px) {
   .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-txt {
     max-width: 225px;
+    /* Permet au Sass de remplacer mot 'content' par les propriétés qui vont être définies dans le code */
   }
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-txt h3 {
@@ -567,23 +574,31 @@ h1 {
   font-weight: 600;
   letter-spacing: 0.02rem;
   margin: 14px 0 0 0;
-  /* Si le texte est trop long, il soit coupé et remplacé par trois points */
+  /* Si le texte est trop long, il soit coupé et remplacé par les points de suspension */
   white-space: nowrap;
+  /* Le texte reste dans la même ligne */
   overflow: hidden;
+  /* N'a pas de débordement */
   text-overflow: ellipsis;
+  /* Les points de suspension */
+  /* Si le texte est trop long, il soit coupé et remplacé par les points de suspension */
 }
 @media all and (max-width: 345px) {
   .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-txt h3 {
     max-width: 225px;
+    /* Permet au Sass de remplacer mot 'content' par les propriétés qui vont être définies dans le code */
   }
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .ligne-txt span {
   font-size: 0.93rem;
   margin: 5px 0 12px 0;
-  /* Si le texte est trop long, il soit coupé et remplacé par trois points */
+  /* Si le texte est trop long, il soit coupé et remplacé par les points de suspension */
   white-space: nowrap;
+  /* Le texte reste dans la même ligne */
   overflow: hidden;
+  /* N'a pas de débordement */
   text-overflow: ellipsis;
+  /* Les points de suspension */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .menu-texte .prix {
   display: flex;
@@ -606,10 +621,11 @@ h1 {
   height: 70px;
   background-color: #99e2d0;
   transform: scaleX(0);
+  /* La taille de cet élément est zero sans effet de survol */
   transform-origin: right;
-  /* Le fond vert s'agrandit de coté droite au survol */
+  /* la direction de transition au sorvol est de côté droite vers la côté gauche */
   transition: transform 400ms ease-out;
-  /* L'effet de coche est réalisé avec les transitions */
+  /* 'transition-property' appliqué est 'transform'; 'transition-duration' est de 400ms; 'transition-timing-function' relantit à la fin */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix .fa-check-circle {
   display: block;
@@ -625,35 +641,41 @@ h1 {
   color: #ffffff;
   background-color: #99e2d0;
   opacity: 0;
-  /* Le check n'est pas visible sans survol */
+  /* N'est pas visible sans survol */
   transition: transform 300ms linear 70ms;
+  /* 'transition delay' - retard de début - de 70ms */
   transform: translateX(35px) rotate(0turn);
-  /* Le check a deux transitions - se déplacer et tourner */
+  /* L'élément est déplacé hors de son block et ne tourne pas sans survol */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover {
-  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  /* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte {
   animation: txt-wrap 300ms ease-out forwards;
+  /* 'animation-name' suivi par 'animation-duration' de 300ms, 'animation-timing-function' et 'animation-fill-mode' en avant */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte .ligne-txt:nth-child(1) {
   flex: 2.1;
-  /* Utilisé pour definir le rapport de deux blocks au survol */
+  /* Utilisé pour définir le rapport de deux blocks au survol */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .menu-texte .prix:nth-child(2) {
   flex: 0.4;
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .coche {
   transform: scaleX(1);
+  /* L'élément regagne sa taille prédéfinie au survol */
 }
 .menus .ensamble-menu__articles .article-menu__cartes .carte-choix:hover .fa-check-circle {
   transform: translateX(0) rotate(2turn);
+  /* Deux transitions au survol - regagne sa place sur axe X et rotation deux fois */
   opacity: 1;
+  /* Est visible au survol */
 }
 .menus .ensamble-menu__articles #entrees {
   animation: menu-block 700ms ease-out 200ms backwards;
-  /* Les animations de reduction de texte menus ayu survol */
+  /* Les animations de reduction de texte menus au survol */
+  /* Les mixins customisables */
 }
 .menus .ensamble-menu__articles #entrees .carte-choix--1 {
   animation: fade-in 200ms ease-out 450ms backwards;
@@ -669,7 +691,7 @@ h1 {
 }
 .menus .ensamble-menu__articles #plats {
   animation: menu-block 700ms ease-out 1250ms backwards;
-  /* Les animations de reduction de texte menus ayu survol */
+  /* Les animations de reduction de texte menus au survol */
 }
 .menus .ensamble-menu__articles #plats .carte-choix--1 {
   animation: fade-in 200ms ease-out 1500ms backwards;
@@ -682,7 +704,7 @@ h1 {
 }
 .menus .ensamble-menu__articles #desserts {
   animation: menu-block 700ms ease-out 2300ms backwards;
-  /* Les animations de reduction de texte menus ayu survol */
+  /* Les animations de reduction de texte menus au survol */
 }
 .menus .ensamble-menu__articles #desserts .carte-choix--1 {
   animation: fade-in 200ms ease-out 2550ms backwards;
@@ -694,13 +716,13 @@ h1 {
   animation: fade-in 200ms ease-out 2950ms backwards;
 }
 .menus .ensamble-menu .bouton-rose {
+  /* Définition des propriétés de bouton que dans les pages menus */
   width: 100%;
   background-color: #f6f6f6;
   padding: 40px 0 56px 0;
 }
 .menus .ensamble-menu .bouton-rose .bouton {
   width: 185px;
-  /* Définition de la taille de bouton mixin */
 }
 
 header .ligne-header {
@@ -710,13 +732,13 @@ header .ligne-header {
 }
 header .ligne-header i {
   padding-left: 4%;
-  /* Espace définie en % pour meilleur raport agrandissant écran */
+  /* Espace définie en % pour meilleur raport agrandissant l'écran */
   font-size: 1.2rem;
   color: #000000;
 }
 header .ligne-header h2 {
-  /* Maps utilisés pour les polices de headings */
   font-family: "Shrikhand", sans-serif;
+  /* Maps utilisés pour les polices de headings */
   font-size: 1.9rem;
   font-weight: normal;
   margin: 7px 0px 5px 0px;
@@ -725,7 +747,7 @@ header .ligne-header h2 {
 header .ligne-header h1 {
   margin: auto;
 }
-header .ligne-header :hover {
+header .ligne-header:hover {
   text-shadow: 2px 4px 10px #777777;
 }
 
@@ -754,11 +776,9 @@ header .ligne-header :hover {
 }
 #footer-content .lien-footer a {
   color: #ffffff;
-  /* Les propiétés d'apparence des liens de footer */
 }
-#footer-content .lien-footer a :hover {
+#footer-content .lien-footer a:hover {
   color: #ff79da;
-  /* Utilisation d'esperluette Sass*/
 }
 #footer-content ul {
   padding: 0px;
@@ -778,9 +798,11 @@ header .ligne-header :hover {
   flex-direction: column;
   justify-content: space-between;
   background-color: #f6f6f6;
+  /* Utilisation de variable */
 }
 @media all and (min-width: 681px) {
   .description {
+    /* Media queries sont placés directement dans les sélécteurs */
     position: relative;
     height: 225px;
   }
@@ -814,8 +836,9 @@ header .ligne-header :hover {
   height: 100%;
   background-color: #eaeaea;
   position: relative;
-  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  /* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
+  /* Utilisation de fonctions de couleurs */
 }
 .description .recherche-form i {
   padding: 17px 15px 0px 59px;
@@ -831,7 +854,7 @@ header .ligne-header :hover {
   background-color: #eaeaea;
 }
 .description .recherche-form:hover {
-  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  /* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
   box-shadow: 2px 4px 10px #777777;
 }
 @media all and (max-width: 680px) {
@@ -868,7 +891,7 @@ header .ligne-header :hover {
     right: 10%;
   }
   .description .recherche-form:hover {
-    /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+    /* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
     box-shadow: 2px 4px 10px #777777;
   }
 }
@@ -887,6 +910,7 @@ header .ligne-header :hover {
 }
 .description__textes h2 {
   font-size: 1.5rem;
+  /* Utilisation de map définie dans les variables */
   font-weight: 900;
   margin: 36px 0 0 0;
   width: 77%;
@@ -897,6 +921,7 @@ header .ligne-header :hover {
 }
 .description .bouton-rose {
   margin-bottom: 57px;
+  /* Les propriétés principales de bouton sont définies dans les mixins */
 }
 @media all and (min-width: 681px) {
   .description .bouton-rose {
@@ -956,7 +981,7 @@ header .ligne-header :hover {
   background-color: #f6f6f6;
   border-radius: 25px 25px 25px 25px;
   margin: 0 20px 20px 0;
-  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  /* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
   box-shadow: 2px 4px 10px #dddddd;
 }
 @media all and (max-width: 680px) {
@@ -968,6 +993,7 @@ header .ligne-header :hover {
   }
 }
 .fonctionnement-ensamble .fonctionnement__etapes--active {
+  /* Sélécteur BEM utilisé */
   background-color: #f5edff;
 }
 @media all and (min-width: 992px) {
@@ -1061,7 +1087,7 @@ header .ligne-header :hover {
   max-width: 434px;
   width: 47%;
   background-color: #ffffff;
-  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  /* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
   box-shadow: 2px 4px 10px #e4e4e4;
   flex-direction: column;
   justify-content: flex-start;
@@ -1121,7 +1147,7 @@ header .ligne-header :hover {
   margin: 3px 0 16px 0;
 }
 #restaurants .cartes-restaurants figure:hover {
-  /* Mixin customisable puor appliquer differentes nuances de couleur selon besoin */
+  /* Mixin customisable puor appliquer differentes fonctions de couleur selon besoin */
   box-shadow: 2px 4px 10px #b6b6b6;
 }
 
