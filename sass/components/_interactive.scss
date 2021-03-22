@@ -11,7 +11,7 @@
 	}
 	.fa-heart {
 		path {
-			/* Définition des parametres de bordure de coeur */
+			/* Définition des paramètres de la bordure de coeur */
 			fill: transparent;
 			stroke-width: 30px;
 			stroke: $colour-black;
@@ -42,10 +42,10 @@
 	right: 0;
 	bottom: 0;
 	background-color: rgba(246, 246, 246, 0.9);
-	/* Couleur rgba utilisé pour définir opacité, pour ne pas définir opacité apart qui affecte l'opacité de l'image de loader */
+	/* Couleur rgba utilisé pour définir opacité, pour ne pas définir opacité apart qui affecte l'opacité des éléments de loader */
 	z-index: 4; /* Place le loader par dessus de l'autre contenu */
 	animation: play-loader 2500ms forwards;
-	/* L'apparition et disparition de loader entier */
+	/* L'apparition et disparition de loader entier avec 'animation-duration' de 2.5 secondes */
 	.spinner-block {
 		display: flex; /* La position des images de loader sur la page */
 		justify-content: center;
@@ -57,7 +57,7 @@
 			width: 265px;
 			height: 265px;
 			border-radius: 100%;
-			overflow: hidden; /* Les éléments de l'animation qui dépassent les bordures de ce block pendant l'animation, ne sont pas visibles */
+			overflow: hidden; /* Les éléments de l'animation qui dépassent les bordures de ce block pendant l'animation ne sont pas visibles */
 			.cercle--contour {
 				position: absolute;
 				top: 0px;
@@ -65,7 +65,7 @@
 				width: 265px;
 				height: 265px;
 				border-radius: 100%;
-				animation: circle-turn 1500ms linear 2; /* Les animations de chaque élément se passent "au milieu" de temps de l'animation de loader intégral */
+				animation: circle-turn 1500ms linear 2; /* Les animations de chaque élément se passent que pendant le temps de l'animation de loader entier */
 				@include gradient-gris;
 			}
 			.cercle--grand {
@@ -84,7 +84,7 @@
 				width: 165px;
 				height: 165px;
 				border-radius: 100%;
-				animation: circle-turn 1500ms linear 2;
+				animation: circle-turn 1500ms linear 2; /* 'animation-iteration-count' - le nombre de répétitions est 2 */
 				@include gradient-gris;
 			}
 			.cercle--petit {
@@ -106,7 +106,7 @@
 					opacity: 0.2;
 					transform: rotate(45deg);
 					animation: spinner-shine-before 1500ms ease-in-out 500ms 1;
-					z-index: 1; /* Les éléments sont placés par dessus de l'cone des ustensiles */
+					z-index: 1; /* Les éléments sont placés par dessus de l'icone des ustensiles */
 				}
 				&::after {
 					content: "";

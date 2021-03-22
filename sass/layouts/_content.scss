@@ -115,7 +115,7 @@
 						@include content-cards;
 						justify-content: space-between;
 						position: relative; /* Pour positionner l'effet de coche au survol */
-						overflow: hidden;
+						overflow: hidden; /* Cache l'icone de coche pendant son effet de transition au survol, pendant qu'elle n'est pas entrée dans son bloc */
 						border-radius: 18px;
 						color: $colour-black;
 						width: 101%;
@@ -136,7 +136,7 @@
 								flex-direction: column;
 								justify-content: space-between;
 								max-width: 405px;
-								@include wrap-dots;
+								overflow: hidden;
 								@include small-screen {
 									max-width: 225px;
 								}
@@ -145,7 +145,7 @@
 									font-weight: $font-weight600;
 									letter-spacing: $letter-spacing;
 									margin: 14px 0 0 0;
-									@include wrap-dots;
+									@include wrap-dots; /* Si le texte est trop long, il soit coupé et remplacé par les points de suspension */
 									@include small-screen {
 										max-width: 225px;
 									}
@@ -178,8 +178,9 @@
 							height: 70px;
 							background-color: #99e2d0;
 							transform: scaleX(0);
-							transform-origin: right;
-							transition: transform 400ms ease-out;
+							/* La taille de cet élément est zero sans effet de survol */
+							transform-origin: right; /* la direction de transition au sorvol est de côté droite vers la côté gauche */
+							transition: transform 400ms ease-out; /* 'transition-property' appliqué est 'transform'; 'transition-duration' est de 400ms; 'transition-timing-function' relantit à la fin */
 						}
 						.fa-check-circle {
 							display: block;
@@ -194,14 +195,14 @@
 							font-size: 1.3rem;
 							color: #ffffff;
 							background-color: #99e2d0;
-							opacity: 0;
-							transition: transform 300ms linear 70ms;
-							transform: translateX(35px) rotate(0turn);
+							opacity: 0; /* N'est pas visible sans survol */
+							transition: transform 300ms linear 70ms; /* 'transition delay' - retard de début - de 70ms */
+							transform: translateX(35px) rotate(0turn); /* L'élément est déplacé hors de son block et ne tourne pas sans survol */
 						}
 						&:hover {
 							@include external-shadow(darken($colour-background, 25%));
 							.menu-texte {
-								animation: txt-wrap 300ms ease-out forwards;
+								animation: txt-wrap 300ms ease-out forwards; /* 'animation-name' suivi par 'animation-duration' de 300ms, 'animation-timing-function' et 'animation-fill-mode' en avant */
 								.ligne-txt:nth-child(1) {
 									flex: 2.1; /* Utilisé pour définir le rapport de deux blocks au survol */
 								}
@@ -211,61 +212,66 @@
 							}
 							.coche {
 								transform: scaleX(1);
+								/* L'élément regagne sa taille prédéfinie au survol */
 							}
 							.fa-check-circle {
-								transform: translateX(0) rotate(2turn);
-								opacity: 1;
+								transform: translateX(0) rotate(2turn); /* Deux transitions au survol - regagne sa place sur axe X et rotation deux fois */
+								opacity: 1; /* Est visible au survol */
 							}
 						}
 					}
 				}
 			}
 			#entrees {
-				@include anime-menu-block($length: 700ms, $time: 200ms);
+				@include anime-menu-block(
+					$duration: 700ms,
+					$delay: 200ms
+				); /* Les mixins customisables */
 				.carte-choix--1 {
-					@include anime-menu-choix($time: 450ms);
+					@include anime-menu-choix($delay: 450ms);
 				}
 				.carte-choix--2 {
-					@include anime-menu-choix($time: 650ms);
+					@include anime-menu-choix($delay: 650ms);
 				}
 				.carte-choix--3 {
-					@include anime-menu-choix($time: 850ms);
+					@include anime-menu-choix($delay: 850ms);
 				}
 				.carte-choix--4 {
-					@include anime-menu-choix($time: 1000ms);
+					@include anime-menu-choix($delay: 1000ms);
 				}
 			}
 			#plats {
-				@include anime-menu-block($length: 700ms, $time: 1250ms);
+				@include anime-menu-block($duration: 700ms, $delay: 1250ms);
 				.carte-choix--1 {
-					@include anime-menu-choix($time: 1500ms);
+					@include anime-menu-choix($delay: 1500ms);
 				}
 				.carte-choix--2 {
-					@include anime-menu-choix($time: 1700ms);
+					@include anime-menu-choix($delay: 1700ms);
 				}
 				.carte-choix--3 {
-					@include anime-menu-choix($time: 1900ms);
+					@include anime-menu-choix($delay: 1900ms);
 				}
 			}
 			#desserts {
-				@include anime-menu-block($length: 700ms, $time: 2300ms);
+				@include anime-menu-block($duration: 700ms, $delay: 2300ms);
 				.carte-choix--1 {
-					@include anime-menu-choix($time: 2550ms);
+					@include anime-menu-choix($delay: 2550ms);
 				}
 				.carte-choix--2 {
-					@include anime-menu-choix($time: 2750ms);
+					@include anime-menu-choix($delay: 2750ms);
 				}
 				.carte-choix--3 {
-					@include anime-menu-choix($time: 2950ms);
+					@include anime-menu-choix($delay: 2950ms);
 				}
 			}
 		}
 		.bouton-rose {
+			/* Définition des propriétés de bouton que dans les pages menus */
 			width: 100%;
 			background-color: $colour-background;
 			padding: 40px 0 56px 0;
 			.bouton {
-				width: 185px; /* Définition de la taille de bouton mixin */
+				width: 185px;
 			}
 		}
 	}

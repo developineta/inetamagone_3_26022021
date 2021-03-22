@@ -4,7 +4,7 @@ header {
 		align-items: center;
 		height: 63px;
 		i {
-			padding-left: 4%; /* Espace définie en % pour meilleur raport agrandissant écran */
+			padding-left: 4%; /* Espace définie en % pour meilleur raport agrandissant l'écran */
 			font-size: 1.2rem;
 			color: $colour-black;
 		}
@@ -14,7 +14,7 @@ header {
 		h1 {
 			margin: auto;
 		}
-		:hover {
+		&:hover {
 			text-shadow: 2px 4px 10px darken($colour-background, 50%);
 		}
 	}

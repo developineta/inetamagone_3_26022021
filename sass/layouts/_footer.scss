@@ -21,9 +21,9 @@
 		font-size: 1rem;
 	}
 	.lien-footer a {
-		color: $colour-white; /* Les propiétés d'apparence des liens de footer */
-		:hover {
-			color: $colour-secondary; /* Utilisation d'esperluette Sass*/
+		color: $colour-white;
+		&:hover {
+			color: $colour-secondary;
 		}
 	}
 	ul {
